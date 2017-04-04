@@ -13,16 +13,23 @@ namespace Hittafotbollsplaner.Controllers
             return View();
         }
 
-        public ActionResult About()
+        public ActionResult Nyplan()
         {
-            ViewBag.Message = "Your application description page.";
+            ViewBag.Message = "";
 
             return View();
         }
 
-        public ActionResult Contact()
+        public ActionResult Om()
         {
-            ViewBag.Message = "Your contact page.";
+            ViewBag.Message = "";
+
+            return View();
+        }
+
+        public ActionResult Kontakt()
+        {
+            ViewBag.Message = "";
 
             return View();
         }
