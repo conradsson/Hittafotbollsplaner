@@ -1,0 +1,58 @@
+﻿@model Hittafotbollsplaner.Models.fotbollsplaner
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>fotbollsplaner</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Namn)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Namn)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Adress)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Adress)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Ort)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Ort)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Postnummer)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Postnummer)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Underlag)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Underlag)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
