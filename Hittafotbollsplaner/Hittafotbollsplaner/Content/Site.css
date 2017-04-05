@@ -8,8 +8,8 @@
     padding-right: 15px;
 }
 
-/* Override the default bootstrap behavior where horizontal description lists 
-   will truncate terms that are too long to fit in the left column 
+/* Override the default bootstrap behavior where horizontal description lists
+   will truncate terms that are too long to fit in the left column
 */
 .dl-horizontal dt {
     white-space: normal;
@@ -45,3 +45,18 @@ footer {
 }
 input[type="search"] {margin:0 auto;}
 
+div.panel-body {
+    width:39%;
+    margin-left: auto;
+    margin-right: auto;
+}
+.panel-primary {
+    margin: 0% auto;
+    width: 60%;
+}
+
+.btn-default {
+    margin: 15% auto;
+    width: 70%;
+
+}
