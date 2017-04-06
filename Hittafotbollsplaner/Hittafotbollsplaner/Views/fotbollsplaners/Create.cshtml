@@ -18,11 +18,11 @@
             <div class="form-horizontal">
                 <h4 style="text-align: center;">Ny fotbollsplan</h4>
                 <hr />
-                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                @Html.ValidationSummary(true, "", new { @class = "text-danger", required = "required" })
                 <div class="form-group">
                     @Html.LabelFor(model => model.Namn, htmlAttributes: new { @class = "control-label col-md-2" })
                     <div class="col-md-10" >
-                        @Html.EditorFor(model => model.Namn, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.EditorFor(model => model.Namn, new { htmlAttributes = new {  @class = "form-control" } })
                         @Html.ValidationMessageFor(model => model.Namn, "", new { @class = "text-danger" })
 
                     </div>
@@ -31,7 +31,7 @@
                 <div class="form-group">
                     @Html.LabelFor(model => model.Adress, htmlAttributes: new { @class = "control-label col-md-2" })
                     <div class="col-md-10">
-                        @Html.EditorFor(model => model.Adress, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.EditorFor(model => model.Adress, new { htmlAttributes = new { @class = "form-control"} })
                         @Html.ValidationMessageFor(model => model.Adress, "", new { @class = "text-danger" })
                     </div>
                 </div>
@@ -53,7 +53,7 @@
                 </div>
 @{
     List<SelectListItem> listItems = new List<SelectListItem>();
-    listItems.Add(new SelectListItem
+                        listItems.Add(new SelectListItem
     {
         Text = "Gräs",
         Value = "Gräs"
@@ -72,7 +72,7 @@
                 <div class="form-group">
                     @Html.LabelFor(model => model.Underlag, htmlAttributes: new { @class = "control-label col-md-2" })
                     <div class="col-md-10">
-                        @Html.DropDownListFor(model => model.Underlag, listItems, "Välj underlag", htmlAttributes: new { @class = "form-control" })
+                        @Html.DropDownListFor(model => model.Underlag, listItems, null, htmlAttributes: new { @class = "form-control" })
                         @Html.ValidationMessageFor(model => model.Underlag, "", new { @class = "text-danger" })
                     </div>
                 </div>
