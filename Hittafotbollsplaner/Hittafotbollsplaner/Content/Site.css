@@ -36,6 +36,15 @@ img {
     padding: 2px 16px;
 }
 
+input#search.form-control {
+    border-radius: 40px;
+    max-width: 30%;
+}
+
+div.list-group {
+    border-radius: 50px;
+}
+
 input,
 select,
 textarea {
