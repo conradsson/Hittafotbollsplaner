@@ -46,7 +46,7 @@ footer {
 input[type="search"] {margin:0 auto;}
 
 div.panel-body {
-    width:39%;
+    width: 60%;
     margin-left: auto;
     margin-right: auto;
 }
@@ -58,4 +58,8 @@ div.panel-body {
 .btn-default {
     margin: 15% auto;
     width: 70%;
+}
+
+label.control-label.col-md-2 {
+    margin-right: 0%;
 }
