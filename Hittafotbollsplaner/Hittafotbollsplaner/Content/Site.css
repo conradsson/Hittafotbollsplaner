@@ -68,7 +68,13 @@ div.panel-body {
 
 .field-validation-error {
     position: absolute;
-    z-index:10;
-    background-color:#ededed;
-    color: black;
+    z-index: 10;
+    padding: 3px;
+    border-radius: 4px;
+    background-color: #ededed;
+    box-shadow: 0 2px 2px 2px rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+    /*TEXTEN*/
+    color: darkred;
+    font-size: small;
 }
