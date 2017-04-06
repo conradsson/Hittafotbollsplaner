@@ -60,3 +60,15 @@ div.panel-body {
     width: 100%;
 }
 
+/*  VALIDATION  */
+
+.form-group {
+    margin-bottom: 40px;
+}
+
+.field-validation-error {
+    position: absolute;
+    z-index:10;
+    background-color:#ededed;
+    color: black;
+}
