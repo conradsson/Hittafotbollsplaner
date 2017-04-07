@@ -1,6 +1,10 @@
-﻿@{
+﻿
+
+@{
     ViewBag.Title = "Sök efter fotbollsplaner";
+    @model Hittafotbollsplaner.Models.FotbollsplanerModels
 }
+
 
 <div class="jumbotron">
     <div class="form-group searchForm">
@@ -15,10 +19,21 @@
             <h3>Populära</h3>
             <!--PartialView som hämtar populära-->
             <div class="list-group">
-                <a href="#" class="list-group-item list-group-item">Exempel 1</a>
+                <a href="#" class="list-group-item list-group-item">11</a>
                 <a href="#" class="list-group-item list-group-item">Exempel 2</a>
                 <a href="#" class="list-group-item list-group-item">Exempel 3</a>
                 <a href="#" class="list-group-item list-group-item">Exempel 4</a>
+
+                @using (Html.BeginForm("Index", "Home"))
+                {
+                    foreach (var item in Model.fotbollsplaner)
+                    {
+                        <a href="#" class="list-group-item list-group-item">item</a>
+                    }
+
+                @Html.ListBox("Fotbollsplaner", new SelectList(Model.fotbollsplaner, "Id", "Namn"))
+                }
+
             </div>
         </div>
         <div class="col-md-3">
