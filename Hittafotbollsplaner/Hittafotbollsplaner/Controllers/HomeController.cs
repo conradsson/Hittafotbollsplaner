@@ -1,8 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
+using System.Data.Entity;
 using System.Linq;
+using System.Net;
 using System.Web;
 using System.Web.Mvc;
+using Hittafotbollsplaner.Models;
 
 namespace Hittafotbollsplaner.Controllers
 {
@@ -10,7 +14,12 @@ namespace Hittafotbollsplaner.Controllers
     {
         public ActionResult Index()
         {
-            return View();
+            hittafotbollsplanerEntities db = new hittafotbollsplanerEntities();
+            FotbollsplanerModels model = new FotbollsplanerModels();
+
+            model.fotbollsplaner = db.fotbollsplaners.ToList();
+
+            return View(model);
         }
 
         public ActionResult Nyplan()
