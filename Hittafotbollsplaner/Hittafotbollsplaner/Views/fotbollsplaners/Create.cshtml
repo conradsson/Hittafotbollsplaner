@@ -81,9 +81,9 @@
                        <input type="submit" id="läggtillFP" value="Lägg till" class="btn btn-default"/>
                     </div>
                 </div>
-                @if (@ViewBag.Confirm != null)
+                @if (@ViewBag.SuccessConfirm != null)
                 {
-                    @Html.Partial("_Confirmation")
+                    @Html.Partial("_SuccessConfirmation")
                 }
             </div>
 

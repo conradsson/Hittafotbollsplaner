@@ -283,7 +283,7 @@
     <Content Include="Views\fotbollsplaners\Details.cshtml" />
     <Content Include="Views\fotbollsplaners\Edit.cshtml" />
     <Content Include="Views\fotbollsplaners\Index.cshtml" />
-    <Content Include="Views\fotbollsplaners\_Confirmation.cshtml" />
+    <Content Include="Views\fotbollsplaners\_SuccessConfirmation.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
