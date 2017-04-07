@@ -52,11 +52,13 @@ namespace Hittafotbollsplaner.Controllers
             {
                 db.fotbollsplaners.Add(fotbollsplaner);
                 db.SaveChanges();
-
-                return RedirectToAction("Index");
+                ViewBag.Confirm = "1";
+                return View();
             }
-
-            return View(fotbollsplaner);
+            else
+            {
+            return View();
+            }
         }
 
         // GET: fotbollsplaners/Edit/5

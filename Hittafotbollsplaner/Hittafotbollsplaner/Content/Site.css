@@ -51,8 +51,12 @@ textarea {
     max-width: 280px;
 }
 
-.navbar{
-    top:0;
+#divSuccessMessage {
+    z-index: 10;
+}
+
+.navbar {
+    top: 0;
     border-radius: 0px;
 }
 
