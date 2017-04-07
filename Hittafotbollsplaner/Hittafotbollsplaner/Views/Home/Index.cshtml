@@ -20,7 +20,7 @@
         <!--PartialView som hämtar populära-->
         <div class="list-group">
 
-            @using (Html.BeginForm("Index", "Home"))        
+            @using (Html.BeginForm("Index", "Home"))
             {
                 foreach (var item in Model.fotbollsplaner) // RADAR UPP FOTBOLLSPLANERS NAMN I "POPULÄRA"
                 {
@@ -38,7 +38,7 @@
             {
                 foreach (var item in Model.senasteFotbollsplaner) // RADAR UPP FOTBOLLSPLANERS NAMN I "POPULÄRA"
                 {
-                    <a href="#" class="list-group-item list-group-item">@item.Namn</a>
+                    <a href="#" class="list-group-item list-group-item">@item.Namn <span class="glyphicon glyphicon-star" style="color:gold;"></span></a>
                 }
             }
         </div>
