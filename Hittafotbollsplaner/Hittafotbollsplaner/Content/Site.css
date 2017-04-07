@@ -108,6 +108,10 @@ div.panel-body {
     font-size: small;
 }
 
+input[type="submit"]:disabled {
+    cursor: not-allowed;
+}
+
 /*  SNACKBAR  */
 #snackbar {
     visibility: hidden;
