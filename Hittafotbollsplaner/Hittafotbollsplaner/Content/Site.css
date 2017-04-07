@@ -68,9 +68,9 @@ textarea {
     border: none;
 }
 
-footer {
+.navbar-inverse .navbar-nav > li > a:hover {
+    color: rgba(33, 160, 62, 0.60);
 }
-
 
 .searchForm {
     margin: 0 auto;
