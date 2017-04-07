@@ -163,3 +163,16 @@ a.logotyp img{
 
 
 }
+ul.navbar-nav li{
+    color: #21a03e;
+
+}
+
+ul.navbar-nav li a:focus{
+    color: black;
+    background-color:aqua;
+
+}
+.navbar-inverse .navbar-nav > li > a:hover {
+        color: #21a03e;
+}
