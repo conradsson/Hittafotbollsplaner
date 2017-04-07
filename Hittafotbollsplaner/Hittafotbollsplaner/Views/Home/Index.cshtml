@@ -28,7 +28,7 @@
                 {
                     foreach (var item in Model.fotbollsplaner)
                     {
-                        <a href="#" class="list-group-item list-group-item">item</a>
+                        <a href="#" class="list-group-item list-group-item">@item.Namn</a>
                     }
 
                 @Html.ListBox("Fotbollsplaner", new SelectList(Model.fotbollsplaner, "Id", "Namn"))
