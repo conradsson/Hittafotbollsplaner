@@ -78,9 +78,13 @@
 
                 <div class="form-group">
                     <div class="col-md-offset-2 col-md-10">
-                       <input type="submit" id="läggtillFP" value="Lägg till" onclick="snackbarFunc()" class="btn btn-default"/>
+                       <input type="submit" id="läggtillFP" value="Lägg till" class="btn btn-default"/>
                     </div>
                 </div>
+                @if (@ViewBag.Confirm != null)
+                {
+                    @Html.Partial("_Confirmation")
+                }
             </div>
 
         }
