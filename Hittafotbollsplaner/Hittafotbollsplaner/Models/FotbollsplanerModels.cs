@@ -9,5 +9,6 @@ namespace Hittafotbollsplaner.Models
     public class FotbollsplanerModels
     {
         public IEnumerable<fotbollsplaner> fotbollsplaner { get; set; }
+        public IEnumerable<fotbollsplaner> senasteFotbollsplaner { get; set; }
     }
 }

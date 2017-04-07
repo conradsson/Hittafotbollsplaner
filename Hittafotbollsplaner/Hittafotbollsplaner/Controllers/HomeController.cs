@@ -16,8 +16,10 @@ namespace Hittafotbollsplaner.Controllers
         {
             hittafotbollsplanerEntities db = new hittafotbollsplanerEntities();
             FotbollsplanerModels model = new FotbollsplanerModels();
+            List<fotbollsplaner> allaFotbollsplaner = db.fotbollsplaners.ToList();
 
-            model.fotbollsplaner = db.fotbollsplaners.ToList();
+            model.fotbollsplaner = allaFotbollsplaner;
+            model.senasteFotbollsplaner = allaFotbollsplaner.OrderByDescending(o => o.Id);
 
             return View(model);
         }
