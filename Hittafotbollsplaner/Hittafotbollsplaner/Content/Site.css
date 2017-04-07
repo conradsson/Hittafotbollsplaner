@@ -111,3 +111,52 @@ div.panel-body {
     color: darkred;
     font-size: small;
 }
+
+
+
+div.card.col-md-6 {
+    position: relative;
+    width: 50%;
+}
+
+.image {
+  opacity: 1;
+  display: block;
+  width: 100%;
+  height: auto;
+  transition: .5s ease;
+  backface-visibility: hidden;
+}
+
+.middle {
+  transition: .5s ease;
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%)
+}
+
+div.card.col-md-6:hover .image {
+  opacity: 0.3;
+}
+
+div.card.col-md-6:hover .middle {
+  opacity: 1;
+}
+
+.text {
+  background-color: rgb(128, 128, 128);
+  color: white;
+  font-size: 16px;
+  padding: 12px 34px;
+  border-radius: 40px;
+}
+
+.text a {
+    text-decoration: none;
+    color: white;
+    
+
+}
