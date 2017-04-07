@@ -22,9 +22,8 @@
                 <div class="form-group">
                     @Html.LabelFor(model => model.Namn, htmlAttributes: new { @class = "control-label col-md-2" })
                     <div class="col-md-10" >
-                        @Html.EditorFor(model => model.Namn, new { htmlAttributes = new {  @class = "form-control" } })
+                        @Html.EditorFor(model => model.Namn, new { htmlAttributes = new {  @class = "form-control"} })
                         @Html.ValidationMessageFor(model => model.Namn, "", new { @class = "text-danger" })
-
                     </div>
                 </div>
 
@@ -79,37 +78,10 @@
 
                 <div class="form-group">
                     <div class="col-md-offset-2 col-md-10">
-                       <input type="submit" id="läggtillFP" value="Lägg till" disabled="disabled" class="btn btn-default"/>
+                       <input type="submit" id="läggtillFP" value="Lägg till" onclick="snackbarFunc()" class="btn btn-default"/>
                     </div>
                 </div>
             </div>
-
-            <div id="snackbar">Fotbollsplanen tillagd.</div>
-
-            //Trigger the modal with a button
-            <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Open Modal</button>
-
-            <!-- Modal -->
-            <div id="myModal" class="modal fade" role="dialog">
-                <div class="modal-dialog">
-
-                    <!-- Modal content-->
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <button type="button" class="close" data-dismiss="modal">&times;</button>
-                            <h4 class="modal-title">Du la precis till en ny fotbollsplan.</h4>
-                        </div>
-                        <div class="modal-body">
-                            <p>Vi växer varje dag och detta gör vi inte utan er. Tack!</p>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-default" data-dismiss="modal">Stäng</button>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-
 
         }
 

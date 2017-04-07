@@ -52,7 +52,7 @@ namespace Hittafotbollsplaner.Controllers
             {
                 db.fotbollsplaners.Add(fotbollsplaner);
                 db.SaveChanges();
-                
+
                 return RedirectToAction("Index");
             }
 
