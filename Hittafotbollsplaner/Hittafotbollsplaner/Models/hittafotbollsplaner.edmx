@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="hittafotbollsplanerModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012.Azure" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="hittafotbollsplanerModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012.Azure" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="fotbollsplaner">
           <Key>
             <PropertyRef Name="Id" />
@@ -15,12 +15,13 @@
           <Property Name="Ort" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="Postnummer" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="Underlag" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Latitud" Type="nvarchar" MaxLength="50" />
+          <Property Name="Longitud" Type="nvarchar" MaxLength="50" />
         </EntityType>
         <EntityContainer Name="hittafotbollsplanerModelStoreContainer">
           <EntitySet Name="fotbollsplaner" EntityType="Self.fotbollsplaner" Schema="dbo" store:Type="Tables" />
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="hittafotbollsplanerModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -34,6 +35,8 @@
           <Property Name="Ort" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Postnummer" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Underlag" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Latitud" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Longitud" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityContainer Name="hittafotbollsplanerEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="fotbollsplaners" EntityType="Self.fotbollsplaner" />
@@ -47,6 +50,8 @@
           <EntitySetMapping Name="fotbollsplaners">
             <EntityTypeMapping TypeName="hittafotbollsplanerModel.fotbollsplaner">
               <MappingFragment StoreEntitySet="fotbollsplaner">
+                <ScalarProperty Name="Longitud" ColumnName="Longitud" />
+                <ScalarProperty Name="Latitud" ColumnName="Latitud" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="Namn" ColumnName="Namn" />
                 <ScalarProperty Name="Adress" ColumnName="Adress" />

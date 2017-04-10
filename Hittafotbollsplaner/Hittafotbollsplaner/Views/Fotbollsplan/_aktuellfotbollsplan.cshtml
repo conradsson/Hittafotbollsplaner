@@ -12,8 +12,8 @@
                 <div class="row">
                     <img class="pull-right bildfotbollsplan" src="http://traveldigg.com/wp-content/uploads/2016/08/Emirates-Stadium-Field.jpg" alt="Bild">
                     <div class="infoDiv">
-                        <h2>Namnet</h2>
-                        <h4>Stadsgatan 4, 700 30 Staden</h4>
+                        <h2>@Model.Namn</h2>
+                        <h4>@Model.Adress + ', ' + @Model.Ort + ', ' + @Model.Postnummer</h4>
                     </div>
                 </div>
                 <div class="row">
@@ -39,16 +39,24 @@
 
                 <script>
                     function myMap() {
-                        var myCenter = new google.maps.LatLng(51.508742, -0.120850);
+                        var myCenter = new google.maps.LatLng(@Convert.ToDouble(Model.Latitud), @Convert.ToDouble(Model.Longitud));
                         var mapCanvas = document.getElementById("googleMap");
                         var mapOptions = { center: myCenter, zoom: 5 };
                         var map = new google.maps.Map(mapCanvas, mapOptions);
                         var marker = new google.maps.Marker({
                             position: myCenter,
                             animation: google.maps.Animation.BOUNCE,
-                            icon: "../favicon.ico"
+                            icon: pinIcon
                         });
                         marker.setMap(map);
+
+                        var pinIcon = new google.maps.MarkerImage(
+                            "../Content/img/marker.png",
+                            null, /* size is determined at runtime */
+                            null, /* origin is 0,0 */
+                            null, /* anchor is bottom center of the scaled image */
+                            new google.maps.Size(42, 68));
+                        marker.setIcon(pinIcon);
                     }
                  </script>
             </div>

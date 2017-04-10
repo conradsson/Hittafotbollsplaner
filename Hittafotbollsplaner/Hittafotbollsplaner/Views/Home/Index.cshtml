@@ -52,10 +52,12 @@ $(document).ready(function () {
 
             @using (Html.BeginForm("Index", "Home"))
             {
-                foreach (var item in Model.fotbollsplaner) // RADAR UPP FOTBOLLSPLANERS NAMN I "POPULÄRA"
-                {
-                    <a href="~/fotbollsplaners/Index" class="list-group-item list-group-item">@item.Namn</a>
-                }
+                <ul>
+                        @foreach (var item in Model.fotbollsplaner) // RADAR UPP FOTBOLLSPLANERS NAMN I "POPULÄRA"
+                        {
+                           <a class="list-group-item list-group-item" href="@Url.Action("AktuellFotbollsplan", "Fotbollsplan", new { id = item.Id })"><li>@item.Namn</li></a>
+                        }
+                </ul>
             }
         </div>
     </div>

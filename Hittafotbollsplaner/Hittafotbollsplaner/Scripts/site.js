@@ -5,5 +5,25 @@
     jQuery('.modal').modal('hide')
 });
 
+// HÄMTAR AKTUELL FOTBOLLSPLAN
+//function aktuellFotbollsplan(elem) {
 
+//    var id = $(elem).data('assigned-id');
+
+//    //window.open('/Fotbollsplan/Index');
+
+//    if (id != "") {
+
+//        $.ajax({
+//            url: '/Fotbollsplan/AktuellFotbollsplan',
+//            contentType: 'application/html; charset=utf-8',
+//            data: { id },
+//            type: 'GET',
+//            dataType: 'html',
+//            success: function (result) {
+//                $('body').html(result);
+//            }
+//        })
+//    }
+//}
 
