@@ -209,6 +209,7 @@
     <Content Include="Content\font-awesome.css" />
     <Content Include="Content\img\hfpLogotype.png" />
     <Content Include="Content\img\img_avatar.png" />
+    <Content Include="Content\img\marker.png" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
