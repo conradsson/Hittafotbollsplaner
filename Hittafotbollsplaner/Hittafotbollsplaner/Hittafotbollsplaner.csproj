@@ -179,6 +179,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\FotbollsplanerAutocomplete.cs" />
     <Compile Include="Models\FotbollsplanerModels.cs" />
     <Compile Include="Models\hittafotbollsplaner.Context.cs">
       <AutoGen>True</AutoGen>
