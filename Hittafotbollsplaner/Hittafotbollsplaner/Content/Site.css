@@ -78,14 +78,15 @@ textarea {
 }
 input[type="search"] {margin:0 auto;}
 
-div.panel-body {
+
+.content-om {
+    margin: 0% auto;
+    width: 80%;
+}
+div.body-om {
     width: 60% !important;
     margin-left: auto;
     margin-right: auto;
-}
-.panel-primary {
-    margin: 0% auto;
-    width: 80%;
 }
 
 .btn-default {
