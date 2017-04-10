@@ -2,6 +2,10 @@
     background-color: #eeeeee;
 }
 
+.row {
+    margin-top:-15px;
+}
+
 /* Set padding to keep content from hitting the edges */
 .body-content {
     padding-left: 15px;
@@ -89,6 +93,12 @@ div.body-om {
     margin-right: auto;
 }
 
+div.body-nyplan {
+    width: 60% !important;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 .btn-default {
     margin: 15% auto;
     width: 100%;
@@ -166,4 +176,17 @@ a.logotyp img{
 }
 .navbar-inverse .navbar-nav > li > a:hover {
     color: rgba(33, 160, 62, 0.60);
+}
+
+.infoDiv{
+    width:65%;
+    padding-left:15px;
+}
+
+.bildfotbollsplan {
+    position:relative;
+    z-index:10;
+    padding: 15px;
+    width:35%;
+    min-width: 175px;
 }
