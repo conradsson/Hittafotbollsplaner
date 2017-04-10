@@ -2,12 +2,42 @@
     ViewBag.Title = "Sök efter fotbollsplaner";
     @model Hittafotbollsplaner.Models.FotbollsplanerModels
 }
+<link rel="stylesheet" href="http://code.jquery.com/ui/1.9.1/themes/smoothness/jquery-ui.css" />
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+
+<script>
+$(document).ready(function () {
+    $("#search").autocomplete({
+        source: function (request, response) {
+            $.ajax({
+                url: "/Home/GetAutoCompleteData",
+                type: "POST",
+                dataType: "json",
+                data: { term: request.term },
+                success: function (data) {
+                    response($.map(data, function (item) {
+                        return {
+                            label: item.Namn, value: item.Adress
+                        }
+                    }))
+                },
+                messages: {
+                    noResults: "", results: ""
+                }
+            });
+        }
+    });
+});
+</script>
+
+
 
 
 <div class="jumbotron">
     <div class="form-group searchForm">
         <label for="search">Sök efter fotbollsplan:</label>
-        <input type="search" class="form-control" id="search" placeholder="Adress eller Namn">
+        <input type="search" class="form-control" id="search" name="search" placeholder="Adress eller Namn">
     </div>
 </div>
 

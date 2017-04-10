@@ -178,6 +178,26 @@ a.logotyp img{
     color: rgba(33, 160, 62, 0.60);
 }
 
+
+
+
+#ui-id-1 {
+    border-radius: 15px;
+    font-family: "News Cycle", "Arial Narrow Bold", sans-serif;
+    padding: 5px;
+}
+
+.ui-menu-item {
+
+
+}
+
+#li.ui-menu-item {
+
+
+}
+}
+
 .infoDiv{
     width:65%;
     padding-left:15px;

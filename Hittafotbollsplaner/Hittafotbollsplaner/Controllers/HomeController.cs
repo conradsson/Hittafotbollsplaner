@@ -44,5 +44,38 @@ namespace Hittafotbollsplaner.Controllers
 
             return View();
         }
+
+        public ActionResult AutoComplete()
+        {
+            return View();
+        }
+
+        public ActionResult GetAutoCompleteData(string term)
+        {
+            hittafotbollsplanerEntities db = new hittafotbollsplanerEntities();
+
+                        var result = db.fotbollsplaners.Where(x => x.Namn.Contains(term))
+                .Select(s => new FotbollsplanerAutocomplete { Value = s.Namn, Namn = s.Namn + " " + s.Adress })
+                .Union(db.fotbollsplaners.Where(x => x.Adress.Contains(term))
+                .Select(s => new FotbollsplanerAutocomplete { Value = s.Adress, Namn = s.Namn + " " + s.Adress})).ToList();
+
+
+            List<FotbollsplanerAutocomplete> sorteradLista = result.OrderBy(o => o.Namn).ToList(); // SORTERAR LISTAN I NAMNORDNING
+            int index = 0;                                                           // KONTROLLERAR OM NAMNET ÄR DENSAMMA SOM
+                                                                                    // NAMNET EFTERÅT. TAR I SÅ FALL BORT DUBLETTEN.
+            while (index < sorteradLista.Count - 1)                                // NÄR HELA LISTAN ÄR KLAR SÅ BLIR LISTAN REN.
+            {
+                if (sorteradLista[index].Namn == sorteradLista[index + 1].Namn)
+                {
+                    sorteradLista.RemoveAt(index);
+                }
+                else
+                {
+                    index++;
+                }
+            }
+
+            return Json(sorteradLista, JsonRequestBehavior.AllowGet);
+        }
     }
 }
