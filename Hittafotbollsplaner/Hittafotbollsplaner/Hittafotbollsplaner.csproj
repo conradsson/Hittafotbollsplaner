@@ -170,6 +170,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\FotbollsplanController.cs" />
     <Compile Include="Controllers\fotbollsplanersController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
@@ -231,8 +232,10 @@
       <DependentUpon>hittafotbollsplaner.edmx</DependentUpon>
     </Content>
     <None Include="Properties\PublishProfiles\hittafotbollsplaner - FTP %282%29.pubxml" />
+    <None Include="Properties\PublishProfiles\hittafotbollsplaner - FTP %283%29.pubxml" />
     <None Include="Properties\PublishProfiles\hittafotbollsplaner - FTP.pubxml" />
     <None Include="Properties\PublishProfiles\hittafotbollsplaner - Web Deploy %282%29.pubxml" />
+    <None Include="Properties\PublishProfiles\hittafotbollsplaner - Web Deploy %283%29.pubxml" />
     <None Include="Properties\PublishProfiles\hittafotbollsplaner - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
@@ -281,17 +284,17 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
-    <Content Include="Views\Home\Nyplan.cshtml" />
     <Content Include="Views\fotbollsplaners\Create.cshtml" />
     <Content Include="Views\fotbollsplaners\Delete.cshtml" />
     <Content Include="Views\fotbollsplaners\Details.cshtml" />
     <Content Include="Views\fotbollsplaners\Edit.cshtml" />
     <Content Include="Views\fotbollsplaners\Index.cshtml" />
     <Content Include="Views\fotbollsplaners\_SuccessConfirmation.cshtml" />
+    <Content Include="Views\Fotbollsplan\Index.cshtml" />
+    <Content Include="Views\Fotbollsplan\_aktuellfotbollsplan.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Fotbollsplan\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
