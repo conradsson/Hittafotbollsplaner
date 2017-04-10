@@ -229,7 +229,9 @@
     <Content Include="Models\hittafotbollsplaner.edmx.diagram">
       <DependentUpon>hittafotbollsplaner.edmx</DependentUpon>
     </Content>
+    <None Include="Properties\PublishProfiles\hittafotbollsplaner - FTP %282%29.pubxml" />
     <None Include="Properties\PublishProfiles\hittafotbollsplaner - FTP.pubxml" />
+    <None Include="Properties\PublishProfiles\hittafotbollsplaner - Web Deploy %282%29.pubxml" />
     <None Include="Properties\PublishProfiles\hittafotbollsplaner - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
