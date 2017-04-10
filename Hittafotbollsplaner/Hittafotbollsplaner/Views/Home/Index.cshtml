@@ -52,12 +52,10 @@ $(document).ready(function () {
 
             @using (Html.BeginForm("Index", "Home"))
             {
-                <ul>
-                        @foreach (var item in Model.fotbollsplaner) // RADAR UPP FOTBOLLSPLANERS NAMN I "POPULÄRA"
-                        {
-                           <a class="list-group-item list-group-item" href="@Url.Action("AktuellFotbollsplan", "Fotbollsplan", new { id = item.Id })"><li>@item.Namn</li></a>
-                        }
-                </ul>
+                foreach (var item in Model.fotbollsplaner) // RADAR UPP FOTBOLLSPLANERS NAMN I "SENAST"
+                {
+                    <a class="list-group-item list-group-item" href="@Url.Action("AktuellFotbollsplan", "Fotbollsplan", new { id = item.Id })"><li>@item.Namn</li></a>
+                }
             }
         </div>
     </div>
@@ -68,10 +66,9 @@ $(document).ready(function () {
 
             @using (Html.BeginForm("Index", "Home"))
             {
-                foreach (var item in Model.senasteFotbollsplaner) // RADAR UPP FOTBOLLSPLANERS NAMN I "POPULÄRA"
+                foreach (var item in Model.senasteFotbollsplaner) // RADAR UPP FOTBOLLSPLANERS NAMN I "SENAST"
                 {
-                    <a href="#" class="list-group-item list-group-item">@item.Namn<span class="glyphicon glyphicon-star pull-right" style="color:gold;"></span>
-                </a>
+                    <a class="list-group-item list-group-item" href="@Url.Action("AktuellFotbollsplan", "Fotbollsplan", new { id = item.Id })"><li>@item.Namn</li></a>
                 }
             }
         </div>

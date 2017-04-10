@@ -206,3 +206,7 @@ a.logotyp img{
     width:35%;
     min-width: 175px;
 }
+
+a.list-group-item {
+    list-style-type: none;
+}
