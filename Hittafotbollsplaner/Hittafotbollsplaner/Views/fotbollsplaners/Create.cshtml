@@ -80,7 +80,14 @@
                         <label class="control-label col-md-9" for="Karta">Markera vart på kartan fotbollsplanen ligger  </label>
                         <div id="googleMap" style="width:100%;height:300px;"></div>
                         <script>
+
+
+
+
                             var oldMarker;
+                            var marker
+
+
                     function myMap() {
                         var myCenter = new google.maps.LatLng(63.176683, 14.636068);
                         var mapCanvas = document.getElementById("googleMap");
@@ -90,20 +97,29 @@
                             url: "/Content/img/marker.png", // url
                             scaledSize: new google.maps.Size(32, 50), // scaled size
                             origin: new google.maps.Point(0,0), // origin
-                            anchor: new google.maps.Point(0, 0) // anchor
+                            anchor: new google.maps.Point(20, 50) // anchor
                         };
                         google.maps.event.addListener(map, 'click', function (event) {
                             placeMarker(event.latLng);
-                            var latitude = latLng.lat();
-                            var longitude = latLng.lng();
-
+                            var position = marker.getPosition();
+                            var latitude = position.lat();
+                            var longitude = position.lng();
+                            var postData = { latitude: latitude, longtitude: longitude };
+                            $.ajax({
+                                url: url,
+                                type: 'GET',
+                                data: postData,
+                                success: function (result) {
+                                }
+                            });
                         });
                         function placeMarker(location) {
-                            var marker = new google.maps.Marker({
+                                marker = new google.maps.Marker({
                                 position: location,
                                 icon: icon,
                                 map: map
                             });
+
                             if (oldMarker != undefined) {
                                 oldMarker.setMap(null);
                             }
@@ -111,6 +127,38 @@
                             map.setCenter(location);
                         }
                     }
+                            // SKICKAR LAT OCH LNG 
+                            function aktuellFotbollsplanLatLng() {
+
+                                if (latitude != "" && longitude != "") {
+
+                                    $.ajax({
+                                        url: '/fotbollsplaners/Create',
+                                        type: 'POST',
+                                        async: false,
+                                        dataType: 'text',
+                                        processData: false,
+                                        data: {
+                                            latitude,
+                                            longitude
+                                        },
+                                        success: function (data) { }
+                                        //success: function (data) { }
+                                        //url: '/fotbollsplaners/Create',
+                                        //contentType: 'application/html; charset=utf-8',
+                                        //data: { latitude, longitude },
+                                        //type: 'POST',
+                                        //dataType: 'text',
+                                        //success: function (data) { }
+                                    });
+                                }
+                            }
+
+                            $("#läggtillFP").click(function () {
+                                alert("Handler for .click() called.");
+                                aktuellFotbollsplanLatLng();
+                            });
+
 
                         </script>
                     </div>
