@@ -210,3 +210,7 @@ a.logotyp img{
 a.list-group-item {
     list-style-type: none;
 }
+
+.information-panel{
+    height: 372px;
+}
