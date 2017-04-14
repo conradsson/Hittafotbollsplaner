@@ -5,6 +5,36 @@
     jQuery('.modal').modal('hide')
 });
 
+$(window).scroll(function () {
+    if ($(this).scrollTop() >= 400) {
+        $('#scrollto').fadeOut(200);
+    } else {
+        $('#scrollto').fadeIn(200);
+    }
+});
+
+//$('#return-to-top').click(function () {
+//    $('body,html').animate({
+//        scrollTop: 0
+//    }, 300);
+//});
+
+$("#hideNav").click(function () {
+    $(".navbar").toggle();
+});
+
+$("#scrollto").click(function () {
+    scrollTo("#scrollto");
+});
+
+var scrollTo = function (identifier, speed) {  // Scroll-To function
+    $('html, body').animate({
+        scrollTop: $(identifier).offset().top
+    }, speed || 750);
+}
+
+
+
 // HÄMTAR AKTUELL FOTBOLLSPLAN
 //function aktuellFotbollsplan(elem) {
 

@@ -8,42 +8,46 @@
 
 
 <script>
-$(document).ready(function () {
-    $("#search").autocomplete({
-        source: function (request, response) {
-            $.ajax({
-                url: "/Home/GetAutoCompleteData",
-                type: "POST",
-                dataType: "json",
-                data: { term: request.term },
-                success: function (data) {
-                    response($.map(data, function (item) {
-                        return {
-                            label: item.Namn, value: item.Adress
-                        }
-                    }))
-                },
-                messages: {
-                    noResults: "", results: ""
-                }
-            });
-        }
+    $(document).ready(function () {
+        $("#search").autocomplete({
+            source: function (request, response) {
+                $.ajax({
+                    url: "/Home/GetAutoCompleteData",
+                    type: "POST",
+                    dataType: "json",
+                    data: { term: request.term },
+                    success: function (data) {
+                        response($.map(data, function (item) {
+                            return {
+                                label: item.Namn, value: item.Adress
+                            }
+                        }))
+                    },
+                    messages: {
+                        noResults: "", results: ""
+                    }
+                });
+            }
+        });
     });
-});
 </script>
 
 
-
-
-<div class="jumbotron">
-    <div class="form-group searchForm">
-        <label for="search">Sök efter fotbollsplan:</label>
-        <input type="search" class="form-control" id="search" name="search" placeholder="Adress eller Namn">
+<div class="sökDiv">
+    <img id="logo" src="/Content/img/hfpLogotype.png" style="width: 150px; height: 60px;">
+    <div class="input-group">
+        <input id="sökinput" type="text" class="form-control" placeholder="Sök på adress eller namn..">
+        <div class="input-group-btn">
+            <button type="button" class="btn btn-default"><i class="material-icons">my_location</i></button>
+            @*<button type="button" class="btn btn-default"><i class="material-icons">search</i></button>*@
+        </div>
     </div>
 </div>
 
+<button id="scrollto" type="button" class="btn btn-default btn-lg scrollto"><i class="material-icons graybtn">keyboard_arrow_down</i></button>
 
-<div class="row">
+
+<div class="row" style="margin-top: 3%;">
     <div class="col-md-3"></div>
     <div class="col-md-3">
         <h3>Populära</h3>
