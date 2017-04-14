@@ -18,8 +18,8 @@ namespace Hittafotbollsplaner.Controllers
             FotbollsplanerModels model = new FotbollsplanerModels();
             List<fotbollsplaner> allaFotbollsplaner = db.fotbollsplaners.ToList();
 
-            model.fotbollsplaner = allaFotbollsplaner;
-            model.senasteFotbollsplaner = allaFotbollsplaner.OrderByDescending(o => o.Id);
+            model.fotbollsplaner = allaFotbollsplaner.Take(7);                                      // PLOCKAR UT 7 FRÅN LISTAN
+            model.senasteFotbollsplaner = allaFotbollsplaner.OrderByDescending(o => o.Id).Take(7); // SORTERAR PÅ ID OCH  // PLOCKAR UT 7 FRÅN LISTAN
 
             return View(model);
         }

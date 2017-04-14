@@ -44,18 +44,19 @@
                         var mapCanvas = document.getElementById("googleMap");
                         var mapOptions = { center: myCenter, zoom: 10 };
                         var map = new google.maps.Map(mapCanvas, mapOptions);
-                        var marker = new google.maps.Marker({position:myCenter});
+                        var icon = {
+                            url: "/Content/img/marker.png", // url
+                            scaledSize: new google.maps.Size(32, 50), // scaled size
+                            origin: new google.maps.Point(0,0), // origin
+                            anchor: new google.maps.Point(0, 0) // anchor
+                        };
+                        var marker = new google.maps.Marker({
+                            position:myCenter,
+                            animation:google.maps.Animation.BOUNCE,
+                            icon: icon
+                        });
                         marker.setMap(map);
                         }
-
-                        //var pinIcon = new google.maps.MarkerImage(
-                        //    "../Content/img/marker.png",
-                        //    null, /* size is determined at runtime */
-                        //    null, /* origin is 0,0 */
-                        //    null, /* anchor is bottom center of the scaled image */
-                        //    new google.maps.Size(42, 68));
-                        //marker.setIcon(pinIcon);
-
                 </script>
             </div>
         </div>
