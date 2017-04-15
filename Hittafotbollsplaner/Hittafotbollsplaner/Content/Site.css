@@ -77,6 +77,7 @@ textarea {
 .navbar {
     top: 0;
     position: absolute;
+    display: none;
     z-index:9;
     width: 100%;
     border-radius: 0px;
@@ -101,7 +102,7 @@ textarea {
 input[type="search"] {margin:0 auto;}
 
 
-.content-om {
+.content {
     margin: 0% auto;
     width: 80%;
 }
@@ -115,6 +116,11 @@ div.body-nyplan {
     width: 60% !important;
     margin-left: auto;
     margin-right: auto;
+    background-color: white;
+    -webkit-box-shadow: 0px 0px 2px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 0px 2px 0px rgba(0,0,0,0.75);
+    box-shadow: 0px 0px 2px 0px rgba(0,0,0,0.75);
+    
 }
 
 /*  VALIDATION  */
@@ -231,45 +237,24 @@ button.btn.btn-default.btn-lg.hideNav{
     border: 1px solid #3c3c3c;
 }
 
-
-button.btn.btn-default.btn-lg.scrollto{
-    position: relative;
-    background-color: #fbfbfb;
-    z-index: 10;
-    width: 4%;
-    height: 5px;
-    font-size: 20px;
-    left:0;
-    top:0;
-    margin-left: 47.5%;
-}
-
-.material-icons.graybtn { position:absolute; color: rgb(74, 74, 74); margin-top: -10px; margin-left: -12px;}
-
 .sökDiv{
     position: absolute;
     z-index:11;
-    background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAYAAAAGCAYAAADgzO9IAAAAKElEQVQYV2NkwA42M2IR38zAwOCLLgEWBClGloALIkugCMIkMARBEgCPyAW6Isk4RwAAAABJRU5ErkJggg==
-    ) repeat;
-    background-color: rgba(23, 23, 23, 0.85);
+    background-color: #eaeaea;
+    outline: 15px solid white;
     width: 40%;
     height: 200px;
     margin-top: -39.75%;
     margin-left: 22.25%;
-    border-radius: 5px;
+    -webkit-box-shadow: 0px 0px 20px 10px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 0px 20px 10px rgba(0,0,0,0.75);
+    box-shadow: 0px 0px 20px 10px rgba(0,0,0,0.75);
 }
 
 #logo{
-    background-color: rgba(235, 235, 235, 0.50);
-    margin-left: 35%;
+    margin-left: 33%;
     margin-top: 5%;
-    margin-bottom: 5%;
-    padding: 2px 2px 0px 5px;
-    border-radius: 3px;
-    -webkit-box-shadow: inset 0px 0px 27px 17px rgba(235, 235, 235, 0.50);
-    -moz-box-shadow: inset 0px 0px 27px 17px rgba(235, 235, 235, 0.50);
-    box-shadow: 0px 0px 50px 17px rgba(235, 235, 235, 0.50);
-
+    margin-bottom: 3%;
 }
 
 
@@ -281,4 +266,19 @@ div.input-group{
 
 input#sökinput{
     height: 46px;
+}
+
+.ontoppage,.ontoppageNyplan,.ontoppageOm,.ontoppageKontakt {
+    margin-top: -7.5%;
+    position: relative;
+    z-index: 10;
+    background-color: #eaeaea;
+    outline: 15px solid white;
+    -webkit-box-shadow: 0px 0px 20px 10px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 0px 20px 10px rgba(0,0,0,0.75);
+    box-shadow: 0px 0px 20px 10px rgba(0,0,0,0.75);
+}
+
+.ontoppageNyplan,.ontoppageOm,.ontoppageKontakt{
+    margin-top: -45%;
 }
