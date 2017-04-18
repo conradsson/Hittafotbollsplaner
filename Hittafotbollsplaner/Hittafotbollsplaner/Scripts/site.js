@@ -5,6 +5,24 @@
     jQuery('.modal').modal('hide')
 });
 
+//$('#return-to-top').click(function () {
+//    $('body,html').animate({
+//        scrollTop: 0
+//    }, 300);
+//});
+
+$("#hideNav").click(function () {
+    $(".navbar").toggle();
+});
+
+var scrollTo = function (identifier, speed) {  // Scroll-To function
+    $('html, body').animate({
+        scrollTop: $(identifier).offset().top
+    }, speed || 750);
+}
+
+
+
 // HÄMTAR AKTUELL FOTBOLLSPLAN
 //function aktuellFotbollsplan(elem) {
 

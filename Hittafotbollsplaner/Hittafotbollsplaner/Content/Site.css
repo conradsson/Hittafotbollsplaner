@@ -2,6 +2,21 @@
     background-color: #eeeeee;
 }
 
+.fullscreenBackground{   
+    top:-100px;
+    width: 100%;
+    height: 700px;
+    background-image: url(../Content/img/start_1920.jpg);
+    background-repeat:no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+
+    -webkit-box-shadow: 0px 10px 52px -1px rgba(6, 35, 41, 0.75);
+    -moz-box-shadow: 0px 10px 52px -1px rgba(6, 35, 41, 0.75);
+    box-shadow: 0px 10px 52px -1px rgba(6, 35, 41, 0.75);
+}
+
+
 .row {
     margin-top:-15px;
 }
@@ -61,6 +76,10 @@ textarea {
 
 .navbar {
     top: 0;
+    position: absolute;
+    display: none;
+    z-index:9;
+    width: 100%;
     border-radius: 0px;
 }
 
@@ -83,7 +102,7 @@ textarea {
 input[type="search"] {margin:0 auto;}
 
 
-.content-om {
+.content {
     margin: 0% auto;
     width: 80%;
 }
@@ -97,11 +116,11 @@ div.body-nyplan {
     width: 60% !important;
     margin-left: auto;
     margin-right: auto;
-}
-
-.btn-default {
-    margin: 15% auto;
-    width: 100%;
+    background-color: white;
+    -webkit-box-shadow: 0px 0px 2px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 0px 2px 0px rgba(0,0,0,0.75);
+    box-shadow: 0px 0px 2px 0px rgba(0,0,0,0.75);
+    
 }
 
 /*  VALIDATION  */
@@ -184,15 +203,6 @@ a.logotyp img{
     padding: 5px;
 }
 
-.ui-menu-item {
-
-
-}
-
-#li.ui-menu-item {
-
-
-}
 
 .infoDiv{
     width:65%;
@@ -215,6 +225,75 @@ a.list-group-item {
     height: 372px;
 }
 
-#googleMap {
-    border-radius: 30px;
+button.btn.btn-default.btn-lg.hideNav{
+    position: absolute;
+    z-index: 10;
+    width: 3%;
+    height: 2%;
+    font-size: 10px;
+    left:0;
+    top:0;
+    margin: 0;
+    border: 1px solid #3c3c3c;
+}
+
+.sökDiv{
+    position: relative;
+    z-index:11;
+    background-color: #eaeaea;
+    outline: 15px solid white;
+    width: 600px;
+    height: 200px;
+    margin: 0 auto;
+    top: -600px;
+    -webkit-box-shadow: 0px 0px 20px 10px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 0px 20px 10px rgba(0,0,0,0.75);
+    box-shadow: 0px 0px 20px 10px rgba(0,0,0,0.75);
+}
+
+#logo{
+    margin-left: 33%;
+    margin-top: 5%;
+    margin-bottom: 3%;
+}
+
+
+div.input-group{
+    width: 329px;
+    margin: 0 auto;
+}
+
+
+input#sökinput{
+    height: 46px;
+}
+
+.ontoppage,.ontoppageNyplan,.ontoppageOm,.ontoppageKontakt {
+    top: -300px;
+    position: relative;
+    z-index: 10;
+    background-color: #eaeaea;
+    outline: 15px solid white;
+    -webkit-box-shadow: 0px 0px 20px 10px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 0px 20px 10px rgba(0,0,0,0.75);
+    box-shadow: 0px 0px 20px 10px rgba(0,0,0,0.75);
+}
+
+.ontoplook{
+    position: relative;
+    z-index: 10;
+    background-color: #eaeaea;
+    outline: 15px solid white;
+    -webkit-box-shadow: 0px 0px 20px 10px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 0px 20px 10px rgba(0,0,0,0.75);
+    box-shadow: 0px 0px 20px 10px rgba(0,0,0,0.75);
+}
+
+.ontoppageNyplan,.ontoppageOm,.ontoppageKontakt{
+    margin-top: -300px;
+}
+
+.aktuellplan1{
+    margin-top: -500px;
+    margin-bottom:7.5%;
 }

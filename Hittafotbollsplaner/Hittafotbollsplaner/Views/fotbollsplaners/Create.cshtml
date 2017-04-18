@@ -4,10 +4,13 @@
     ViewBag.Title = "Lägg till fotbollsplan";
 }
 
-<div class="panel panel-primary">
-    <div class="panel-heading">
-        <h3 class="panel-title">Lägg till ny fotbollsplan</h3>
-    </div>
+<script>
+    $("#hideNav").click(function () {
+        $(".navbar").toggle();
+    });
+</script>
+
+<div class="row ontoppageNyplan content">
     <div class="panel-body body-nyplan">
 
         @using (Html.BeginForm())
@@ -49,24 +52,24 @@
                         @Html.ValidationMessageFor(model => model.Postnummer, "", new { @class = "text-danger" })
                     </div>
                 </div>
-                        @{
-                            List<SelectListItem> listItems = new List<SelectListItem>();
-                                                listItems.Add(new SelectListItem
-                            {
-                                Text = "Gräs",
-                                Value = "Gräs"
-                            });
-                            listItems.Add(new SelectListItem
-                            {
-                                Text = "Grus",
-                                Value = "Grus",
-                            });
-                            listItems.Add(new SelectListItem
-                            {
-                                Text = "Konstgräs",
-                                Value = "Konstgräs",
-                            });
-                        }
+                    @{
+                        List<SelectListItem> listItems = new List<SelectListItem>();
+                                            listItems.Add(new SelectListItem
+                        {
+                            Text = "Gräs",
+                            Value = "Gräs"
+                        });
+                        listItems.Add(new SelectListItem
+                        {
+                            Text = "Grus",
+                            Value = "Grus",
+                        });
+                        listItems.Add(new SelectListItem
+                        {
+                            Text = "Konstgräs",
+                            Value = "Konstgräs",
+                        });
+                    }
                 <div class="form-group">
                     @Html.LabelFor(model => model.Underlag, htmlAttributes: new { @class = "control-label col-md-2" })
                     <div class="col-md-10">
@@ -80,9 +83,6 @@
                         <label class="control-label col-md-9" for="Karta">Markera vart på kartan fotbollsplanen ligger  </label>
                         <div id="googleMap" style="width:100%;height:300px;"></div>
                         <script>
-
-
-
 
                             var oldMarker;
                             var marker
@@ -168,7 +168,7 @@
                 </div>
 
                 <div class="form-group">
-                    <div class="col-md-offset-2 col-md-8 col-md-offset-2" >
+                    <div class="col-md-offset-5 col-md-7" >
                        <input type="submit" id="läggtillFP" value="Lägg till" class="btn btn-default"/>
                     </div>
                 </div>
