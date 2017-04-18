@@ -1,6 +1,6 @@
 ﻿@model Hittafotbollsplaner.Models.fotbollsplaner
 @{
-    ViewBag.Title = "";
+    ViewBag.Title = Model.Namn;
 }
 
 <script>
@@ -26,7 +26,11 @@
                     <div class="row">
                         <div class="col-md-6 antalfotbollplaner">
                             <h5>Fotbollsplaner:</h5>
-                            <p></p>
+                            <ul class="nolidots">
+                                <li>@Model.AntalGras x <i>[Gräs]</i></li>
+                                <li>@Model.AntalKonstGras x <i>[Konst]</i></li>
+                                <li>@Model.AntalGrus x <i>[Grus]</i></li>
+                            </ul>
                         </div>
                         <div class="col-md-6">
                             <h5>Övrigt:</h5>
@@ -39,7 +43,7 @@
         <div class="col-md-4" style="margin-right: 2%;">
             <div class="ontoplook">
                 <div class="panel-heading">
-                    <h3 class="panel-title">Karta</h3>
+                    <h3 class="panel-title text-center">Karta</h3>
                 </div>
                 <div class="panel-body">
                     <div id="googleMap" style="width:100%;height:300px;"></div>
@@ -48,13 +52,13 @@
                         function myMap() {
                             var myCenter = new google.maps.LatLng(@Model.Latitud, @Model.Longitud);
                             var mapCanvas = document.getElementById("googleMap");
-                            var mapOptions = { center: myCenter, zoom: 12 };
+                            var mapOptions = { center: myCenter, zoom: 16 };
                             var map = new google.maps.Map(mapCanvas, mapOptions);
                             var icon = {
                                 url: "/Content/img/marker.png", // url
                                 scaledSize: new google.maps.Size(32, 50), // scaled size
                                 origin: new google.maps.Point(0,0), // origin
-                                anchor: new google.maps.Point(0, 0) // anchor
+                                anchor: new google.maps.Point(20, 50) // anchor
                             };
                             var marker = new google.maps.Marker({
                                 position:myCenter,
@@ -88,7 +92,9 @@
                     <h3 class="panel-title"></h3>
                 </div>
                 <div class="panel-body">
-
+                    <ul class="nolidots">
+                        <li>@Html.ActionLink("Föreslå ändring", "../Home/Index")</li>
+                    </ul>
                 </div>
             </div>
         </div>

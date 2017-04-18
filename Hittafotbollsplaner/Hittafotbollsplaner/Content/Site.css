@@ -296,8 +296,12 @@ input#sökinput{
 }
 
 .aktuellplan1{
-    margin-top: -500px;
+    margin-top: -550px;
     margin-bottom:5.5%;
+}
+
+.nolidots{
+    list-style-type: none;
 }
 
 /*#lat, #long {             döljer lat o long fälten.
