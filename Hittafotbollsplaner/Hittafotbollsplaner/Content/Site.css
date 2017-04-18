@@ -53,6 +53,7 @@ img {
 /* Add some padding inside the card container */
 .container {
     padding: 2px 16px;
+    width:75%;
 }
 
 input#search.form-control {
@@ -104,7 +105,7 @@ input[type="search"] {margin:0 auto;}
 
 .content {
     margin: 0% auto;
-    width: 80%;
+    width: 90%;
 }
 div.body-om {
     width: 60% !important;
@@ -295,7 +296,7 @@ input#sökinput{
 
 .aktuellplan1{
     margin-top: -500px;
-    margin-bottom:7.5%;
+    margin-bottom:5.5%;
 }
 
 /*#lat, #long {             döljer lat o long fälten.
