@@ -104,14 +104,17 @@
                             var position = marker.getPosition();
                             var latitude = position.lat();
                             var longitude = position.lng();
-                            var postData = { latitude: latitude, longtitude: longitude };
+                            
+
                             $.ajax({
-                                url: url,
-                                type: 'GET',
-                                data: postData,
+                                url: '/fotbollsplaners/Create',
+                                type: 'POST',
+                                contentType: 'application/html; charset=utf-8',
+                                data: { "latitude": latitude, "longitude": longitude },
+                                dataType: 'html',
                                 success: function (result) {
                                 }
-                            });
+                            }); debugger;
                         });
                         function placeMarker(location) {
                                 marker = new google.maps.Marker({
@@ -127,37 +130,37 @@
                             map.setCenter(location);
                         }
                     }
-                            // SKICKAR LAT OCH LNG 
-                            function aktuellFotbollsplanLatLng() {
+                            //// SKICKAR LAT OCH LNG
+                            //function aktuellFotbollsplanLatLng() {
 
-                                if (latitude != "" && longitude != "") {
+                            //    if (latitude != "" && longitude != "") {
 
-                                    $.ajax({
-                                        url: '/fotbollsplaners/Create',
-                                        type: 'POST',
-                                        async: false,
-                                        dataType: 'text',
-                                        processData: false,
-                                        data: {
-                                            latitude,
-                                            longitude
-                                        },
-                                        success: function (data) { }
-                                        //success: function (data) { }
-                                        //url: '/fotbollsplaners/Create',
-                                        //contentType: 'application/html; charset=utf-8',
-                                        //data: { latitude, longitude },
-                                        //type: 'POST',
-                                        //dataType: 'text',
-                                        //success: function (data) { }
-                                    });
-                                }
-                            }
+                            //        $.ajax({
+                            //            url: '/fotbollsplaners/Create',
+                            //            type: 'POST',
+                            //            async: false,
+                            //            dataType: 'text',
+                            //            processData: false,
+                            //            data: {
+                            //                latitude,
+                            //                longitude
+                            //            },
+                            //            success: function (data) { }
+                            //            //success: function (data) { }
+                            //            //url: '/fotbollsplaners/Create',
+                            //            //contentType: 'application/html; charset=utf-8',
+                            //            //data: { latitude, longitude },
+                            //            //type: 'POST',
+                            //            //dataType: 'text',
+                            //            //success: function (data) { }
+                            //        });
+                            //    }
+                            //}
 
-                            $("#läggtillFP").click(function () {
-                                alert("Handler for .click() called.");
-                                aktuellFotbollsplanLatLng();
-                            });
+                            //$("#läggtillFP").click(function () {
+                            //    alert("Handler for .click() called.");
+                            //    aktuellFotbollsplanLatLng();
+                            //});
 
 
                         </script>
