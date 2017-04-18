@@ -3,9 +3,9 @@
 }
 
 .fullscreenBackground{   
-    top:0;
+    top:-100px;
     width: 100%;
-    height: 600px;
+    height: 700px;
     background-image: url(../Content/img/start_1920.jpg);
     background-repeat:no-repeat;
     background-attachment: fixed;
@@ -238,14 +238,14 @@ button.btn.btn-default.btn-lg.hideNav{
 }
 
 .sökDiv{
-    position: absolute;
+    position: relative;
     z-index:11;
     background-color: #eaeaea;
     outline: 15px solid white;
-    width: 40%;
+    width: 600px;
     height: 200px;
-    margin-top: -39.75%;
-    margin-left: 22.25%;
+    margin: 0 auto;
+    top: -600px;
     -webkit-box-shadow: 0px 0px 20px 10px rgba(0,0,0,0.75);
     -moz-box-shadow: 0px 0px 20px 10px rgba(0,0,0,0.75);
     box-shadow: 0px 0px 20px 10px rgba(0,0,0,0.75);
@@ -269,7 +269,17 @@ input#sökinput{
 }
 
 .ontoppage,.ontoppageNyplan,.ontoppageOm,.ontoppageKontakt {
-    margin-top: -7.5%;
+    top: -300px;
+    position: relative;
+    z-index: 10;
+    background-color: #eaeaea;
+    outline: 15px solid white;
+    -webkit-box-shadow: 0px 0px 20px 10px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 0px 20px 10px rgba(0,0,0,0.75);
+    box-shadow: 0px 0px 20px 10px rgba(0,0,0,0.75);
+}
+
+.ontoplook{
     position: relative;
     z-index: 10;
     background-color: #eaeaea;
@@ -280,5 +290,10 @@ input#sökinput{
 }
 
 .ontoppageNyplan,.ontoppageOm,.ontoppageKontakt{
-    margin-top: -45%;
+    margin-top: -300px;
+}
+
+.aktuellplan1{
+    margin-top: -500px;
+    margin-bottom:7.5%;
 }
