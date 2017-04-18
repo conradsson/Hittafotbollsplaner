@@ -11,21 +11,22 @@ namespace Hittafotbollsplaner.Models
 {
     using System;
     using System.Collections.Generic;
-    using System.ComponentModel.DataAnnotations;
     
     public partial class fotbollsplaner
     {
         public int Id { get; set; }
-        [Required(ErrorMessage = "Fältet Namn krävs."), StringLength(25, MinimumLength = 3, ErrorMessage = "Namnet bör vara minst tre bokstäver.")]
         public string Namn { get; set; }
-        [Required(ErrorMessage = "Fältet Adress krävs."), StringLength(25, MinimumLength = 3, ErrorMessage = "Adressen bör vara minst tre bokstäver.")]
         public string Adress { get; set; }
-        [Required(ErrorMessage = "Fältet Ort krävs."), StringLength(20, MinimumLength = 3, ErrorMessage = "Ortsnamnet bör vara minst tre bokstäver.")]
         public string Ort { get; set; }
-        [Required(ErrorMessage = "Fältet Postnummer krävs."), StringLength(5, MinimumLength = 5, ErrorMessage = "Postnummret bör vara fem siffor ihop.")]
         public string Postnummer { get; set; }
         public string Underlag { get; set; }
         public string Latitud { get; set; }
         public string Longitud { get; set; }
+        public string AntalGras { get; set; }
+        public string AntalGrus { get; set; }
+        public string AntalKonstGras { get; set; }
+        public Nullable<bool> Parkering { get; set; }
+        public Nullable<bool> Kafe { get; set; }
+        public Nullable<bool> Omkladnadsrum { get; set; }
     }
 }

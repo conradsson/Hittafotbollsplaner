@@ -17,6 +17,12 @@
           <Property Name="Underlag" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="Latitud" Type="nvarchar" MaxLength="50" />
           <Property Name="Longitud" Type="nvarchar" MaxLength="50" />
+          <Property Name="AntalGras" Type="nvarchar" MaxLength="50" />
+          <Property Name="AntalGrus" Type="nvarchar" MaxLength="50" />
+          <Property Name="AntalKonstGras" Type="nvarchar" MaxLength="50" />
+          <Property Name="Parkering" Type="bit" />
+          <Property Name="Omkladnadsrum" Type="bit" />
+          <Property Name="Kafe" Type="bit" />
         </EntityType>
         <EntityContainer Name="hittafotbollsplanerModelStoreContainer">
           <EntitySet Name="fotbollsplaner" EntityType="Self.fotbollsplaner" Schema="dbo" store:Type="Tables" />
@@ -37,6 +43,12 @@
           <Property Name="Underlag" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Latitud" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Longitud" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="AntalGras" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="AntalGrus" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="AntalKonstGras" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Parkering" Type="Boolean" />
+          <Property Name="Kafe" Type="Boolean" />
+          <Property Name="Omkladnadsrum" Type="Boolean" />
         </EntityType>
         <EntityContainer Name="hittafotbollsplanerEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="fotbollsplaners" EntityType="Self.fotbollsplaner" />
@@ -50,6 +62,12 @@
           <EntitySetMapping Name="fotbollsplaners">
             <EntityTypeMapping TypeName="hittafotbollsplanerModel.fotbollsplaner">
               <MappingFragment StoreEntitySet="fotbollsplaner">
+                <ScalarProperty Name="Omkladnadsrum" ColumnName="Omkladnadsrum" />
+                <ScalarProperty Name="Kafe" ColumnName="Kafe" />
+                <ScalarProperty Name="Parkering" ColumnName="Parkering" />
+                <ScalarProperty Name="AntalKonstGras" ColumnName="AntalKonstGras" />
+                <ScalarProperty Name="AntalGrus" ColumnName="AntalGrus" />
+                <ScalarProperty Name="AntalGras" ColumnName="AntalGras" />
                 <ScalarProperty Name="Longitud" ColumnName="Longitud" />
                 <ScalarProperty Name="Latitud" ColumnName="Latitud" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
