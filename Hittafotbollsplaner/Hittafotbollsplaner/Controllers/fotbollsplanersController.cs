@@ -46,12 +46,10 @@ namespace Hittafotbollsplaner.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,Namn,Adress,Ort,Postnummer,Underlag")] fotbollsplaner fotbollsplaner, string latitude, string longitud)
+        public ActionResult Create([Bind(Include = "Id,Namn,Adress,Ort,Postnummer,Underlag,Latitud,Longitud")] fotbollsplaner fotbollsplaner, string latitude, string longitud)
         {
             if (ModelState.IsValid)
             {
-                fotbollsplaner.Latitud = latitude;
-                fotbollsplaner.Longitud = longitud;
                 db.fotbollsplaners.Add(fotbollsplaner);
                 db.SaveChanges();
                 ViewBag.SuccessConfirm = "y";
