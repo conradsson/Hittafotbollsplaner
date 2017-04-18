@@ -24,7 +24,7 @@
                 <div class="form-group">
                     @Html.LabelFor(model => model.Namn, htmlAttributes: new { @class = "control-label col-md-2" })
                     <div class="col-md-10" >
-                        @Html.EditorFor(model => model.Namn, new { htmlAttributes = new {  @class = "form-control"} })
+                        @Html.EditorFor(model => model.Namn, new { htmlAttributes = new { @class = "form-control" } })
                         @Html.ValidationMessageFor(model => model.Namn, "", new { @class = "text-danger" })
                     </div>
                 </div>
@@ -32,7 +32,7 @@
                 <div class="form-group">
                     @Html.LabelFor(model => model.Adress, htmlAttributes: new { @class = "control-label col-md-2" })
                     <div class="col-md-10">
-                        @Html.EditorFor(model => model.Adress, new { htmlAttributes = new { @class = "form-control"} })
+                        @Html.EditorFor(model => model.Adress, new { htmlAttributes = new { @class = "form-control" } })
                         @Html.ValidationMessageFor(model => model.Adress, "", new { @class = "text-danger" })
                     </div>
                 </div>
@@ -54,7 +54,7 @@
                 </div>
                     @{
                         List<SelectListItem> listItems = new List<SelectListItem>();
-                                            listItems.Add(new SelectListItem
+                        listItems.Add(new SelectListItem
                         {
                             Text = "Gräs",
                             Value = "Gräs"
@@ -81,31 +81,25 @@
                 <div id="lat"class="form-group">
                     @Html.LabelFor(model => model.Latitud, htmlAttributes: new { @class = "control-label col-md-2" })
                     <div class="col-md-10">
-                        @Html.EditorFor(model => model.Latitud, new { htmlAttributes = new { @class = "form-control", @id = "lat" } })
+                        @Html.EditorFor(model => model.Latitud, new { htmlAttributes = new { @class = "form-control", @id = "lat1" } })
                         @Html.ValidationMessageFor(model => model.Latitud, "", new { @class = "text-danger" })
                     </div>
                 </div>
                 <div id="long" class="form-group">
                     @Html.LabelFor(model => model.Longitud, htmlAttributes: new { @class = "control-label col-md-2" })
                     <div class="col-md-10">
-                        @Html.EditorFor(model => model.Longitud, new { htmlAttributes = new { @class = "form-control", @id = "long" } })
+                        @Html.EditorFor(model => model.Longitud, new { htmlAttributes = new { @class = "form-control", @id = "long1" } })
                         @Html.ValidationMessageFor(model => model.Longitud, "", new { @class = "text-danger" })
                     </div>
                 </div>
-
-
 
                 <div class="form-group">
                     <div class="col-md-10">
                         <label class="control-label col-md-9" for="Karta">Markera vart på kartan fotbollsplanen ligger  </label>
                         <div id="googleMap" style="width:100%;height:300px;"></div>
                         <script>
-
                             var oldMarker;
                             var marker;
-                            var LO;
-                            var LA;
-
 
                     function myMap() {
                         var myCenter = new google.maps.LatLng(63.176683, 14.636068);
@@ -124,9 +118,8 @@
                             var latitude = position.lat();
                             var longitude = position.lng();
 
-                            $('#lat').val(latitude);
-                            $('#long').val(longitude);
-
+                            $('#lat1').val(latitude);
+                            $('#long1').val(longitude);
                         });
                         function placeMarker(location) {
                                 marker = new google.maps.Marker({
@@ -143,6 +136,94 @@
                         }
                     }
                         </script>
+                    </div>
+                </div>
+                @{
+                    List<SelectListItem> antalPlaner = new List<SelectListItem>();
+                    antalPlaner.Add(new SelectListItem
+                    {
+                        Text = "0",
+                        Value = "0"
+                    });
+                    antalPlaner.Add(new SelectListItem
+                    {
+                        Text = "1",
+                        Value = "1",
+                    });
+                    antalPlaner.Add(new SelectListItem
+                    {
+                        Text = "2",
+                        Value = "2",
+                    });
+                    antalPlaner.Add(new SelectListItem
+                    {
+                        Text = "3",
+                        Value = "3",
+                    });
+                    antalPlaner.Add(new SelectListItem
+                    {
+                        Text = "4",
+                        Value = "4",
+                    });
+                    antalPlaner.Add(new SelectListItem
+                    {
+                        Text = "5",
+                        Value = "5",
+                    });
+                }
+                <div class="form-group">
+                    @Html.LabelFor(model => model.AntalGras, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.DropDownListFor(model => model.AntalGras, antalPlaner, null, htmlAttributes: new { @class = "form-control" })
+                        @Html.ValidationMessageFor(model => model.AntalGras, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(model => model.AntalGrus, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.DropDownListFor(model => model.AntalGrus, antalPlaner, null, htmlAttributes: new { @class = "form-control" })
+                        @Html.ValidationMessageFor(model => model.AntalGrus, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(model => model.AntalKonstGras, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.DropDownListFor(model => model.AntalKonstGras, antalPlaner, null, htmlAttributes: new { @class = "form-control" })
+                        @Html.ValidationMessageFor(model => model.AntalKonstGras, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                    @{
+                        List<SelectListItem> jaNej = new List<SelectListItem>();
+                        jaNej.Add(new SelectListItem
+                        {
+                            Text = "Ja",
+                            Value = "Ja"
+                        });
+                        jaNej.Add(new SelectListItem
+                        {
+                            Text = "Nej",
+                            Value = "Nej",
+                        });
+                    }
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Parkering, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.DropDownListFor(model => model.Parkering, jaNej, null, htmlAttributes: new { @class = "form-control" })
+                        @Html.ValidationMessageFor(model => model.Parkering, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Omkladnadsrum, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.DropDownListFor(model => model.Omkladnadsrum, jaNej, htmlAttributes: new { @class = "form-control" })
+                        @Html.ValidationMessageFor(model => model.Omkladnadsrum, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Kafe, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.DropDownListFor(model => model.Kafe, jaNej, htmlAttributes: new { @class = "form-control" })
+                        @Html.ValidationMessageFor(model => model.Kafe, "", new { @class = "text-danger" })
                     </div>
                 </div>
 
