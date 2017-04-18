@@ -201,6 +201,7 @@ a.logotyp img{
     border-radius: 15px;
     font-family: "News Cycle", "Arial Narrow Bold", sans-serif;
     padding: 5px;
+    z-index: 1000;
 }
 
 

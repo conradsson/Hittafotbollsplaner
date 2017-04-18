@@ -9,7 +9,7 @@
 
 <script>
     $(document).ready(function () {
-        $("#search").autocomplete({
+        $("#sökinput").autocomplete({
             source: function (request, response) {
                 $.ajax({
                     url: "/Home/GetAutoCompleteData",
