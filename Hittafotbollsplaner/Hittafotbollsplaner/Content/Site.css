@@ -18,8 +18,14 @@
 
 
 .row {
-    margin-top:-15px;
+    margin-top: -15px;
 }
+
+#aktuellInformation{
+    margin-top: 0px;
+}
+
+
 
 /* Set padding to keep content from hitting the edges */
 .body-content {
@@ -279,6 +285,7 @@ input#sökinput{
     -webkit-box-shadow: 0px 0px 20px 10px rgba(0,0,0,0.75);
     -moz-box-shadow: 0px 0px 20px 10px rgba(0,0,0,0.75);
     box-shadow: 0px 0px 20px 10px rgba(0,0,0,0.75);
+
 }
 
 .ontoplook{
@@ -302,8 +309,12 @@ input#sökinput{
 
 .nolidots{
     list-style-type: none;
+    margin-left: -37px;
 }
 
 /*#lat, #long {             döljer lat o long fälten.
     visibility: hidden;
 }*/
+
+
+/*//Stjärnsystemet*/

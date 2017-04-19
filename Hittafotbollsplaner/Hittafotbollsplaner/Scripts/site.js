@@ -45,3 +45,5 @@ var scrollTo = function (identifier, speed) {  // Scroll-To function
 //    }
 //}
 
+// BETYGSÄTTNING
+// Starrr plugin (https://github.com/dobtco/starrr)

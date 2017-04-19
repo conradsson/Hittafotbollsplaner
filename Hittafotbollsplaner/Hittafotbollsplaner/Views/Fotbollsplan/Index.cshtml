@@ -1,6 +1,9 @@
 ﻿@model Hittafotbollsplaner.Models.fotbollsplaner
 @{
     ViewBag.Title = Model.Namn;
+    string omk;
+    string park;
+    string kafe;
 }
 
 <script>
@@ -10,98 +13,126 @@
 </script>
 
 <div class="row aktuellplan1">
-        <div class="col-md-7" style="margin-right: 2%; margin-left: 3.5%;">
-            <div class="ontoplook information-panel">
-                <div class="panel-heading">
-                    <p>@Html.ActionLink("< Till start", "../Home/Index")</p><h3 class="panel-title text-center">Information</h3>
-                </div>
-                <div class="panel-body">
-                    <div class="row">
-                        <img class="pull-right bildfotbollsplan" src="http://traveldigg.com/wp-content/uploads/2016/08/Emirates-Stadium-Field.jpg" alt="Bild">
-                        <div class="infoDiv">
-                            <h2>@Model.Namn</h2>
-                            <h4>@Model.Adress, @Model.Postnummer @Model.Ort</h4>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-6 antalfotbollplaner">
-                            <h5 style="text-decoration-line: underline;">Fotbollsplaner</h5>
-                            <ul class="nolidots">
-                                <li style="margin-bottom: 5px;">@Model.AntalGras x <img src="~/Content/img/GG.png" width="22" style="margin-top: -10px;" title="Gräsplan"/></li>
-                                <li style="margin-bottom: 5px;">@Model.AntalKonstGras x <img src="~/Content/img/KG.png" width="22" style="margin-top: -8px;" title="Konstgräsplan" /></li>
-                                <li>@Model.AntalGrus x <img src="~/Content/img/GR.png" width="22" style="margin-top: -12px;" title="Grusplan"/></li>
-                            </ul>
-                        </div>
-                        <div class="col-md-6">
-                            <h5 style="text-decoration-line: underline;">Övrigt</h5>
-                            <p></p>
-                        </div>
-                    </div>
-                </div>
+    <div class="col-md-7" style="margin-right: 2%; margin-left: 3.5%;">
+        <div class="ontoplook information-panel">
+            <div class="panel-heading">
+                <p>@Html.ActionLink("< Till start", "../Home/Index")</p><h3 class="panel-title text-center">Information</h3>
             </div>
-        </div>
-        <div class="col-md-4" style="margin-right: 2%;">
-            <div class="ontoplook">
-                <div class="panel-heading">
-                    <h3 class="panel-title text-center">Karta</h3>
+            <div class="panel-body">
+                <div class="row">
+                    <img class="pull-right bildfotbollsplan" src="http://traveldigg.com/wp-content/uploads/2016/08/Emirates-Stadium-Field.jpg" alt="Bild">
+                    <div class="infoDiv">
+                        <h2>@Model.Namn</h2>
+                        <h4>@Model.Adress, @Model.Postnummer @Model.Ort</h4>
+                    </div>
                 </div>
-                <div class="panel-body">
-                    <div id="googleMap" style="width:100%;height:300px;"></div>
-
-                    <script>
-                        function myMap() {
-                            var myCenter = new google.maps.LatLng(@Model.Latitud, @Model.Longitud);
-                            var mapCanvas = document.getElementById("googleMap");
-                            var mapOptions = { center: myCenter, zoom: 16 };
-                            var map = new google.maps.Map(mapCanvas, mapOptions);
-                            var icon = {
-                                url: "/Content/img/marker.png", // url
-                                scaledSize: new google.maps.Size(32, 50), // scaled size
-                                origin: new google.maps.Point(0,0), // origin
-                                anchor: new google.maps.Point(20, 50) // anchor
-                            };
-                            var marker = new google.maps.Marker({
-                                position:myCenter,
-                                //animation:google.maps.Animation.BOUNCE,
-                                icon: icon
-                            });
-                            marker.setMap(map);
-                        }
-                    </script>
+                <div id="aktuellInformation" class="row">
+                    <div class="col-md-6 antalfotbollplaner">
+                        <h5 style="text-decoration-line: underline;">Fotbollsplaner</h5>
+                        <ul class="nolidots">
+                            <li style="margin-bottom: 5px;">@Model.AntalGras x <img src="~/Content/img/GG.png" width="22" style="margin-top: -10px;" title="Gräsplan" /></li>
+                            <li style="margin-bottom: 5px;">@Model.AntalKonstGras x <img src="~/Content/img/KG.png" width="22" style="margin-top: -8px;" title="Konstgräsplan" /></li>
+                            <li>@Model.AntalGrus x <img src="~/Content/img/GR.png" width="22" style="margin-top: -12px;" title="Grusplan" /></li>
+                        </ul>
+                    </div>
+                    @if (Model.Omkladnadsrum == true)
+                    {
+                        omk = "Ja";
+                    }
+                    else
+                    {
+                        omk = "Nej";
+                    }
+                    @if (Model.Parkering == true)
+                    {
+                        park = "Ja";
+                    }
+                    else
+                    {
+                        park = "Nej";
+                    }
+                    @if (Model.Kafe == true)
+                    {
+                        kafe = "Ja";
+                    }
+                    else
+                    {
+                        kafe = "Nej";
+                    }
+                    <div class="col-md-6">
+                        <h5 style="text-decoration-line: underline;">Övrigt</h5>
+                        <ul class="nolidots">
+                            <li style="margin-bottom: 5px;">@omk - <i class="fa fa-shower" aria-hidden="true" style="color: black" title="Omklädnadsrum"></i></li>
+                            <li style="margin-bottom: 5px;">@park - <i class="fa fa-car" aria-hidden="true" style="color: black" title="Parkering"></i></li>
+                            <li>@kafe - <i class="fa fa-coffee" aria-hidden="true" style="color: black" title="Kafé"></i></li>
+                        </ul>
+                        <p></p>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-    <div class="row aktuellplan2">
-        <div class="col-md-7" style="margin-right: 2%; margin-left: 3.5%;">
-            <div class="ontoplook fullwidth">
-                <div class="panel-heading">
-                    <h3 class="panel-title">Kommentarer</h3>
-                </div>
-                <div class="panel-body">
-                    <div class="row läggtillkom">
+    <div class="col-md-4" style="margin-right: 2%;">
+        <div class="ontoplook">
+            <div class="panel-heading">
+                <h3 class="panel-title text-center">Karta</h3>
+            </div>
+            <div class="panel-body">
+                <div id="googleMap" style="width:100%;height:300px;"></div>
 
-                    </div>
-
-                </div>
+                <script>
+                    function myMap() {
+                        var myCenter = new google.maps.LatLng(@Model.Latitud, @Model.Longitud);
+                        var mapCanvas = document.getElementById("googleMap");
+                        var mapOptions = { center: myCenter, zoom: 16 };
+                        var map = new google.maps.Map(mapCanvas, mapOptions);
+                        var icon = {
+                            url: "/Content/img/marker.png", // url
+                            scaledSize: new google.maps.Size(32, 50), // scaled size
+                            origin: new google.maps.Point(0,0), // origin
+                            anchor: new google.maps.Point(20, 50) // anchor
+                        };
+                        var marker = new google.maps.Marker({
+                            position:myCenter,
+                            //animation:google.maps.Animation.BOUNCE,
+                            icon: icon
+                        });
+                        marker.setMap(map);
+                    }
+                </script>
             </div>
         </div>
-        <div class="col-md-4" style="margin-right: 2%;">
-            <div class="ontoplook fullwidth">
-                <div class="panel-heading">
-                    <h3 class="panel-title"></h3>
-                </div>
-                <div class="panel-body">
-                    <ul class="nolidots">
-                        <li>@Html.ActionLink("Föreslå ändring", "../Home/Index")</li>
-                    </ul>
+    </div>
+</div>
+<div class="row aktuellplan2">
+    <div class="col-md-7" style="margin-right: 2%; margin-left: 3.5%;">
+        <div class="ontoplook fullwidth">
+            <div class="panel-heading">
+                <h3 class="panel-title">Kommentarer</h3>
+            </div>
+            <div class="panel-body">
+                <div class="row läggtillkom">
+
                 </div>
             </div>
         </div>
     </div>
+    <div class="col-md-4" style="margin-right: 2%;">
+        <div class="ontoplook fullwidth">
+            <div class="panel-heading">
+                <h3 class="panel-title"></h3>
+            </div>
+            <div class="panel-body">
+                <ul class="nolidots">
+                    <li>@Html.ActionLink("Föreslå ändring", "../Home/Index")</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
 
 
 
-    <script src="http://maps.google.com/maps/api/js?sensor=false" type="text/javascript"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBdYS_UAzWfdbIIbydr7rIwpvqtKCUUEBY&callback=myMap"></script>
+<script src="http://maps.google.com/maps/api/js?sensor=false" type="text/javascript"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBdYS_UAzWfdbIIbydr7rIwpvqtKCUUEBY&callback=myMap"></script>
