@@ -20,65 +20,42 @@
                     <div class="infoDiv">
                         <h2>@Model.Namn</h2>
                         <h4>@Model.Adress, @Model.Postnummer @Model.Ort</h4>
-                        <p></p>
+                        @*<a href="@Model.webbadress"></a>*@
                         <img class="pull-right bildfotbollsplan" src="http://traveldigg.com/wp-content/uploads/2016/08/Emirates-Stadium-Field.jpg" alt="Bild">
                     </div>
 
                 </div>
                 <div class="row icon-panel">
-                    <div class="col-md-4 antalfotbollplaner">
+                    <div class="col-md-5 antalfotbollplaner">
                         <h5 style="text-decoration-line: underline;">Fotbollsplaner</h5>
                         <ul class="nolidots">
-                            <li><div class="col-md-4" style="margin-top: 5%;">@Model.AntalGras x <img src="~/Content/img/GG.png" width="22" style="margin-top:-7.5px;" title="Gräsplan" /></div></li>
-                            <li><div class="col-md-4" style="margin-top: 5%;">@Model.AntalKonstGras x <img src="~/Content/img/KG.png" width="22" style="margin-top:-7.5px;" title="Konstgräsplan" /></div></li>
-                            <li><div class="col-md-4" style="margin-top: 5%;">@Model.AntalGrus x <img src="~/Content/img/GR.png" width="22" style="margin-top:-7.5px;" title="Grusplan" /></div></li>
+                            <li><div class="col-md-4" style="margin-top: 5%;">@Model.AntalGras x <img src="~/Content/img/GG.png" width="25" style="margin-top:-7.5px;" title="Gräsplan" /></div></li>
+                            <li><div class="col-md-4" style="margin-top: 5%;">@Model.AntalKonstGras x <img src="~/Content/img/KG.png" width="25" style="margin-top:-7.5px;" title="Konstgräsplan" /></div></li>
+                            <li><div class="col-md-4" style="margin-top: 5%;">@Model.AntalGrus x <img src="~/Content/img/GR.png" width="25" style="margin-top:-11px;" title="Grusplan" /></div></li>
                         </ul>
                     </div>
-                    @if (Model.Omkladnadsrum == true)
-                    {
 
-                    }
-                    else
-                    {
-
-                    }
-                    @if (Model.Parkering == true)
-                    {
-                        
-                    }
-                    else
-                    {
-                        
-                    }
-                    @if (Model.Kafe == true)
-                    {
-                        
-                    }
-                    else
-                    {
-                        
-                    }
-                    <div class="col-md-2"></div>
-                        <div class="col-md-4">
+                    <div class="col-md-1"></div>
+                        <div class="col-md-5">
                             <h5 style="text-decoration-line: underline;">Övrigt</h5>
                             <div class="row ovrigtrow">
                                 <ul class="nolidots">
-                                    <li><div class="col-md-3"><i id="omkl" class="fa fa-shower" style="@(Model.Omkladnadsrum == true ? "color: #2ab74b;" : "color: #7d7d7d;")'" aria-hidden="true" title="Omklädnadsrum"></i></div></li>
-                                    <li><div class="col-md-3"><i id="park" class="fa fa-car"style="@(Model.Parkering == true ? "color: #2ab74b;" : "color: #7d7d7d;")'" aria-hidden="true" title="Parkering"></i></div></li>
-                                    <li><div class="col-md-3"><i id="bokn" class="fa fa-calendar"style="@(Model.Kafe == true ? "color: #2ab74b;" : "color: #7d7d7d;")'" aria-hidden="true" title="Bokning"></i></div></li>
+                                    <li><div class="col-md-3"><i id="omkl" class="fa fa-shower fa-lg" style="@(Model.Omkladnadsrum == true ? "color: #2ab74b;" : "color: #7d7d7d;")'" aria-hidden="true" title="Omklädnadsrum"></i></div></li>
+                                    <li><div class="col-md-3"><i id="park" class="fa fa-car fa-lg"style="@(Model.Parkering == true ? "color: #2ab74b;" : "color: #7d7d7d;")'" aria-hidden="true" title="Parkering"></i></div></li>
+                                    <li><div class="col-md-3"><i id="bokn" class="fa fa-calendar fa-lg"style="@(Model.Kafe == true ? "color: #2ab74b;" : "color: #7d7d7d;")'" aria-hidden="true" title="Bokning"></i></div></li>
                                     <li><div class="col-md-3"></div></li>
                                 </ul>
                             </div>
                             <div class="row ovrigtrow">
                                 <ul class="nolidots">
-                                    <li><div class="col-md-3"><i id="uppl" class="fa fa-lightbulb-o"style="@(Model.Kafe == true ? "color: #2ab74b;" : "color: #7d7d7d;")'" aria-hidden="true" title="Upplyst"></i></div></li>
-                                    <li><div class="col-md-3"><i id="kafe" class="fa fa-coffee"style="@(Model.Kafe == true ? "color: #2ab74b;" : "color: #7d7d7d;")'" aria-hidden="true" title="Kafé"></i></div></li>
-                                    <li><div class="col-md-3"><i id="rest" class="fa fa-cutlery"style="@(Model.Kafe == true ? "color: #2ab74b;" : "color: #7d7d7d;")'" aria-hidden="true" title="Restaurang"></i></div></li>
+                                    <li><div class="col-md-3"><i id="uppl" class="fa fa-lightbulb-o fa-lg"style="@(Model.Kafe == true ? "color: #2ab74b;" : "color: #7d7d7d;")'" aria-hidden="true" title="Upplyst"></i></div></li>
+                                    <li><div class="col-md-3"><i id="kafe" class="fa fa-coffee fa-lg"style="@(Model.Kafe == true ? "color: #2ab74b;" : "color: #7d7d7d;")'" aria-hidden="true" title="Kafé"></i></div></li>
+                                    <li><div class="col-md-3"><i id="rest" class="fa fa-cutlery fa-lg"style="@(Model.Kafe == true ? "color: #2ab74b;" : "color: #7d7d7d;")'" aria-hidden="true" title="Restaurang"></i></div></li>
                                     <li><div class="col-md-3"></div></li>
                                 </ul>
                             </div>
                         </div>
-                    <div class="col-md-2"></div>
+                    <div class="col-md-1"></div>
                     </div>
             </div>
         </div>
