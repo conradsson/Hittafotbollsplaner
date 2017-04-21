@@ -298,6 +298,7 @@ input#sökinput{
 
 .ontoppage,.ontoppageNyplan,.ontoppageOm,.ontoppageKontakt {
     top: -300px;
+    min-height: 300px;
     position: relative;
     z-index: 10;
     background-color: #eaeaea;
