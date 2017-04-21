@@ -20,7 +20,7 @@
                     <div class="infoDiv">
                         <h2>@Model.Namn</h2>
                         <h4>@Model.Adress, @Model.Postnummer @Model.Ort</h4>
-                        @*<a href="@Model.Hemsida"></a>*@
+                        <a href="@Model.Hemsida">@Model.Hemsida</a>
                         <img class="pull-right bildfotbollsplan" src="http://traveldigg.com/wp-content/uploads/2016/08/Emirates-Stadium-Field.jpg" alt="Bild">
                     </div>
 
@@ -42,15 +42,15 @@
                                 <ul class="nolidots">
                                     <li><div class="col-md-3"><i id="omkl" class="fa fa-shower fa-lg" style="@(Model.Omkladnadsrum == true ? "color: #2ab74b;" : "color: #7d7d7d;")'" aria-hidden="true" title="Omklädnadsrum"></i></div></li>
                                     <li><div class="col-md-3"><i id="park" class="fa fa-car fa-lg"style="@(Model.Parkering == true ? "color: #2ab74b;" : "color: #7d7d7d;")'" aria-hidden="true" title="Parkering"></i></div></li>
-                                    <li><div class="col-md-3"><i id="bokn" class="fa fa-calendar fa-lg"style="@(Model.Kafe == true ? "color: #2ab74b;" : "color: #7d7d7d;")'" aria-hidden="true" title="Bokning"></i></div></li>
+                                    <li><div class="col-md-3"><i id="bokn" class="fa fa-calendar fa-lg"style="@(Model.Bokning == true ? "color: #2ab74b;" : "color: #7d7d7d;")'" aria-hidden="true" title="Bokning"></i></div></li>
                                     <li><div class="col-md-3"></div></li>
                                 </ul>
                             </div>
                             <div class="row ovrigtrow">
                                 <ul class="nolidots">
-                                    <li><div class="col-md-3"><i id="uppl" class="fa fa-lightbulb-o fa-lg"style="@(Model.Kafe == true ? "color: #2ab74b;" : "color: #7d7d7d;")'" aria-hidden="true" title="Upplyst"></i></div></li>
+                                    <li><div class="col-md-3"><i id="uppl" class="fa fa-lightbulb-o fa-lg"style="@(Model.Upplyst == true ? "color: #2ab74b;" : "color: #7d7d7d;")'" aria-hidden="true" title="Upplyst"></i></div></li>
                                     <li><div class="col-md-3"><i id="kafe" class="fa fa-coffee fa-lg"style="@(Model.Kafe == true ? "color: #2ab74b;" : "color: #7d7d7d;")'" aria-hidden="true" title="Kafé"></i></div></li>
-                                    <li><div class="col-md-3"><i id="rest" class="fa fa-cutlery fa-lg"style="@(Model.Kafe == true ? "color: #2ab74b;" : "color: #7d7d7d;")'" aria-hidden="true" title="Restaurang"></i></div></li>
+                                    <li><div class="col-md-3"><i id="rest" class="fa fa-cutlery fa-lg"style="@(Model.Restaurang == true ? "color: #2ab74b;" : "color: #7d7d7d;")'" aria-hidden="true" title="Restaurang"></i></div></li>
                                     <li><div class="col-md-3"></div></li>
                                 </ul>
                             </div>
