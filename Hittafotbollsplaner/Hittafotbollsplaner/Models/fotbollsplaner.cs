@@ -33,5 +33,9 @@ namespace Hittafotbollsplaner.Models
         public Nullable<bool> Parkering { get; set; }
         public Nullable<bool> Kafe { get; set; }
         public Nullable<bool> Omkladnadsrum { get; set; }
+        public Nullable<bool> Restaurang { get; set; }
+        public Nullable<bool> Upplyst { get; set; }
+        public Nullable<bool> Bokning { get; set; }
+        public string Hemsida { get; set; }
     }
 }

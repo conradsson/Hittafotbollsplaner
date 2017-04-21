@@ -23,6 +23,10 @@
           <Property Name="Parkering" Type="bit" />
           <Property Name="Omkladnadsrum" Type="bit" />
           <Property Name="Kafe" Type="bit" />
+          <Property Name="Restaurang" Type="bit" />
+          <Property Name="Upplyst" Type="bit" />
+          <Property Name="Bokning" Type="bit" />
+          <Property Name="Hemsida" Type="nvarchar" MaxLength="50" />
         </EntityType>
         <EntityContainer Name="hittafotbollsplanerModelStoreContainer">
           <EntitySet Name="fotbollsplaner" EntityType="Self.fotbollsplaner" Schema="dbo" store:Type="Tables" />
@@ -49,6 +53,10 @@
           <Property Name="Parkering" Type="Boolean" />
           <Property Name="Kafe" Type="Boolean" />
           <Property Name="Omkladnadsrum" Type="Boolean" />
+          <Property Name="Restaurang" Type="Boolean" />
+          <Property Name="Upplyst" Type="Boolean" />
+          <Property Name="Bokning" Type="Boolean" />
+          <Property Name="Hemsida" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityContainer Name="hittafotbollsplanerEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="fotbollsplaners" EntityType="Self.fotbollsplaner" />
@@ -62,6 +70,10 @@
           <EntitySetMapping Name="fotbollsplaners">
             <EntityTypeMapping TypeName="hittafotbollsplanerModel.fotbollsplaner">
               <MappingFragment StoreEntitySet="fotbollsplaner">
+                <ScalarProperty Name="Hemsida" ColumnName="Hemsida" />
+                <ScalarProperty Name="Bokning" ColumnName="Bokning" />
+                <ScalarProperty Name="Upplyst" ColumnName="Upplyst" />
+                <ScalarProperty Name="Restaurang" ColumnName="Restaurang" />
                 <ScalarProperty Name="Omkladnadsrum" ColumnName="Omkladnadsrum" />
                 <ScalarProperty Name="Kafe" ColumnName="Kafe" />
                 <ScalarProperty Name="Parkering" ColumnName="Parkering" />
