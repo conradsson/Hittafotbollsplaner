@@ -21,7 +21,7 @@ namespace Hittafotbollsplaner.Models
         public string Adress { get; set; }
         [Required(ErrorMessage = "Fältet Ort krävs."), StringLength(20, MinimumLength = 3, ErrorMessage = "Ortsnamnet bör vara minst tre bokstäver.")]
         public string Ort { get; set; }
-        [Required(ErrorMessage = "Fältet Postnummer krävs."), StringLength(5, MinimumLength = 5, ErrorMessage = "Postnummret bör vara fem siffor ihop.")]
+        [Required(ErrorMessage = "Fältet Postnummer krävs."), StringLength(6, MinimumLength = 5, ErrorMessage = "Postnummret bör vara fem siffor ihop.")]
         public string Postnummer { get; set; }
         public string Latitud { get; set; }
         public string Longitud { get; set; }

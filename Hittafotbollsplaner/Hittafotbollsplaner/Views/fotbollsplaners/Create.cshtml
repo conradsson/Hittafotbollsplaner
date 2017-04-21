@@ -112,11 +112,34 @@
                                         origin: new google.maps.Point(0, 0), // origin
                                         anchor: new google.maps.Point(20, 50) // anchor
                                     };
+
+                                    var geocoder = new google.maps.Geocoder();
+
                                     google.maps.event.addListener(map, 'click', function (event) {
                                         placeMarker(event.latLng);
                                         var position = marker.getPosition();
                                         var latitude = position.lat();
                                         var longitude = position.lng();
+
+                                        geocoder.geocode({
+                                            'latLng': event.latLng
+                                        }, function (results, status) {
+                                            if (status == google.maps.GeocoderStatus.OK) {
+                                                if (results[0]) {
+                                                    
+                                                    var helaAdressen = results[0].formatted_address;
+                                                    var adress = helaAdressen.split(',')[0];
+                                                    var postnummerStad = helaAdressen.split(',')[1];
+                                                    var postnummer = postnummerStad.substring(1, 7);
+                                                    var stad = postnummerStad.substring(8);
+                                                    $('#adress').val(adress);
+                                                    $('#postnummer').val(postnummer);
+                                                    $('#ort').val(stad);    
+                                                }
+                                            }
+                                        });
+
+                                        
 
                                         $('#lat1').val(latitude);
                                         $('#long1').val(longitude);
