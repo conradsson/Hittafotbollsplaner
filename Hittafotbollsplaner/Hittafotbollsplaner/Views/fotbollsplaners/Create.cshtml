@@ -16,128 +16,121 @@
         @using (Html.BeginForm())
         {
             @Html.AntiForgeryToken()
+            
+                <div class="form-horizontal">
+                    <h4 style="text-align: center; margin-bottom: 2%;">Lägg till fotbollsplan</h4>
+                    <div class="container-generellinfo col-md-12">
+                        <h5 style="text-align: left; margin-left: 1%;">Generell information</h5>
 
-            <div class="form-horizontal">
-                <h4 style="text-align: center;">Lägg till fotbollsplan</h4>
-                <hr />
-                @Html.ValidationSummary(true, "", new { @class = "text-danger", required = "required" })
-                <div class="form-group">
-                    @Html.LabelFor(model => model.Namn, htmlAttributes: new { @class = "control-label col-md-2" })
-                    <div class="col-md-10" >
-                        @Html.EditorFor(model => model.Namn, new { htmlAttributes = new { @class = "form-control" } })
-                        @Html.ValidationMessageFor(model => model.Namn, "", new { @class = "text-danger" })
-                    </div>
-                </div>
+                        <div class="col-md-offset-1 col-md-5">
+                            <div class="col-md-offset-12" style="visibility:hidden;">.</div>
+                            @Html.ValidationSummary(true, "", new { @class = "text-danger", required = "required" })
 
-                <div class="form-group">
-                    @Html.LabelFor(model => model.Adress, htmlAttributes: new { @class = "control-label col-md-2" })
-                    <div class="col-md-10">
-                        @Html.EditorFor(model => model.Adress, new { htmlAttributes = new { @class = "form-control" } })
-                        @Html.ValidationMessageFor(model => model.Adress, "", new { @class = "text-danger" })
-                    </div>
-                </div>
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.Namn, htmlAttributes: new { @class = "control-label col-md-2" })
+                                <div class="col-md-10">
+                                    @Html.EditorFor(model => model.Namn, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.Namn, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
 
-                <div class="form-group">
-                    @Html.LabelFor(model => model.Ort, htmlAttributes: new { @class = "control-label col-md-2" })
-                    <div class="col-md-10">
-                        @Html.EditorFor(model => model.Ort, new { htmlAttributes = new { @class = "form-control" } })
-                        @Html.ValidationMessageFor(model => model.Ort, "", new { @class = "text-danger" })
-                    </div>
-                </div>
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.Postnummer, htmlAttributes: new { @class = "control-label col-md-2" })
+                                <div class="col-md-10">
+                                    @Html.EditorFor(model => model.Postnummer, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.Postnummer, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
 
-                <div class="form-group">
-                    @Html.LabelFor(model => model.Postnummer, htmlAttributes: new { @class = "control-label col-md-2" })
-                    <div class="col-md-10">
-                        @Html.EditorFor(model => model.Postnummer, new { htmlAttributes = new { @class = "form-control" } })
-                        @Html.ValidationMessageFor(model => model.Postnummer, "", new { @class = "text-danger" })
-                    </div>
-                </div>
-                    @{
-                        List<SelectListItem> listItems = new List<SelectListItem>();
-                        listItems.Add(new SelectListItem
-                        {
-                            Text = "Gräs",
-                            Value = "Gräs"
-                        });
-                        listItems.Add(new SelectListItem
-                        {
-                            Text = "Grus",
-                            Value = "Grus",
-                        });
-                        listItems.Add(new SelectListItem
-                        {
-                            Text = "Konstgräs",
-                            Value = "Konstgräs",
-                        });
-                    }
-                <div class="form-group">
-                    @Html.LabelFor(model => model.Underlag, htmlAttributes: new { @class = "control-label col-md-2" })
-                    <div class="col-md-10">
-                        @Html.DropDownListFor(model => model.Underlag, listItems, null, htmlAttributes: new { @class = "form-control" })
-                        @Html.ValidationMessageFor(model => model.Underlag, "", new { @class = "text-danger" })
-                    </div>
-                </div>
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.Adress, htmlAttributes: new { @class = "control-label col-md-2" })
+                                <div class="col-md-10">
+                                    @Html.EditorFor(model => model.Adress, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.Adress, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
 
-                <div id="lat"class="form-group">
-                    @Html.LabelFor(model => model.Latitud, htmlAttributes: new { @class = "control-label col-md-2" })
-                    <div class="col-md-10">
-                        @Html.EditorFor(model => model.Latitud, new { htmlAttributes = new { @class = "form-control", @id = "lat1" } })
-                        @Html.ValidationMessageFor(model => model.Latitud, "", new { @class = "text-danger" })
-                    </div>
-                </div>
-                <div id="long" class="form-group">
-                    @Html.LabelFor(model => model.Longitud, htmlAttributes: new { @class = "control-label col-md-2" })
-                    <div class="col-md-10">
-                        @Html.EditorFor(model => model.Longitud, new { htmlAttributes = new { @class = "form-control", @id = "long1" } })
-                        @Html.ValidationMessageFor(model => model.Longitud, "", new { @class = "text-danger" })
-                    </div>
-                </div>
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.Ort, htmlAttributes: new { @class = "control-label col-md-2" })
+                                <div class="col-md-10">
+                                    @Html.EditorFor(model => model.Ort, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.Ort, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
 
-                <div class="form-group">
-                    <div class="col-md-10">
-                        <label class="control-label col-md-9" for="Karta">Markera vart på kartan fotbollsplanen ligger  </label>
-                        <div id="googleMap" style="width:100%;height:300px;"></div>
-                        <script>
-                            var oldMarker;
-                            var marker;
+                            <div id="lat" class="form-group" style="position:absolute; z-index: -10;">
+                                @Html.LabelFor(model => model.Latitud, htmlAttributes: new { @class = "control-label col-md-2" })
+                                <div class="col-md-10">
+                                    @Html.EditorFor(model => model.Latitud, new { htmlAttributes = new { @class = "form-control", @id = "lat1" } })
+                                    @Html.ValidationMessageFor(model => model.Latitud, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                            <div id="long" class="form-group" style="position:absolute; z-index: -10;">
+                                @Html.LabelFor(model => model.Longitud, htmlAttributes: new { @class = "control-label col-md-2" })
+                                <div class="col-md-10">
+                                    @Html.EditorFor(model => model.Longitud, new { htmlAttributes = new { @class = "form-control", @id = "long1" } })
+                                    @Html.ValidationMessageFor(model => model.Longitud, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
 
-                    function myMap() {
-                        var myCenter = new google.maps.LatLng(63.176683, 14.636068);
-                        var mapCanvas = document.getElementById("googleMap");
-                        var mapOptions = { center: myCenter, zoom: 4 };
-                        var map = new google.maps.Map(mapCanvas, mapOptions);
-                        var icon = {
-                            url: "/Content/img/marker.png", // url
-                            scaledSize: new google.maps.Size(32, 50), // scaled size
-                            origin: new google.maps.Point(0,0), // origin
-                            anchor: new google.maps.Point(20, 50) // anchor
-                        };
-                        google.maps.event.addListener(map, 'click', function (event) {
-                            placeMarker(event.latLng);
-                            var position = marker.getPosition();
-                            var latitude = position.lat();
-                            var longitude = position.lng();
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.Hemsida, htmlAttributes: new { @class = "control-label col-md-2" })
+                                <div class="col-md-10">
+                                    @Html.EditorFor(model => model.Hemsida, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.Hemsida, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                        </div>
 
-                            $('#lat1').val(latitude);
-                            $('#long1').val(longitude);
-                        });
-                        function placeMarker(location) {
-                                marker = new google.maps.Marker({
-                                position: location,
-                                icon: icon,
-                                map: map
-                            });
+                        <div class="col-md-6">
+                            <div class="col-md-12" style="text-align: center;">
+                                <label class="text-center" for="Karta">Markera vart på kartan fotbollsplanen ligger</label>
+                            </div>
+                                <div class="col-md-12">
+                                    <div id="googleMap" style="width:100%;height:370px;"></div>
+                                </div>
+                        </div>
+                            <script>
+                                var oldMarker;
+                                var marker;
 
-                            if (oldMarker != undefined) {
-                                oldMarker.setMap(null);
-                            }
-                            oldMarker = marker;
-                            map.setCenter(location);
-                        }
-                    }
-                        </script>
-                    </div>
-                </div>
+                                function myMap() {
+                                    var myCenter = new google.maps.LatLng(63.176683, 14.636068);
+                                    var mapCanvas = document.getElementById("googleMap");
+                                    var mapOptions = { center: myCenter, zoom: 4 };
+                                    var map = new google.maps.Map(mapCanvas, mapOptions);
+                                    var icon = {
+                                        url: "/Content/img/marker.png", // url
+                                        scaledSize: new google.maps.Size(32, 50), // scaled size
+                                        origin: new google.maps.Point(0, 0), // origin
+                                        anchor: new google.maps.Point(20, 50) // anchor
+                                    };
+                                    google.maps.event.addListener(map, 'click', function (event) {
+                                        placeMarker(event.latLng);
+                                        var position = marker.getPosition();
+                                        var latitude = position.lat();
+                                        var longitude = position.lng();
+
+                                        $('#lat1').val(latitude);
+                                        $('#long1').val(longitude);
+                                    });
+                                    function placeMarker(location) {
+                                        marker = new google.maps.Marker({
+                                            position: location,
+                                            icon: icon,
+                                            map: map
+                                        });
+
+                                        if (oldMarker != undefined) {
+                                            oldMarker.setMap(null);
+                                        }
+                                        oldMarker = marker;
+                                        map.setCenter(location);
+                                    }
+                                }
+                            </script>
+                        </div>
+
                 @{
                     List<SelectListItem> antalPlaner = new List<SelectListItem>();
                     antalPlaner.Add(new SelectListItem
@@ -171,101 +164,121 @@
                         Value = "5",
                     });
                 }
-                <div class="form-group">
-                    @Html.LabelFor(model => model.AntalGras, htmlAttributes: new { @class = "control-label col-md-2" })
-                    <div class="col-md-10">
-                        @Html.DropDownListFor(model => model.AntalGras, antalPlaner, null, htmlAttributes: new { @class = "form-control" })
-                        @Html.ValidationMessageFor(model => model.AntalGras, "", new { @class = "text-danger" })
-                    </div>
-                </div>
-                <div class="form-group">
-                    @Html.LabelFor(model => model.AntalGrus, htmlAttributes: new { @class = "control-label col-md-2" })
-                    <div class="col-md-10">
-                        @Html.DropDownListFor(model => model.AntalGrus, antalPlaner, null, htmlAttributes: new { @class = "form-control" })
-                        @Html.ValidationMessageFor(model => model.AntalGrus, "", new { @class = "text-danger" })
-                    </div>
-                </div>
-                <div class="form-group">
-                    @Html.LabelFor(model => model.AntalKonstGras, htmlAttributes: new { @class = "control-label col-md-2" })
-                    <div class="col-md-10">
-                        @Html.DropDownListFor(model => model.AntalKonstGras, antalPlaner, null, htmlAttributes: new { @class = "form-control" })
-                        @Html.ValidationMessageFor(model => model.AntalKonstGras, "", new { @class = "text-danger" })
-                    </div>
-                </div>
-                    @{
-                        List<SelectListItem> jaNej = new List<SelectListItem>();
-                        jaNej.Add(new SelectListItem
-                        {
-                            Text = "Ja",
-                            Value = "True"
-                        });
-                        jaNej.Add(new SelectListItem
-                        {
-                            Text = "Nej",
-                            Value = "False",
-                        });
-                    }
-                <div class="form-group">
-                    @Html.LabelFor(model => model.Parkering, htmlAttributes: new { @class = "control-label col-md-2" })
-                    <div class="col-md-10">
-                        @Html.DropDownListFor(model => model.Parkering, jaNej, null, htmlAttributes: new { @class = "form-control" })
-                        @Html.ValidationMessageFor(model => model.Parkering, "", new { @class = "text-danger" })
-                    </div>
-                </div>
-                <div class="form-group">
-                    @Html.LabelFor(model => model.Omkladnadsrum, htmlAttributes: new { @class = "control-label col-md-2" })
-                    <div class="col-md-10">
-                        @Html.DropDownListFor(model => model.Omkladnadsrum, jaNej, htmlAttributes: new { @class = "form-control" })
-                        @Html.ValidationMessageFor(model => model.Omkladnadsrum, "", new { @class = "text-danger" })
-                    </div>
-                </div>
-                <div class="form-group">
-                    @Html.LabelFor(model => model.Kafe, htmlAttributes: new { @class = "control-label col-md-2" })
-                    <div class="col-md-10">
-                        @Html.DropDownListFor(model => model.Kafe, jaNej, htmlAttributes: new { @class = "form-control" })
-                        @Html.ValidationMessageFor(model => model.Kafe, "", new { @class = "text-danger" })
-                    </div>
-                </div>
-                <div class="form-group">
-                    @Html.LabelFor(model => model.Restaurang, htmlAttributes: new { @class = "control-label col-md-2" })
-                    <div class="col-md-10">
-                        @Html.DropDownListFor(model => model.Restaurang, jaNej, null, htmlAttributes: new { @class = "form-control" })
-                        @Html.ValidationMessageFor(model => model.Restaurang, "", new { @class = "text-danger" })
-                    </div>
-                </div>
-                <div class="form-group">
-                    @Html.LabelFor(model => model.Upplyst, htmlAttributes: new { @class = "control-label col-md-2" })
-                    <div class="col-md-10">
-                        @Html.DropDownListFor(model => model.Upplyst, jaNej, null, htmlAttributes: new { @class = "form-control" })
-                        @Html.ValidationMessageFor(model => model.Upplyst, "", new { @class = "text-danger" })
-                    </div>
-                </div>
-                <div class="form-group">
-                    @Html.LabelFor(model => model.Bokning, htmlAttributes: new { @class = "control-label col-md-2" })
-                    <div class="col-md-10">
-                        @Html.DropDownListFor(model => model.Bokning, jaNej, null, htmlAttributes: new { @class = "form-control" })
-                        @Html.ValidationMessageFor(model => model.Bokning, "", new { @class = "text-danger" })
-                    </div>
-                </div>
-                <div class="form-group">
-                    @Html.LabelFor(model => model.Hemsida, htmlAttributes: new { @class = "control-label col-md-2" })
-                    <div class="col-md-10">
-                        @Html.EditorFor(model => model.Hemsida, new { htmlAttributes = new { @class = "form-control" } })
-                        @Html.ValidationMessageFor(model => model.Hemsida, "", new { @class = "text-danger" })
-                    </div>
-                </div>
+                    <div class="container-planinfo col-md-12">
+                        <h5 style="text-align: left; margin-left: 1%;">Planinformation</h5>
+
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label class="control-label col-md-4" for="AntalGräs">Antal gräsplaner</label>
+                                <div class="col-md-8">
+                                    @Html.DropDownListFor(model => model.AntalGras, antalPlaner, null, htmlAttributes: new { @class = "form-control" })
+                                    @Html.ValidationMessageFor(model => model.AntalGras, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label col-md-4" for="AntalGrus">Antal grusplaner</label>
+                                <div class="col-md-8">
+                                    @Html.DropDownListFor(model => model.AntalGrus, antalPlaner, null, htmlAttributes: new { @class = "form-control" })
+                                    @Html.ValidationMessageFor(model => model.AntalGrus, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label col-md-4" for="AntalKonstGras">Antal konstgräsplaner</label>
+                                <div class="col-md-8">
+                                    @Html.DropDownListFor(model => model.AntalKonstGras, antalPlaner, null, htmlAttributes: new { @class = "form-control" })
+                                    @Html.ValidationMessageFor(model => model.AntalKonstGras, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                       </div>
+                        <div class="col-md-6">
+                            <p>
+                                Alla fotbollsplaner oavsett storlek räknas som fullstora.
+                            </p>
+                        </div>
+
+                            @{
+                                List<SelectListItem> jaNej = new List<SelectListItem>();
+                                jaNej.Add(new SelectListItem
+                                {
+                                    Text = "---",
+                                    Value = "Null"
+                                });
+                                jaNej.Add(new SelectListItem
+                                {
+                                    Text = "Ja",
+                                    Value = "True"
+                                });
+                                jaNej.Add(new SelectListItem
+                                {
+                                    Text = "Nej",
+                                    Value = "False",
+                                });
+                            }
+                        </div>
+
+                        <div class="container-tillgängligt col-md-12">
+                            <h5 style="text-align: left; margin-left: 1%;">Tillgängligt</h5>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    @Html.LabelFor(model => model.Parkering, htmlAttributes: new { @class = "control-label col-md-3" })
+                                    <div class="col-md-9">
+                                        @Html.DropDownListFor(model => model.Parkering, jaNej, null, htmlAttributes: new { @class = "form-control" })
+                                        @Html.ValidationMessageFor(model => model.Parkering, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    @Html.LabelFor(model => model.Omkladnadsrum, htmlAttributes: new { @class = "control-label col-md-3" })
+                                    <div class="col-md-9">
+                                        @Html.DropDownListFor(model => model.Omkladnadsrum, jaNej, htmlAttributes: new { @class = "form-control" })
+                                        @Html.ValidationMessageFor(model => model.Omkladnadsrum, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    @Html.LabelFor(model => model.Kafe, htmlAttributes: new { @class = "control-label col-md-3" })
+                                    <div class="col-md-9">
+                                        @Html.DropDownListFor(model => model.Kafe, jaNej, htmlAttributes: new { @class = "form-control" })
+                                        @Html.ValidationMessageFor(model => model.Kafe, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+                           </div>
+
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    @Html.LabelFor(model => model.Restaurang, htmlAttributes: new { @class = "control-label col-md-3" })
+                                    <div class="col-md-9">
+                                        @Html.DropDownListFor(model => model.Restaurang, jaNej, null, htmlAttributes: new { @class = "form-control" })
+                                        @Html.ValidationMessageFor(model => model.Restaurang, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    @Html.LabelFor(model => model.Upplyst, htmlAttributes: new { @class = "control-label col-md-3" })
+                                    <div class="col-md-9">
+                                        @Html.DropDownListFor(model => model.Upplyst, jaNej, null, htmlAttributes: new { @class = "form-control" })
+                                        @Html.ValidationMessageFor(model => model.Upplyst, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    @Html.LabelFor(model => model.Bokning, htmlAttributes: new { @class = "control-label col-md-3" })
+                                    <div class="col-md-9">
+                                        @Html.DropDownListFor(model => model.Bokning, jaNej, null, htmlAttributes: new { @class = "form-control" })
+                                        @Html.ValidationMessageFor(model => model.Bokning, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+                            </div>
+                         </div>
+                     
 
 
-                <div class="form-group">
-                    <div class="col-md-offset-5 col-md-7" >
-                       <input type="submit" id="läggtillFP" value="Lägg till" class="btn btn-default"/>
+                        @*<div class="form-group">*@
+                            <div class="col-md-offset-5 col-md-7">
+                                <input type="submit" id="läggtillFP" value="Lägg till" class="btn btn-default" />
+                            </div>
+                        @*</div>*@
+                        @if (@ViewBag.SuccessConfirm != null)
+                        {
+                            @Html.Partial("_SuccessConfirmation")
+                        }
                     </div>
-                </div>
-                @if (@ViewBag.SuccessConfirm != null)
-                {
-                    @Html.Partial("_SuccessConfirmation")
-                }
-            </div>
 
         }
 

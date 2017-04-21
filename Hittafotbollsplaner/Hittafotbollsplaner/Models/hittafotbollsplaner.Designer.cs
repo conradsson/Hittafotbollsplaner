@@ -1,4 +1,4 @@
-﻿// T4 code generation is enabled for model 'C:\Users\Hischam\Source\Repos\Hittafotbollsplaner\Hittafotbollsplaner\Hittafotbollsplaner\Models\hittafotbollsplaner.edmx'. 
+﻿// T4 code generation is enabled for model 'C:\Users\conradsson\Documents\Visual Studio 2015\Projects\Github\Hittafotbollsplaner\Hittafotbollsplaner\Hittafotbollsplaner\Models\hittafotbollsplaner.edmx'. 
 // To enable legacy code generation, change the value of the 'Code Generation Strategy' designer
 // property to 'Legacy ObjectContext'. This property is available in the Properties Window when the model
 // is open in the designer.

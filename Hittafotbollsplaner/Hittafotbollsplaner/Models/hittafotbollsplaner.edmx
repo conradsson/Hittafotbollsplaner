@@ -14,7 +14,6 @@
           <Property Name="Adress" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="Ort" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="Postnummer" Type="nvarchar" MaxLength="50" Nullable="false" />
-          <Property Name="Underlag" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="Latitud" Type="nvarchar" MaxLength="50" />
           <Property Name="Longitud" Type="nvarchar" MaxLength="50" />
           <Property Name="AntalGras" Type="nvarchar" MaxLength="50" />
@@ -44,7 +43,6 @@
           <Property Name="Adress" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Ort" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Postnummer" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="Underlag" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Latitud" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Longitud" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="AntalGras" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
@@ -87,7 +85,6 @@
                 <ScalarProperty Name="Adress" ColumnName="Adress" />
                 <ScalarProperty Name="Ort" ColumnName="Ort" />
                 <ScalarProperty Name="Postnummer" ColumnName="Postnummer" />
-                <ScalarProperty Name="Underlag" ColumnName="Underlag" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

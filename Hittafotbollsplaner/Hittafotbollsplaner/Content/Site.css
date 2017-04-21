@@ -130,14 +130,19 @@ div.body-om {
 }
 
 div.body-nyplan {
-    width: 60% !important;
+    width: 95% !important;
     margin-left: auto;
     margin-right: auto;
+    margin-top: 1%;
+    margin-bottom: 1%;
+}
+
+div.container-generellinfo,div.container-planinfo,div.container-tillgängligt{
+    margin-bottom: 2%;
     background-color: white;
     -webkit-box-shadow: 0px 0px 2px 0px rgba(0,0,0,0.75);
     -moz-box-shadow: 0px 0px 2px 0px rgba(0,0,0,0.75);
     box-shadow: 0px 0px 2px 0px rgba(0,0,0,0.75);
-
 }
 
 /*  VALIDATION  */

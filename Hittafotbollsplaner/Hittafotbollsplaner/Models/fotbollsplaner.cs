@@ -6,13 +6,12 @@
 //     Manual changes to this file will be overwritten if the code is regenerated.
 // </auto-generated>
 //------------------------------------------------------------------------------
-
 namespace Hittafotbollsplaner.Models
 {
     using System;
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
-    
+
     public partial class fotbollsplaner
     {
         public int Id { get; set; }
@@ -24,7 +23,6 @@ namespace Hittafotbollsplaner.Models
         public string Ort { get; set; }
         [Required(ErrorMessage = "Fältet Postnummer krävs."), StringLength(5, MinimumLength = 5, ErrorMessage = "Postnummret bör vara fem siffor ihop.")]
         public string Postnummer { get; set; }
-        public string Underlag { get; set; }
         public string Latitud { get; set; }
         public string Longitud { get; set; }
         public string AntalGras { get; set; }
