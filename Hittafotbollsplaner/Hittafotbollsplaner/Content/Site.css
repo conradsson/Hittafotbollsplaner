@@ -18,11 +18,11 @@
 
 
 .row {
-    margin-top: -15px;
+    margin-top: -1px;
 }
 
-#aktuellInformation{
-    margin-top: 0px;
+div#aktuellInformation.row{
+    margin-top: 0px !important;
 }
 
 
