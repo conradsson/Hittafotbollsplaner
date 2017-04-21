@@ -6,34 +6,30 @@
 //     Manual changes to this file will be overwritten if the code is regenerated.
 // </auto-generated>
 //------------------------------------------------------------------------------
+
 namespace Hittafotbollsplaner.Models
 {
     using System;
     using System.Collections.Generic;
-    using System.ComponentModel.DataAnnotations;
-
+    
     public partial class fotbollsplaner
     {
         public int Id { get; set; }
-        [Required(ErrorMessage = "Fältet Namn krävs."), StringLength(25, MinimumLength = 3, ErrorMessage = "Namnet bör vara minst tre bokstäver.")]
         public string Namn { get; set; }
-        [Required(ErrorMessage = "Fältet Adress krävs."), StringLength(25, MinimumLength = 3, ErrorMessage = "Adressen bör vara minst tre bokstäver.")]
         public string Adress { get; set; }
-        [Required(ErrorMessage = "Fältet Ort krävs."), StringLength(20, MinimumLength = 3, ErrorMessage = "Ortsnamnet bör vara minst tre bokstäver.")]
         public string Ort { get; set; }
-        [Required(ErrorMessage = "Fältet Postnummer krävs."), StringLength(6, MinimumLength = 5, ErrorMessage = "Postnummret bör vara fem siffor ihop.")]
         public string Postnummer { get; set; }
         public string Latitud { get; set; }
         public string Longitud { get; set; }
         public string AntalGras { get; set; }
         public string AntalGrus { get; set; }
         public string AntalKonstGras { get; set; }
-        public Nullable<bool> Parkering { get; set; }
-        public Nullable<bool> Kafe { get; set; }
-        public Nullable<bool> Omkladnadsrum { get; set; }
-        public Nullable<bool> Restaurang { get; set; }
-        public Nullable<bool> Upplyst { get; set; }
-        public Nullable<bool> Bokning { get; set; }
+        public bool Parkering { get; set; }
+        public bool Kafe { get; set; }
+        public bool Omkladnadsrum { get; set; }
+        public bool Restaurang { get; set; }
+        public bool Upplyst { get; set; }
+        public bool Bokning { get; set; }
         public string Hemsida { get; set; }
     }
 }
