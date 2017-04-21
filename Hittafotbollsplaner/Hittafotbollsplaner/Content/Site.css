@@ -21,11 +21,21 @@
     margin-top: -15px;
 }
 
-#aktuellInformation{
-    margin-top: 0px;
+.icon-panel{
+    margin-top: 2.5%;
 }
 
+.ovrigtrow{
+    margin-top: 2%;
+    margin-left: 5%;
+}
 
+.activeIcon{
+    color: #2ab74b;
+}
+.disabledIcon{
+    color: #7d7d7d;
+}
 
 /* Set padding to keep content from hitting the edges */
 .body-content {
@@ -196,10 +206,6 @@ div.card.col-md-6:hover .middle {
     color: white;
 }
 
-a.logotyp img{
-
-
-}
 .navbar-inverse .navbar-nav > li > a:hover {
     color: rgba(33, 160, 62, 0.60);
 }
@@ -211,26 +217,35 @@ a.logotyp img{
     z-index: 1000;
 }
 
+.toppanel{
+    text-align: center;
+}
 
 .infoDiv{
-    width:65%;
+    margin-top:-2%;
+    width:100%;
     padding-left:15px;
 }
 
 .bildfotbollsplan {
     position:relative;
     z-index:10;
-    padding: 15px;
+    padding-right: 15px;
     width:35%;
     min-width: 175px;
+    margin-top: -9.5%;
 }
 
 a.list-group-item {
     list-style-type: none;
 }
 
-.information-panel{
-    height: 372px;
+.information-panel,.aktuellkarta{
+    min-height: 350px;
+}
+
+div.kommentar-panel,div.extra-panel{
+    min-height: 90px;
 }
 
 button.btn.btn-default.btn-lg.hideNav{
