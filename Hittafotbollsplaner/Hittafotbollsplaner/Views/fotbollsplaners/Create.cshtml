@@ -16,7 +16,7 @@
         @using (Html.BeginForm())
         {
             @Html.AntiForgeryToken()
-            
+
                 <div class="form-horizontal">
                     <h4 style="text-align: center; margin-bottom: 2%;">Lägg till fotbollsplan</h4>
                     <div class="container-generellinfo col-md-12">
@@ -76,7 +76,7 @@
                             <div class="form-group">
                                 @Html.LabelFor(model => model.Hemsida, htmlAttributes: new { @class = "control-label col-md-2" })
                                 <div class="col-md-10">
-                                    @Html.EditorFor(model => model.Hemsida, new { htmlAttributes = new { @class = "form-control", @placeholder ="https://" } })
+                                    @Html.EditorFor(model => model.Hemsida, new { htmlAttributes = new { @class = "form-control" } })
                                     @Html.ValidationMessageFor(model => model.Hemsida, "", new { @class = "text-danger" })
                                 </div>
                             </div>
@@ -119,7 +119,7 @@
                                         }, function (results, status) {
                                             if (status == google.maps.GeocoderStatus.OK) {
                                                 if (results[0]) {
-                                                    
+
                                                     var helaAdressen = results[0].formatted_address;
                                                     var adress = helaAdressen.split(',')[0];
                                                     var postnummerStad = helaAdressen.split(',')[1];
@@ -127,12 +127,12 @@
                                                     var stad = postnummerStad.substring(8);
                                                     $('#adress').val(adress);
                                                     $('#postnummer').val(postnummer);
-                                                    $('#ort').val(stad);    
+                                                    $('#ort').val(stad);
                                                 }
                                             }
                                         });
 
-                                        
+
 
                                         $('#lat1').val(latitude);
                                         $('#long1').val(longitude);
@@ -289,7 +289,7 @@
                                 </div>
                             </div>
                          </div>
-                     
+
 
 
                         @*<div class="form-group">*@
