@@ -328,6 +328,8 @@ input#sökinput{
     position: relative;
     z-index: 10;
     background-color: #eaeaea;
+    border: none;
+    border-radius: 0px;
     outline: 15px solid white;
     -webkit-box-shadow: 0px 0px 20px 10px rgba(0,0,0,0.75);
     -moz-box-shadow: 0px 0px 20px 10px rgba(0,0,0,0.75);
@@ -348,11 +350,6 @@ input#sökinput{
     margin-left: -37px;
 }
 
-.modal{
-    position: relative;
-    z-index:100;
-    background-color: yellow;
-}
 
 span#hjalpKnapp:hover span.hjalpText{
     visibility: visible;
