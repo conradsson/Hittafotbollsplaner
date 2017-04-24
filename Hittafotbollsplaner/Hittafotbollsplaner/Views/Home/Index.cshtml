@@ -36,12 +36,13 @@
 <div class="sökDiv text-center">
     <a href="~/Home/Index"><img id="logo" src="/Content/img/hfpLogotype.png" style="width: 200px; height: 80px;"></a>
     <div class="input-group">
-        <input id="sökinput" type="text" class="form-control" placeholder="Sök på adress eller namn..">
+        <input id="sökinput" type="text" class="form-control controls" placeholder="Sök på adress eller namn..">
         <div class="input-group-btn">
             <button type="button" class="btn btn-default"><i class="material-icons">my_location</i></button>
             @*<button type="button" class="btn btn-default"><i class="material-icons">search</i></button>*@
         </div>
     </div>
+
     <div class="mini-nav">
         <ul>
             <li>@Html.ActionLink("Lägg till fotbollsplan", "Create", "fotbollsplaners")</li>
@@ -81,7 +82,7 @@
                                                 icon: icon
                                             });
                                             marker.setMap(map);
-                                            addInfoWindow(marker, "<b>@item.Namn</b><br>@item.Adress<br>@item.Postnummer @item.Ort<br><br><a href=@Url.Action("AktuellFotbollsplan", "Fotbollsplan", new { id = item.Id })><li>Mer information</li></a>");
+                                            addInfoWindow(marker, "<b>@item.Namn</b><br>@item.Adress<br>@item.Postnummer @item.Ort<br><br><a id=merInfoA href=@Url.Action("AktuellFotbollsplan", "Fotbollsplan", new { id = item.Id })><li id=merInfo>Mer information</li></a>");
                                             </text>
                                             }
 
@@ -95,10 +96,8 @@
                                                     infoWindow.open(map, marker);
                                                 });
                                             }
-
                                     }
                                     </script>
-
                             }
 </div>
 
