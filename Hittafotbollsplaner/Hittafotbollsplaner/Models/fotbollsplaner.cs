@@ -22,19 +22,26 @@ namespace Hittafotbollsplaner.Models
         public string Adress { get; set; }
         [Required(ErrorMessage = "Fältet Ort krävs."), StringLength(20, MinimumLength = 3, ErrorMessage = "Ortsnamnet bör vara minst tre bokstäver.")]
         public string Ort { get; set; }
-        [Required(ErrorMessage = "Fältet Postnummer krävs."), StringLength(5, MinimumLength = 5, ErrorMessage = "Postnummret bör vara fem siffor ihop.")]
+        [Required(ErrorMessage = "Fältet Postnummer krävs."), StringLength(6, MinimumLength = 5, ErrorMessage = "Postnummret bör vara fem siffor ihop.")]
         public string Postnummer { get; set; }
         public string Latitud { get; set; }
         public string Longitud { get; set; }
         public string AntalGras { get; set; }
         public string AntalGrus { get; set; }
         public string AntalKonstGras { get; set; }
+        [RegularExpression("\\d+", ErrorMessage = "Du måste välja Ja eller Nej.")]
         public bool Parkering { get; set; }
+        [RegularExpression("\\d+", ErrorMessage = "Du måste välja Ja eller Nej.")]
         public bool Kafe { get; set; }
+        [RegularExpression("\\d+", ErrorMessage = "Du måste välja Ja eller Nej.")]
         public bool Omkladnadsrum { get; set; }
+        [RegularExpression("\\d+", ErrorMessage = "Du måste välja Ja eller Nej.")]
         public bool Restaurang { get; set; }
+        [RegularExpression("\\d+", ErrorMessage = "Du måste välja Ja eller Nej.")]
         public bool Upplyst { get; set; }
+        [RegularExpression("\\d+", ErrorMessage = "Du måste välja Ja eller Nej.")]
         public bool Bokning { get; set; }
+        [RegularExpression("\\d+", ErrorMessage = "Du måste välja Ja eller Nej.")]
         public string Hemsida { get; set; }
     }
 }
