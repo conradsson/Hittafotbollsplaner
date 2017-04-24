@@ -29,19 +29,12 @@ namespace Hittafotbollsplaner.Models
         public string AntalGras { get; set; }
         public string AntalGrus { get; set; }
         public string AntalKonstGras { get; set; }
-        [RegularExpression("\\d+", ErrorMessage = "Du måste välja Ja eller Nej.")]
         public bool Parkering { get; set; }
-        [RegularExpression("\\d+", ErrorMessage = "Du måste välja Ja eller Nej.")]
         public bool Kafe { get; set; }
-        [RegularExpression("\\d+", ErrorMessage = "Du måste välja Ja eller Nej.")]
         public bool Omkladnadsrum { get; set; }
-        [RegularExpression("\\d+", ErrorMessage = "Du måste välja Ja eller Nej.")]
         public bool Restaurang { get; set; }
-        [RegularExpression("\\d+", ErrorMessage = "Du måste välja Ja eller Nej.")]
         public bool Upplyst { get; set; }
-        [RegularExpression("\\d+", ErrorMessage = "Du måste välja Ja eller Nej.")]
         public bool Bokning { get; set; }
-        [RegularExpression("\\d+", ErrorMessage = "Du måste välja Ja eller Nej.")]
         public string Hemsida { get; set; }
     }
 }
