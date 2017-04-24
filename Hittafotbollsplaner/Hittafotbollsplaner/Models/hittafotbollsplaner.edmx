@@ -26,6 +26,7 @@
           <Property Name="Upplyst" Type="bit" Nullable="false" />
           <Property Name="Bokning" Type="bit" Nullable="false" />
           <Property Name="Hemsida" Type="nvarchar" MaxLength="50" />
+          <Property Name="Fritext" Type="nvarchar" MaxLength="50" />
         </EntityType>
         <EntityContainer Name="hittafotbollsplanerModelStoreContainer">
           <EntitySet Name="fotbollsplaner" EntityType="Self.fotbollsplaner" Schema="dbo" store:Type="Tables" />
@@ -55,6 +56,7 @@
           <Property Name="Upplyst" Type="Boolean" Nullable="false" />
           <Property Name="Bokning" Type="Boolean" Nullable="false" />
           <Property Name="Hemsida" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Fritext" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityContainer Name="hittafotbollsplanerEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="fotbollsplaners" EntityType="Self.fotbollsplaner" />
@@ -68,6 +70,7 @@
           <EntitySetMapping Name="fotbollsplaners">
             <EntityTypeMapping TypeName="hittafotbollsplanerModel.fotbollsplaner">
               <MappingFragment StoreEntitySet="fotbollsplaner">
+                <ScalarProperty Name="Fritext" ColumnName="Fritext" />
                 <ScalarProperty Name="Hemsida" ColumnName="Hemsida" />
                 <ScalarProperty Name="Bokning" ColumnName="Bokning" />
                 <ScalarProperty Name="Upplyst" ColumnName="Upplyst" />

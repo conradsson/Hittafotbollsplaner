@@ -10,6 +10,11 @@
     });
 </script>
 
+@if (@ViewBag.SuccessConfirm != null)
+{
+    @Html.Partial("_SuccessConfirmation")
+}
+
 <div class="row ontoppageNyplan content">
     <div class="panel-body body-nyplan">
 
@@ -233,6 +238,13 @@
                             <p>
                                 Alla fotbollsplaner oavsett storlek räknas som fullstora.
                             </p>
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.Fritext, htmlAttributes: new { @class = "control-label col-md-4" })
+                                <div class="col-md-8">
+                                    @Html.EditorFor(model => model.Fritext, new { htmlAttributes = new { @class = "form-control", @id = "postnummer" } })
+                                    @Html.ValidationMessageFor(model => model.Fritext, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
                         </div>
 
                             @{
@@ -313,10 +325,6 @@
                                 <input type="submit" id="läggtillFP" value="Lägg till" class="btn btn-default" />
                             </div>
                         @*</div>*@
-                        @if (@ViewBag.SuccessConfirm != null)
-                        {
-                            @Html.Partial("_SuccessConfirmation")
-                        }
                     </div>
 
         }

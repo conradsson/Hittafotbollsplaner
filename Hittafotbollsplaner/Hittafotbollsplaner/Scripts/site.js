@@ -1,9 +1,9 @@
-﻿jQuery(window).load(function () {
-    jQuery('.modal').modal('show').on('hide.bs.modal', function (e) {
-        e.preventDefault();
-    });
-    jQuery('.modal').modal('hide')
-});
+﻿//jQuery(window).load(function () {
+//    jQuery('.modal').modal('show').on('hide.bs.modal', function (e) {
+//        e.preventDefault();
+//    });
+//    jQuery('.modal').modal('hide')
+//});
 
 //$('#return-to-top').click(function () {
 //    $('body,html').animate({
