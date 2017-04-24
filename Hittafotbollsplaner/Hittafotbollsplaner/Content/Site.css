@@ -224,6 +224,7 @@ div.card.col-md-6:hover .middle {
 
 .toppanel{
     text-align: center;
+    margin-bottom: 2%;
 }
 
 .infoDiv{
@@ -271,7 +272,7 @@ button.btn.btn-default.btn-lg.hideNav{
     background-color: #eaeaea;
     outline: 15px solid white;
     width: 600px;
-    height: 200px;
+    height: 210px;
     margin: 0 auto;
     top: -600px;
     -webkit-box-shadow: 0px 0px 20px 10px rgba(0,0,0,0.75);
@@ -280,7 +281,6 @@ button.btn.btn-default.btn-lg.hideNav{
 }
 
 #logo{
-    margin-left: 33%;
     margin-top: 5%;
     margin-bottom: 3%;
 }
@@ -296,8 +296,24 @@ input#sökinput{
     height: 46px;
 }
 
+.mini-nav ul{
+    padding: 0;
+    list-style-type: none;
+}
+.mini-nav li {
+        display: inline-block;
+        margin-top: 5px;
+        padding: 5px;
+}
+.mini-nav li a{
+        font-size: 16px;
+        font-weight: bold;
+}
+
+
 .ontoppage,.ontoppageNyplan,.ontoppageOm,.ontoppageKontakt {
     top: -300px;
+    min-height: 300px;
     position: relative;
     z-index: 10;
     background-color: #eaeaea;
@@ -331,10 +347,6 @@ input#sökinput{
     list-style-type: none;
     margin-left: -37px;
 }
-
-/*#lat, #long {             döljer lat o long fälten.
-    visibility: hidden;
-}*/
 
 
 /*//Stjärnsystemet*/

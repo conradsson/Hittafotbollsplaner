@@ -16,71 +16,14 @@
         @using (Html.BeginForm())
         {
             @Html.AntiForgeryToken()
-
+            
                 <div class="form-horizontal">
-                    <h4 style="text-align: center; margin-bottom: 2%;">Lägg till fotbollsplan</h4>
+                    <div class="toppanel"><a class="pull-left" href="/Home/Index" style="display:inline;">&lt; Till start</a><h3 class="panel-title text-center" style="display:inline; margin-left:-10%; margin-bottom: 2%;">Lägg till fotbollsplan</h3></div>
+
                     <div class="container-generellinfo col-md-12">
                         <h5 style="text-align: left; margin-left: 1%;">Generell information</h5>
 
-                        <div class="col-md-offset-1 col-md-5">
-                            <div class="col-md-offset-12" style="visibility:hidden;">.</div>
-                            @Html.ValidationSummary(true, "", new { @class = "text-danger", required = "required" })
-
-                            <div class="form-group">
-                                @Html.LabelFor(model => model.Namn, htmlAttributes: new { @class = "control-label col-md-2" })
-                                <div class="col-md-10">
-                                    @Html.EditorFor(model => model.Namn, new { htmlAttributes = new { @class = "form-control" } })
-                                    @Html.ValidationMessageFor(model => model.Namn, "", new { @class = "text-danger" })
-                                </div>
-                            </div>
-
-                            <div class="form-group">
-                                @Html.LabelFor(model => model.Postnummer, htmlAttributes: new { @class = "control-label col-md-2" })
-                                <div class="col-md-10">
-                                    @Html.EditorFor(model => model.Postnummer, new { htmlAttributes = new { @class = "form-control", @id = "postnummer" } })
-                                    @Html.ValidationMessageFor(model => model.Postnummer, "", new { @class = "text-danger" })
-                                </div>
-                            </div>
-
-                            <div class="form-group">
-                                @Html.LabelFor(model => model.Adress, htmlAttributes: new { @class = "control-label col-md-2" })
-                                <div class="col-md-10">
-                                    @Html.EditorFor(model => model.Adress, new { htmlAttributes = new { @class = "form-control", @id = "adress" } })
-                                    @Html.ValidationMessageFor(model => model.Adress, "", new { @class = "text-danger" })
-                                </div>
-                            </div>
-
-                            <div class="form-group">
-                                @Html.LabelFor(model => model.Ort, htmlAttributes: new { @class = "control-label col-md-2" })
-                                <div class="col-md-10">
-                                    @Html.EditorFor(model => model.Ort, new { htmlAttributes = new { @class = "form-control", @id = "ort" } })
-                                    @Html.ValidationMessageFor(model => model.Ort, "", new { @class = "text-danger" })
-                                </div>
-                            </div>
-
-                            <div id="lat" class="form-group" style="position:absolute; z-index: -10;">
-                                @Html.LabelFor(model => model.Latitud, htmlAttributes: new { @class = "control-label col-md-2" })
-                                <div class="col-md-10">
-                                    @Html.EditorFor(model => model.Latitud, new { htmlAttributes = new { @class = "form-control", @id = "lat1" } })
-                                    @Html.ValidationMessageFor(model => model.Latitud, "", new { @class = "text-danger" })
-                                </div>
-                            </div>
-                            <div id="long" class="form-group" style="position:absolute; z-index: -10;">
-                                @Html.LabelFor(model => model.Longitud, htmlAttributes: new { @class = "control-label col-md-2" })
-                                <div class="col-md-10">
-                                    @Html.EditorFor(model => model.Longitud, new { htmlAttributes = new { @class = "form-control", @id = "long1" } })
-                                    @Html.ValidationMessageFor(model => model.Longitud, "", new { @class = "text-danger" })
-                                </div>
-                            </div>
-
-                            <div class="form-group">
-                                @Html.LabelFor(model => model.Hemsida, htmlAttributes: new { @class = "control-label col-md-2" })
-                                <div class="col-md-10">
-                                    @Html.EditorFor(model => model.Hemsida, new { htmlAttributes = new { @class = "form-control" } })
-                                    @Html.ValidationMessageFor(model => model.Hemsida, "", new { @class = "text-danger" })
-                                </div>
-                            </div>
-                        </div>
+                        
 
                         <div class="col-md-6">
                             <div class="col-md-12" style="text-align: center;">
@@ -120,8 +63,13 @@
                                             if (status == google.maps.GeocoderStatus.OK) {
                                                 if (results[0]) {
 
+                                                    function capitalize(string) {
+                                                        return string.charAt(0).toUpperCase() + string.slice(1).toLowerCase();
+                                                    }
+                                                    
                                                     var helaAdressen = results[0].formatted_address;
                                                     var adress = helaAdressen.split(',')[0];
+                                                    capitalize(adress);
                                                     var postnummerStad = helaAdressen.split(',')[1];
                                                     var postnummer = postnummerStad.substring(1, 7);
                                                     var stad = postnummerStad.substring(8);
@@ -132,7 +80,7 @@
                                             }
                                         });
 
-
+                                        
 
                                         $('#lat1').val(latitude);
                                         $('#long1').val(longitude);
@@ -152,7 +100,75 @@
                                     }
                                 }
                             </script>
+
+                        <div class="col-md-4">
+                            <div class="col-md-offset-12" style="visibility:hidden;">.</div>
+                            @Html.ValidationSummary(true, "", new { @class = "text-danger", required = "required" })
+
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.Namn, htmlAttributes: new { @class = "control-label col-md-4" })
+                                <div class="col-md-8">
+                                    @Html.EditorFor(model => model.Namn, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.Namn, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+
+                            <div class="autogenposDiv">
+
+                                <div class="form-group">
+                                    @Html.LabelFor(model => model.Adress, htmlAttributes: new { @class = "control-label col-md-4" })
+                                    <div class="col-md-8">
+                                        @Html.EditorFor(model => model.Adress, new { htmlAttributes = new { @class = "form-control", @id = "adress" } })
+                                        @Html.ValidationMessageFor(model => model.Adress, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    @Html.LabelFor(model => model.Postnummer, htmlAttributes: new { @class = "control-label col-md-4" })
+                                    <div class="col-md-8">
+                                        @Html.EditorFor(model => model.Postnummer, new { htmlAttributes = new { @class = "form-control", @id = "postnummer" } })
+                                        @Html.ValidationMessageFor(model => model.Postnummer, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    @Html.LabelFor(model => model.Ort, htmlAttributes: new { @class = "control-label col-md-4" })
+                                    <div class="col-md-8">
+                                        @Html.EditorFor(model => model.Ort, new { htmlAttributes = new { @class = "form-control", @id = "ort" } })
+                                        @Html.ValidationMessageFor(model => model.Ort, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.Hemsida, htmlAttributes: new { @class = "control-label col-md-4" })
+                                <div class="col-md-8">
+                                    @Html.EditorFor(model => model.Hemsida, new { htmlAttributes = new { @class = "form-control", @placeholder = "https://" } })
+                                    @Html.ValidationMessageFor(model => model.Hemsida, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+
+                            <!-- START DOLDA -->
+                            <div id="lat" class="form-group" style="position:absolute; z-index: -10; margin-top: -20%;">
+                                @Html.LabelFor(model => model.Latitud, htmlAttributes: new { @class = "control-label col-md-4" })
+                                <div class="col-md-8">
+                                    @Html.EditorFor(model => model.Latitud, new { htmlAttributes = new { @class = "form-control", @id = "lat1" } })
+                                    @Html.ValidationMessageFor(model => model.Latitud, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                            <div id="long" class="form-group" style="position:absolute; z-index: -10; margin-top: -20%;">
+                                @Html.LabelFor(model => model.Longitud, htmlAttributes: new { @class = "control-label col-md-2" })
+                                <div class="col-md-10">
+                                    @Html.EditorFor(model => model.Longitud, new { htmlAttributes = new { @class = "form-control", @id = "long1" } })
+                                    @Html.ValidationMessageFor(model => model.Longitud, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                            <!-- DOLDA SLUT -->
+
                         </div>
+                        <div class="col-md-2"></div>
+                    </div>
 
                 @{
                     List<SelectListItem> antalPlaner = new List<SelectListItem>();
@@ -289,7 +305,7 @@
                                 </div>
                             </div>
                          </div>
-
+                     
 
 
                         @*<div class="form-group">*@

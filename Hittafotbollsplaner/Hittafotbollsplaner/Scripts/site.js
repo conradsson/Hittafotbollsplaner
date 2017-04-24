@@ -1,4 +1,10 @@
-﻿jQuery(window).load(function () {
+﻿$(document).ready(function () {
+    $("#adress").disabled();
+    $("#postnummer").disabled();
+    $("#ort").disabled();
+});
+
+jQuery(window).load(function () {
     jQuery('.modal').modal('show').on('hide.bs.modal', function (e) {
         e.preventDefault();
     });

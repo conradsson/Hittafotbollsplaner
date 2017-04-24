@@ -14,18 +14,18 @@
           <Property Name="Adress" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="Ort" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="Postnummer" Type="nvarchar" MaxLength="50" Nullable="false" />
-          <Property Name="Latitud" Type="nvarchar" MaxLength="50" />
-          <Property Name="Longitud" Type="nvarchar" MaxLength="50" />
-          <Property Name="AntalGras" Type="nvarchar" MaxLength="50" />
-          <Property Name="AntalGrus" Type="nvarchar" MaxLength="50" />
-          <Property Name="AntalKonstGras" Type="nvarchar" MaxLength="50" />
-          <Property Name="Parkering" Type="bit" />
-          <Property Name="Omkladnadsrum" Type="bit" />
-          <Property Name="Kafe" Type="bit" />
-          <Property Name="Restaurang" Type="bit" />
-          <Property Name="Upplyst" Type="bit" />
-          <Property Name="Bokning" Type="bit" />
-          <Property Name="Hemsida" Type="nvarchar" MaxLength="50" />
+          <Property Name="Latitud" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Longitud" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="AntalGras" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="AntalGrus" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="AntalKonstGras" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Parkering" Type="bit" Nullable="false" />
+          <Property Name="Omkladnadsrum" Type="bit" Nullable="false" />
+          <Property Name="Kafe" Type="bit" Nullable="false" />
+          <Property Name="Restaurang" Type="bit" Nullable="false" />
+          <Property Name="Upplyst" Type="bit" Nullable="false" />
+          <Property Name="Bokning" Type="bit" Nullable="false" />
+          <Property Name="Hemsida" Type="nvarchar" MaxLength="50" Nullable="false" />
         </EntityType>
         <EntityContainer Name="hittafotbollsplanerModelStoreContainer">
           <EntitySet Name="fotbollsplaner" EntityType="Self.fotbollsplaner" Schema="dbo" store:Type="Tables" />
@@ -43,18 +43,18 @@
           <Property Name="Adress" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Ort" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Postnummer" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="Latitud" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Longitud" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="AntalGras" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="AntalGrus" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="AntalKonstGras" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Parkering" Type="Boolean" />
-          <Property Name="Kafe" Type="Boolean" />
-          <Property Name="Omkladnadsrum" Type="Boolean" />
-          <Property Name="Restaurang" Type="Boolean" />
-          <Property Name="Upplyst" Type="Boolean" />
-          <Property Name="Bokning" Type="Boolean" />
-          <Property Name="Hemsida" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Latitud" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Longitud" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="AntalGras" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="AntalGrus" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="AntalKonstGras" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Parkering" Type="Boolean" Nullable="false" />
+          <Property Name="Kafe" Type="Boolean" Nullable="false" />
+          <Property Name="Omkladnadsrum" Type="Boolean" Nullable="false" />
+          <Property Name="Restaurang" Type="Boolean" Nullable="false" />
+          <Property Name="Upplyst" Type="Boolean" Nullable="false" />
+          <Property Name="Bokning" Type="Boolean" Nullable="false" />
+          <Property Name="Hemsida" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
         </EntityType>
         <EntityContainer Name="hittafotbollsplanerEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="fotbollsplaners" EntityType="Self.fotbollsplaner" />

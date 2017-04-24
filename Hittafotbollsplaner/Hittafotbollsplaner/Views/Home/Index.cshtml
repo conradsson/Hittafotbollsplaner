@@ -33,7 +33,7 @@
 </script>
 
 
-<div class="sökDiv">
+<div class="sökDiv text-center">
     <a href="~/Home/Index"><img id="logo" src="/Content/img/hfpLogotype.png" style="width: 200px; height: 80px;"></a>
     <div class="input-group">
         <input id="sökinput" type="text" class="form-control" placeholder="Sök på adress eller namn..">
@@ -41,6 +41,13 @@
             <button type="button" class="btn btn-default"><i class="material-icons">my_location</i></button>
             @*<button type="button" class="btn btn-default"><i class="material-icons">search</i></button>*@
         </div>
+    </div>
+    <div class="mini-nav">
+        <ul>
+            <li>@Html.ActionLink("Lägg till fotbollsplan", "Create", "fotbollsplaners")</li>
+            <li>@Html.ActionLink("Om oss", "Om", "Home")</li>
+            <li>@Html.ActionLink("Kontakt", "Kontakt", "Home")</li>
+        </ul>
     </div>
 </div>
 

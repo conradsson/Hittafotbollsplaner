@@ -72,7 +72,7 @@
                     function myMap() {
                         var myCenter = new google.maps.LatLng(@Model.Latitud, @Model.Longitud);
                         var mapCanvas = document.getElementById("googleMap");
-                        var mapOptions = { center: myCenter, zoom: 15, mapTypeId: google.maps.MapTypeId.HYBRID};
+                        var mapOptions = { center: myCenter, zoom: 14};
                         var map = new google.maps.Map(mapCanvas, mapOptions);
                         var icon = {
                             url: "/Content/img/marker.png", // url
