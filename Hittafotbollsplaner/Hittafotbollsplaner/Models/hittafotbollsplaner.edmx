@@ -25,7 +25,7 @@
           <Property Name="Restaurang" Type="bit" Nullable="false" />
           <Property Name="Upplyst" Type="bit" Nullable="false" />
           <Property Name="Bokning" Type="bit" Nullable="false" />
-          <Property Name="Hemsida" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Hemsida" Type="nvarchar" MaxLength="50" />
         </EntityType>
         <EntityContainer Name="hittafotbollsplanerModelStoreContainer">
           <EntitySet Name="fotbollsplaner" EntityType="Self.fotbollsplaner" Schema="dbo" store:Type="Tables" />
@@ -54,7 +54,7 @@
           <Property Name="Restaurang" Type="Boolean" Nullable="false" />
           <Property Name="Upplyst" Type="Boolean" Nullable="false" />
           <Property Name="Bokning" Type="Boolean" Nullable="false" />
-          <Property Name="Hemsida" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Hemsida" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityContainer Name="hittafotbollsplanerEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="fotbollsplaners" EntityType="Self.fotbollsplaner" />

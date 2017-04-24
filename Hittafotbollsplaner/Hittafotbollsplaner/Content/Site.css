@@ -348,5 +348,11 @@ input#sökinput{
     margin-left: -37px;
 }
 
+.modal{
+    position: relative;
+    z-index:100;
+    background-color: yellow;
+}
+
 
 /*//Stjärnsystemet*/
