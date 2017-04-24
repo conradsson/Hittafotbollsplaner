@@ -21,14 +21,12 @@
         @using (Html.BeginForm())
         {
             @Html.AntiForgeryToken()
-            
+
                 <div class="form-horizontal">
                     <div class="toppanel"><a class="pull-left" href="/Home/Index" style="display:inline;">&lt; Till start</a><h3 class="panel-title text-center" style="display:inline; margin-left:-10%; margin-bottom: 2%;">Lägg till fotbollsplan</h3></div>
 
                     <div class="container-generellinfo col-md-12">
-                        <h5 style="text-align: left; margin-left: 1%;">Generell information</h5>
-
-                        
+                        <h5 style="text-align: left; margin-left: 1%;">Generell information<span id="hjalpKnapp"class="glyphicon glyphicon-question-sign pull-right" style="font-size:larger;" aria-hidden="true"><span class="hjalpText">Vänligen markera på kartan vart fotbollsplanen ligger, uppgifterna fylls då i automatiskt. Fyll sedan i det som saknas eller ändra det som är felaktigt. <br /><br /> Hemsida är ej obligatoriskt.</span></span></h5>
 
                         <div class="col-md-6">
                             <div class="col-md-12" style="text-align: center;">
@@ -71,7 +69,7 @@
                                                     function capitalize(string) {
                                                         return string.charAt(0).toUpperCase() + string.slice(1).toLowerCase();
                                                     }
-                                                    
+
                                                     var helaAdressen = results[0].formatted_address;
                                                     var adress = helaAdressen.split(',')[0];
                                                     capitalize(adress);
@@ -85,7 +83,7 @@
                                             }
                                         });
 
-                                        
+
 
                                         $('#lat1').val(latitude);
                                         $('#long1').val(longitude);
@@ -209,7 +207,7 @@
                     });
                 }
                     <div class="container-planinfo col-md-12">
-                        <h5 style="text-align: left; margin-left: 1%;">Planinformation</h5>
+                        <h5 style="text-align: left; margin-left: 1%;">Planinformation<span id="hjalpText" class="glyphicon glyphicon-question-sign pull-right" style="font-size:larger;" aria-hidden="true"></span></h5>
 
                         <div class="col-md-6">
                             <div class="form-group">
@@ -317,7 +315,7 @@
                                 </div>
                             </div>
                          </div>
-                     
+
 
 
                         @*<div class="form-group">*@
