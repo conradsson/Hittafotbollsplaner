@@ -207,7 +207,7 @@
                     });
                 }
                     <div class="container-planinfo col-md-12">
-                        <h5 style="text-align: left; margin-left: 1%;">Planinformation<span id="hjalpKnapp" class="glyphicon glyphicon-question-sign pull-right" style="font-size:larger;" aria-hidden="true"><span class="hjalpText">Välj typ av fotbollsplan samt antal. Fritextrutan är till för extra information du vill lämna. <br /><br /> Alla fotbollsplaner oavsett storlek räknas som fullstora.</span></span></h5>
+                        <h5 style="text-align: left; margin-left: 1%;">Planinformation<span id="hjalpKnapp" class="glyphicon glyphicon-question-sign pull-right" style="font-size:larger;" aria-hidden="true"><span class="hjalpText">Välj typ av fotbollsplan samt antal. Fritextrutan är till för extra information du vill lämna, max 50 tecken får användas. <br /><br /> Alla fotbollsplaner oavsett storlek räknas som fullstora.</span></span></h5>
 
                         <div class="col-md-6">
                             <div class="form-group">
@@ -233,13 +233,10 @@
                             </div>
                        </div>
                         <div class="col-md-6">
-                            <p>
-                                Alla fotbollsplaner oavsett storlek räknas som fullstora.
-                            </p>
                             <div class="form-group">
-                                @Html.LabelFor(model => model.Fritext, htmlAttributes: new { @class = "control-label col-md-4" })
+                                @Html.LabelFor(model => model.Fritext, htmlAttributes: new { @class = "control-label col-md-3" })
                                 <div class="col-md-8">
-                                    @Html.EditorFor(model => model.Fritext, new { htmlAttributes = new { @class = "form-control", @id = "postnummer" } })
+                                    @Html.TextAreaFor(model => model.Fritext, new { htmlAttributes = new { @class = "form-control" } })
                                     @Html.ValidationMessageFor(model => model.Fritext, "", new { @class = "text-danger" })
                                 </div>
                             </div>
