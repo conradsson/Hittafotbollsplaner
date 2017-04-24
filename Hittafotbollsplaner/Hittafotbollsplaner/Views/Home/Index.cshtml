@@ -53,32 +53,53 @@
     <div>
         <div id="googleMap" style="width:100%;height:370px;"></div>
     </div>
-    <script>
-                                var marker;
+                            @using (Html.BeginForm("Index", "Home"))
+                            {
 
-                                function myMap() {
-                                    var myCenter = new google.maps.LatLng(63.176683, 14.636068);
-                                    var mapCanvas = document.getElementById("googleMap");
-                                    var mapOptions = { center: myCenter, zoom: 4 };
-                                    var map = new google.maps.Map(mapCanvas, mapOptions);
-                                    var icon = {
-                                        url: "/Content/img/marker.png", // url
-                                        scaledSize: new google.maps.Size(32, 50), // scaled size
-                                        origin: new google.maps.Point(0, 0), // origin
-                                        anchor: new google.maps.Point(20, 50) // anchor
-                                    };
+                                    <script>
 
+                                        function myMap() {
+                                            var myCenter = new google.maps.LatLng(63, 14);
+                                            var mapCanvas = document.getElementById("googleMap");
+                                            var mapOptions = { center: myCenter, zoom: 4 };
+                                            var map = new google.maps.Map(mapCanvas, mapOptions);
+                                            var icon = {
+                                                url: "/Content/img/marker.png", // url
+                                                scaledSize: new google.maps.Size(32, 50), // scaled size
+                                                origin: new google.maps.Point(0, 0), // origin
+                                                anchor:
+                                                new google.maps.Point(20, 50) // anchor
+                                            };
 
-                                    function placeMarker(location) {
-                                        marker = new google.maps.Marker({
-                                            position: location,
-                                            icon: icon,
-                                            map: map
-                                        });
-                                        map.setCenter(location);
+                                            @foreach (var item in Model.AllaFotbollsplaner)
+                                            {
+                                               <text>
+
+                                            var myCenter = new google.maps.LatLng(@item.Latitud, @item.Longitud);
+                                            var marker = new google.maps.Marker({
+                                                position: myCenter,
+                                                icon: icon
+                                            });
+                                            marker.setMap(map);
+                                            addInfoWindow(marker, "<b>@item.Namn</b><br>@item.Adress<br>@item.Postnummer @item.Ort<br><br><a href=@Url.Action("AktuellFotbollsplan", "Fotbollsplan", new { id = item.Id })><li>Mer information</li></a>");
+                                            </text>
+                                            }
+
+                                            function addInfoWindow(marker, message) {
+
+                                                var infoWindow = new google.maps.InfoWindow({
+                                                    content: message
+                                                });
+
+                                                google.maps.event.addListener(marker, 'click', function () {
+                                                    infoWindow.open(map, marker);
+                                                });
+                                            }
+
                                     }
-                                }
-    </script>
+                                    </script>
+
+                            }
 </div>
 
 
