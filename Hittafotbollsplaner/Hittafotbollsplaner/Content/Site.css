@@ -386,3 +386,18 @@ span.hjalpText{
 footer{
 
 }
+
+li#merInfo{
+    list-style-type: none;
+    background-color:lightgrey;
+    padding: 3%;
+    border-radius: 10px;
+    text-decoration: none;
+}
+li#merInfo:hover{
+
+}
+a#merInfoA{
+    text-decoration: none;
+
+}
