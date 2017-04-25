@@ -111,11 +111,11 @@
                                             infowindow.setContent(infowindowContent);
                                             var marker1 = new google.maps.Marker({
                                                 map: map,
-                                                anchorPoint: new google.maps.Point(0, -29)
+                                                anchorPoint: new google.maps.Point(0, -29),
+                                                animation:google.maps.Animation.BOUNCE
                                             });
                                             autocomplete.addListener('place_changed', function() {
                                                 infowindow.close();
-                                                marker1.setVisible(false);
                                                 var place = autocomplete.getPlace();
                                                 if (!place.geometry) {
                                                     // User entered the name of a Place that was not suggested and
