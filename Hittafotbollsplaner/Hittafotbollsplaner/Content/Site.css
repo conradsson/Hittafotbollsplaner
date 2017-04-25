@@ -253,7 +253,7 @@ a.list-group-item {
 }
 
 .information-panel,.aktuellkarta{
-    min-height: 350px;
+    min-height: inherit;
 }
 
 div.kommentar-panel,div.extra-panel{
@@ -355,8 +355,12 @@ input#sökinput{
     margin-left: -37px;
 }
 
+span.hjalpKnapp{
+    font-size: x-large;
+    color: #2ab74b;
+}
 
-span#hjalpKnapp:hover span.hjalpText{
+span.hjalpKnapp:hover span.hjalpText{
     visibility: visible;
     opacity: 1;
 }
@@ -368,8 +372,9 @@ span.hjalpText{
     color: #fff;
     text-align: center;
     font-family: "News Cycle", "Arial Narrow", sans-serif;
-    padding: 5px 0;
+    padding: 5px;
     border-radius: 6px;
+    font-size: smaller;
 
     /* Position the tooltip text */
     position: absolute;

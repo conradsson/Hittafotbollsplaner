@@ -26,7 +26,7 @@
                     <div class="toppanel"><a class="pull-left" href="/Home/Index" style="display:inline;">&lt; Till start</a><h3 class="panel-title text-center" style="display:inline; margin-left:-10%; margin-bottom: 2%;">Lägg till fotbollsplan</h3></div>
 
                     <div class="container-generellinfo col-md-12">
-                        <h5 style="text-align: left; margin-left: 1%;">Generell information<span id="hjalpKnapp"class="glyphicon glyphicon-question-sign pull-right" style="font-size:larger;" aria-hidden="true"><span class="hjalpText">Vänligen markera på kartan vart fotbollsplanen ligger, uppgifterna fylls då i automatiskt. Fyll sedan i det som saknas eller ändra det som är felaktigt. <br /><br /> Hemsida är ej obligatoriskt.</span></span></h5>
+                        <h5 style="text-align: left; margin-left: 1%;">Generell information<span class="glyphicon glyphicon-question-sign pull-right hjalpKnapp" aria-hidden="true"><span class="hjalpText">Vänligen markera på kartan vart fotbollsplanen ligger, uppgifterna fylls då i automatiskt. Fyll sedan i det som saknas eller ändra det som är felaktigt. <br /><br /> Hemsida är ej obligatoriskt.</span></span></h5>
 
                         <div class="col-md-6">
                             <div class="col-md-12" style="text-align: center;">
@@ -47,7 +47,7 @@
                                     var map = new google.maps.Map(mapCanvas, mapOptions);
                                     var icon = {
                                         url: "/Content/img/marker.png", // url
-                                        scaledSize: new google.maps.Size(32, 50), // scaled size
+                                        scaledSize: new google.maps.Size(55, 55), // scaled size
                                         origin: new google.maps.Point(0, 0), // origin
                                         anchor: new google.maps.Point(20, 50) // anchor
                                     };
@@ -207,7 +207,7 @@
                     });
                 }
                     <div class="container-planinfo col-md-12">
-                        <h5 style="text-align: left; margin-left: 1%;">Planinformation<span id="hjalpKnapp" class="glyphicon glyphicon-question-sign pull-right" style="font-size:larger;" aria-hidden="true"><span class="hjalpText">Välj typ av fotbollsplan samt antal. Fritextrutan är till för extra information du vill lämna, max 50 tecken får användas. <br /><br /> Alla fotbollsplaner oavsett storlek räknas som fullstora.</span></span></h5>
+                        <h5 style="text-align: left; margin-left: 1%;">Planinformation<span class="glyphicon glyphicon-question-sign pull-right hjalpKnapp" aria-hidden="true"><span class="hjalpText">Välj typ av fotbollsplan samt antal. Fritextrutan är till för extra information du vill lämna, max 50 tecken får användas. <br /><br /> Alla fotbollsplaner oavsett storlek räknas som fullstora.</span></span></h5>
 
                         <div class="col-md-6">
                             <div class="form-group">
@@ -263,7 +263,7 @@
                         </div>
 
                         <div class="container-tillgängligt col-md-12">
-                            <h5 style="text-align: left; margin-left: 1%;">Tillgängligt<span id="hjalpKnapp" class="glyphicon glyphicon-question-sign pull-right" style="font-size:larger;" aria-hidden="true"><span class="hjalpText">Välj Ja alternativt Nej för respektive facilitet på den aktuella fotbollsplanen.</span></span></h5>
+                            <h5 style="text-align: left; margin-left: 1%;">Tillgängligt<span class="glyphicon glyphicon-question-sign pull-right hjalpKnapp" aria-hidden="true"><span class="hjalpText">Välj Ja alternativt Nej för respektive facilitet på den aktuella fotbollsplanen.</span></span></h5>
                             <div class="col-md-6">
                                 <div class="form-group">
                                     @Html.LabelFor(model => model.Parkering, htmlAttributes: new { @class = "control-label col-md-3" })
