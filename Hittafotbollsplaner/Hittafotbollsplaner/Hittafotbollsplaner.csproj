@@ -222,6 +222,7 @@
     <Content Include="Content\img\KG.png" />
     <Content Include="Content\img\marker.png" />
     <Content Include="Content\img\start_1920.jpg" />
+    <Content Include="Content\img\marker.png" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\fontawesome-webfont.svg" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
