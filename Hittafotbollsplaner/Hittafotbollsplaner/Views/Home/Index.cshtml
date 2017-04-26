@@ -102,6 +102,8 @@
 
                                             var autocomplete = new google.maps.places.Autocomplete(input, options);
 
+                                          
+
                                             // Bind the map's bounds (viewport) property to the autocomplete object,
                                             // so that the autocomplete requests use the current map bounds for the
                                             // bounds option in the request.
@@ -120,7 +122,7 @@
                                                 if (!place.geometry) {
                                                     // User entered the name of a Place that was not suggested and
                                                     // pressed the Enter key, or the Place Details request failed.
-                                                    window.alert("No details available for input: '" + place.name + "'");
+                                                    window.alert("Ingen adress fanns med namnet: '" + place.name + "'");
                                                     return;
                                                 }
                                                 // If the place has a geometry, then present it on a map.
