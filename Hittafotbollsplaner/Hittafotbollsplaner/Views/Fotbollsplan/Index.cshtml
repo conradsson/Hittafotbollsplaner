@@ -8,6 +8,15 @@
         $(".navbar").toggle();
     });
 </script>
+<style type="text/css">
+    #share-buttons img {
+        width: 45px;
+        padding: 5px;
+        border: 0;
+        box-shadow: 0;
+        display: inline;
+    }
+</style>
 
 <div class="row aktuellplan1">
     <div class="col-md-7" style="margin-right: 2%; margin-left: 3.5%; min-height: inherit;">
@@ -37,27 +46,27 @@
                     </div>
 
                     <div class="col-md-1"></div>
-                        <div class="col-md-5">
-                            <h5 style="text-decoration-line: underline;">Övrigt</h5>
-                            <div class="row ovrigtrow">
-                                <ul class="nolidots">
-                                    <li><div class="col-md-3"><i id="omkl" class="fa fa-shower fa-lg" style="@(Model.Omkladnadsrum == true ? "color: #2ab74b;" : "color: #7d7d7d;")'" aria-hidden="true" title="Omklädnadsrum"></i></div></li>
-                                    <li><div class="col-md-3"><i id="park" class="fa fa-car fa-lg"style="@(Model.Parkering == true ? "color: #2ab74b;" : "color: #7d7d7d;")'" aria-hidden="true" title="Parkering"></i></div></li>
-                                    <li><div class="col-md-3"><i id="bokn" class="fa fa-calendar fa-lg"style="@(Model.Bokning == true ? "color: #2ab74b;" : "color: #7d7d7d;")'" aria-hidden="true" title="Bokning"></i></div></li>
-                                    <li><div class="col-md-3"></div></li>
-                                </ul>
-                            </div>
-                            <div class="row ovrigtrow">
-                                <ul class="nolidots">
-                                    <li><div class="col-md-3"><i id="uppl" class="fa fa-lightbulb-o fa-lg"style="@(Model.Upplyst == true ? "color: #2ab74b;" : "color: #7d7d7d;")'" aria-hidden="true" title="Upplyst"></i></div></li>
-                                    <li><div class="col-md-3"><i id="kafe" class="fa fa-coffee fa-lg"style="@(Model.Kafe == true ? "color: #2ab74b;" : "color: #7d7d7d;")'" aria-hidden="true" title="Kafé"></i></div></li>
-                                    <li><div class="col-md-3"><i id="rest" class="fa fa-cutlery fa-lg"style="@(Model.Restaurang == true ? "color: #2ab74b;" : "color: #7d7d7d;")'" aria-hidden="true" title="Restaurang"></i></div></li>
-                                    <li><div class="col-md-3"></div></li>
-                                </ul>
-                            </div>
+                    <div class="col-md-5">
+                        <h5 style="text-decoration-line: underline;">Övrigt</h5>
+                        <div class="row ovrigtrow">
+                            <ul class="nolidots">
+                                <li><div class="col-md-3"><i id="omkl" class="fa fa-shower fa-lg" style="@(Model.Omkladnadsrum == true ? "color: #2ab74b;" : "color: #7d7d7d;")'" aria-hidden="true" title="Omklädnadsrum"></i></div></li>
+                                <li><div class="col-md-3"><i id="park" class="fa fa-car fa-lg" style="@(Model.Parkering == true ? "color: #2ab74b;" : "color: #7d7d7d;")'" aria-hidden="true" title="Parkering"></i></div></li>
+                                <li><div class="col-md-3"><i id="bokn" class="fa fa-calendar fa-lg" style="@(Model.Bokning == true ? "color: #2ab74b;" : "color: #7d7d7d;")'" aria-hidden="true" title="Bokning"></i></div></li>
+                                <li><div class="col-md-3"></div></li>
+                            </ul>
                         </div>
-                    <div class="col-md-1"></div>
+                        <div class="row ovrigtrow">
+                            <ul class="nolidots">
+                                <li><div class="col-md-3"><i id="uppl" class="fa fa-lightbulb-o fa-lg" style="@(Model.Upplyst == true ? "color: #2ab74b;" : "color: #7d7d7d;")'" aria-hidden="true" title="Upplyst"></i></div></li>
+                                <li><div class="col-md-3"><i id="kafe" class="fa fa-coffee fa-lg" style="@(Model.Kafe == true ? "color: #2ab74b;" : "color: #7d7d7d;")'" aria-hidden="true" title="Kafé"></i></div></li>
+                                <li><div class="col-md-3"><i id="rest" class="fa fa-cutlery fa-lg" style="@(Model.Restaurang == true ? "color: #2ab74b;" : "color: #7d7d7d;")'" aria-hidden="true" title="Restaurang"></i></div></li>
+                                <li><div class="col-md-3"></div></li>
+                            </ul>
+                        </div>
                     </div>
+                    <div class="col-md-1"></div>
+                </div>
             </div>
         </div>
     </div>
@@ -227,17 +236,57 @@
                 <h3 class="panel-title">Kommentarer</h3>
             </div>
             <div class="panel-body">
-                <div class="row läggtillkom">
+                <div class="row läggtillkom text-center">
                     <script src="https://apis.google.com/js/plusone.js"></script>
                     <div id="comments" class=" text-center"></div>
                     <script>
-                            gapi.comments.render('comments', {
-                                href: window.location,
-                                width: '800',
-                                first_party_property: 'BLOGGER',
-                                view_type: 'FILTERED_POSTMOD'
-                            });
+                        gapi.comments.render('comments', {
+                            href: window.location,
+                            width: '624',
+                            first_party_property: 'BLOGGER',
+                            view_type: 'FILTERED_POSTMOD'
+                        });
                     </script>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4" style="margin-right: 2%;">
+        <div class="ontoplook extra-panel" style="margin-bottom: 13%;">
+            <div class="panel-heading">
+                <h3 class="panel-title">Dela!</h3>
+            </div>
+            <div class="panel-body text-center">
+                <div id="share-buttons">
+
+                    <img class="icon icons8-Copy-Link" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABoAAAAaCAYAAACpSkzOAAABpklEQVRIS7WVAVEDMRBFXxUACgAFIAEHUAfgoCgAB4ACkEAVAAoABbQOQAHMg6RzuSaXML1m5qbXXJK3+3ezO+FvHAA3wHF4D9PJzydwCTzkPtbmJuHgV2C3tjh8F3TRuHa1TNAjcAq8AOfAonCIXpe+VbmClGQHOKxAatJqhNJq+NoQ9B1mfc8NPfmPtLcBmJzVAmqV9gR4KsWxBdQibbQ+quP/JGlaQDVpuxJ1QQls2yBhd8BsbNAbcJTJqOnYoD4jJshi2yDBv3EbC2T5ugL0wItriTJbRwUJ8f5o9HV4hJ2NDfK8WJD1wnppdYhzG0sX5ZoFmaaAWad3FmjnN5auL5d9TIhxUkJjtXGMuhAlEuC4z0ASj2It2+tYkSsrsbp7uBb7KI9eOOYhPtGTpP51G99zSMt+c+vXuhjw2HdsI45SU1wlgwt13+bXH7l7JsC1emY6vwfP+p6seeSEMDca1P0OLQcyRrYA96iCsBIkiVHGkWSqFsOh/RrzASxL7bu7OXbYUgxLICFmokkzbwENxbCmht+/DEkLaCiGQ6BlSDKvwOIHs8mA7w22/4gAAAAASUVORK5CYII=" width="26" height="26">
+
+                    <!-- Email -->
+                    <a href="mailto:?Subject=Hitta Fotbollsplaner&amp;Body=I%20saw%20this%20and%20thought%20of%20you!%20 https://hittafotbollsplaner.azurewebsites.net/Fotbollsplan/AktuellFotbollsplan/@Model.Id">
+                        <img src="https://simplesharebuttons.com/images/somacro/email.png" alt="Email" />
+                    </a>
+
+                    <!-- Facebook -->
+                    <a href="http://www.facebook.com/sharer.php?u=https://hittafotbollsplaner.azurewebsites.net/Fotbollsplan/AktuellFotbollsplan/@Model.Id" target="_blank">
+                        <img src="https://simplesharebuttons.com/images/somacro/facebook.png" alt="Facebook" />
+                    </a>
+
+                    <!-- Google+ -->
+                    <a href="https://plus.google.com/share?url=https://hittafotbollsplaner.azurewebsites.net/Fotbollsplan/AktuellFotbollsplan/@Model.Id" target="_blank">
+                        <img src="https://simplesharebuttons.com/images/somacro/google.png" alt="Google" />
+                    </a>
+
+                    <!-- LinkedIn -->
+                    <a href="http://www.linkedin.com/shareArticle?mini=true&amp;url=https://hittafotbollsplaner.azurewebsites.net/Fotbollsplan/AktuellFotbollsplan/@Model.Id" target="_blank">
+                        <img src="https://simplesharebuttons.com/images/somacro/linkedin.png" alt="LinkedIn" />
+                    </a>
+
+
+                    <!-- Twitter -->
+                    <a href="https://twitter.com/share?url=https://hittafotbollsplaner.azurewebsites.net/Fotbollsplan/AktuellFotbollsplan/@Model.Id&amp;text=Hitta%20Fotbollsplaner&amp;hashtags=simplesharebuttons" target="_blank">
+                        <img src="https://simplesharebuttons.com/images/somacro/twitter.png" alt="Twitter" />
+                    </a>
+
                 </div>
             </div>
         </div>
@@ -245,7 +294,7 @@
     <div class="col-md-4" style="margin-right: 2%;">
         <div class="ontoplook extra-panel">
             <div class="panel-heading">
-                <h3 class="panel-title"></h3>
+                <h3 class="panel-title">Fel?</h3>
             </div>
             <div class="panel-body">
                 <ul class="nolidots text-center" style="color:black; text-decoration: none;">
@@ -257,7 +306,9 @@
 </div>
 
 
-
+<script src="https://apis.google.com/js/platform.js" async defer>
+    {lang: 'sv'}
+</script>
 <script src="http://maps.google.com/maps/api/js?sensor=false" type="text/javascript"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBdYS_UAzWfdbIIbydr7rIwpvqtKCUUEBY&callback=myMap"></script>

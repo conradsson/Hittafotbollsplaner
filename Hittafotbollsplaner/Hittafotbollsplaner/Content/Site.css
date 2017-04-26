@@ -1,7 +1,7 @@
 ﻿
 
 body {
-    background: url(../Content/img/start_1920.jpg) no-repeat center center fixed; 
+    background: url(../Content/img/start_1920.jpg) no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -438,7 +438,7 @@ footer.ontoplookFooter{
     width: 50%;
     height: 4%;
     min-height: 4%;
-    
+
 }
 
 li#merInfo{
