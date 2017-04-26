@@ -330,10 +330,17 @@ div.input-group{
     width: 329px;
     margin: 0 auto;
 }
-
+div.input-group button{
+    position: relative;
+    z-index: 20;
+    margin-left:-7%;
+}
 
 input#sökinput{
     height: 46px;
+    width: 95%;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .mini-nav ul{
@@ -353,6 +360,7 @@ input#sökinput{
 
 .kartDiv{
     margin: 0 auto;
+    min-width: 320px;
     width: 60%;
     height: 540px;
     margin-bottom: 2.5%;
