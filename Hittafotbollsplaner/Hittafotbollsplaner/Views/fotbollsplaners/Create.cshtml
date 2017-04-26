@@ -23,19 +23,22 @@
             @Html.AntiForgeryToken()
 
                 <div class="form-horizontal">
-                    <div class="toppanel"><a class="pull-left" href="/Home/Index" style="display:inline;">&lt; Till start</a><h3 class="panel-title text-center" style="display:inline; margin-left:-10%; margin-bottom: 2%;">Lägg till fotbollsplan</h3></div>
+                    <div class="toppanel"><a class="pull-left" href="/Home/Index" style="display:inline;">&lt; Till start</a><h3 class="panel-title text-center" style="display:inline; margin-left:-10%; margin-bottom: 2%; font-size:larger;">Lägg till fotbollsplan</h3></div>
 
+                    
                     <div class="container-generellinfo col-md-12">
-                        <h5 style="text-align: left; margin-left: 1%; margin-bottom: 3%;">Generell information<span class="glyphicon glyphicon-question-sign pull-right hjalpKnapp" aria-hidden="true"><span class="hjalpText">Vänligen markera på kartan vart fotbollsplanen ligger, uppgifterna fylls då i automatiskt. Fyll sedan i det som saknas eller ändra det som är felaktigt. <br /><br /> Hemsida är ej obligatoriskt.</span></span></h5>
+                        <div class="genInfoSlide text-center">Generell information <span id="genInfoSlideIco" class="glyphicon glyphicon-chevron-down" aria-hidden="true"></span></div>
+                        <div id="G-toggle">
+                            <h5 style="text-align: left; margin-left: 2%; margin-bottom: 2%;">Generell information<span class="glyphicon glyphicon-question-sign pull-right hjalpKnapp" aria-hidden="true" style="margin-right:2%; "><span class="hjalpText">Vänligen markera på kartan vart fotbollsplanen ligger, uppgifterna fylls då i automatiskt. Fyll sedan i det som saknas eller ändra det som är felaktigt. <br /><br /> Hemsida är ej obligatoriskt.</span></span></h5>
 
-                        <div class="col-md-6">
-                            <div class="col-md-12" style="text-align: center;">
-                                <label class="text-center" for="Karta">Markera vart på kartan fotbollsplanen ligger</label>
-                            </div>
+                            <div class="col-md-6">
+                                <div class="col-md-12" style="text-align: center;">
+                                    <label class="text-center" for="Karta">Markera vart på kartan fotbollsplanen ligger</label>
+                                </div>
                                 <div class="col-md-12">
                                     <div id="googleMap" style="width:100%;height:370px;"></div>
                                 </div>
-                        </div>
+                            </div>
                             <script>
                                 var oldMarker;
                                 var marker;
@@ -232,19 +235,17 @@
                                 }
                             </script>
 
-                        <div class="col-md-4">
-                            <div class="col-md-offset-12" style="visibility:hidden;">.</div>
-                            @Html.ValidationSummary(true, "", new { @class = "text-danger", required = "required" })
+                            <div class="col-md-4">
+                                <div class="col-md-offset-12" style="visibility:hidden;">.</div>
+                                @Html.ValidationSummary(true, "", new { @class = "text-danger", required = "required" })
 
-                            <div class="form-group">
-                                @Html.LabelFor(model => model.Namn, htmlAttributes: new { @class = "control-label col-md-4" })
-                                <div class="col-md-8">
-                                    @Html.EditorFor(model => model.Namn, new { htmlAttributes = new { @class = "form-control" } })
-                                    @Html.ValidationMessageFor(model => model.Namn, "", new { @class = "text-danger" })
+                                <div class="form-group">
+                                    @Html.LabelFor(model => model.Namn, htmlAttributes: new { @class = "control-label col-md-4" })
+                                    <div class="col-md-8">
+                                        @Html.EditorFor(model => model.Namn, new { htmlAttributes = new { @class = "form-control" } })
+                                        @Html.ValidationMessageFor(model => model.Namn, "", new { @class = "text-danger" })
+                                    </div>
                                 </div>
-                            </div>
-
-                            <div class="autogenposDiv">
 
                                 <div class="form-group">
                                     @Html.LabelFor(model => model.Adress, htmlAttributes: new { @class = "control-label col-md-4" })
@@ -270,35 +271,34 @@
                                     </div>
                                 </div>
 
-                            </div>
-
-                            <div class="form-group">
-                                @Html.LabelFor(model => model.Hemsida, htmlAttributes: new { @class = "control-label col-md-4" })
-                                <div class="col-md-8">
-                                    @Html.EditorFor(model => model.Hemsida, new { htmlAttributes = new { @class = "form-control", @placeholder = "https://" } })
-                                    @Html.ValidationMessageFor(model => model.Hemsida, "", new { @class = "text-danger" })
+                                <div class="form-group">
+                                    @Html.LabelFor(model => model.Hemsida, htmlAttributes: new { @class = "control-label col-md-4" })
+                                    <div class="col-md-8">
+                                        @Html.EditorFor(model => model.Hemsida, new { htmlAttributes = new { @class = "form-control", @placeholder = "https://" } })
+                                        @Html.ValidationMessageFor(model => model.Hemsida, "", new { @class = "text-danger" })
+                                    </div>
                                 </div>
-                            </div>
 
-                            <!-- START DOLDA -->
-                            <div id="lat" class="form-group" style="position:absolute; z-index: -10; margin-top: -20%;">
-                                @Html.LabelFor(model => model.Latitud, htmlAttributes: new { @class = "control-label col-md-4" })
-                                <div class="col-md-8">
-                                    @Html.EditorFor(model => model.Latitud, new { htmlAttributes = new { @class = "form-control", @id = "lat1" } })
-                                    @Html.ValidationMessageFor(model => model.Latitud, "", new { @class = "text-danger" })
+                                <!-- START DOLDA -->
+                                <div id="lat" class="form-group" style="position:absolute; z-index: -10; margin-top: -20%;">
+                                    @Html.LabelFor(model => model.Latitud, htmlAttributes: new { @class = "control-label col-md-4" })
+                                    <div class="col-md-8">
+                                        @Html.EditorFor(model => model.Latitud, new { htmlAttributes = new { @class = "form-control", @id = "lat1" } })
+                                        @Html.ValidationMessageFor(model => model.Latitud, "", new { @class = "text-danger" })
+                                    </div>
                                 </div>
-                            </div>
-                            <div id="long" class="form-group" style="position:absolute; z-index: -10; margin-top: -20%;">
-                                @Html.LabelFor(model => model.Longitud, htmlAttributes: new { @class = "control-label col-md-2" })
-                                <div class="col-md-10">
-                                    @Html.EditorFor(model => model.Longitud, new { htmlAttributes = new { @class = "form-control", @id = "long1" } })
-                                    @Html.ValidationMessageFor(model => model.Longitud, "", new { @class = "text-danger" })
+                                <div id="long" class="form-group" style="position:absolute; z-index: -10; margin-top: -20%;">
+                                    @Html.LabelFor(model => model.Longitud, htmlAttributes: new { @class = "control-label col-md-2" })
+                                    <div class="col-md-10">
+                                        @Html.EditorFor(model => model.Longitud, new { htmlAttributes = new { @class = "form-control", @id = "long1" } })
+                                        @Html.ValidationMessageFor(model => model.Longitud, "", new { @class = "text-danger" })
+                                    </div>
                                 </div>
-                            </div>
-                            <!-- DOLDA SLUT -->
+                                <!-- DOLDA SLUT -->
 
+                            </div>
+                            <div class="col-md-2"></div>
                         </div>
-                        <div class="col-md-2"></div>
                     </div>
 
                 @{
@@ -334,41 +334,44 @@
                         Value = "5",
                     });
                 }
+                    
                     <div class="container-planinfo col-md-12">
-                        <h5 style="text-align: left; margin-left: 1%; margin-bottom: 3%;">Planinformation<span class="glyphicon glyphicon-question-sign pull-right hjalpKnapp" aria-hidden="true"><span class="hjalpText">Välj typ av fotbollsplan samt antal. Fritextrutan är till för extra information du vill lämna, max 50 tecken får användas. <br /><br /> Alla fotbollsplaner oavsett storlek räknas som fullstora.</span></span></h5>
+                        <div class="planInfoSlide text-center">Planinformation <span id="planInfoSlideIco" class="glyphicon glyphicon-chevron-down" aria-hidden="true"></span></div>
+                        <div id="P-toggle">
+                            <h5 style="text-align: left; margin-left: 2%; margin-bottom: 2%;">Planinformation<span class="glyphicon glyphicon-question-sign pull-right hjalpKnapp" aria-hidden="true" style="margin-right:2%;" ><span class="hjalpText">Välj typ av fotbollsplan samt antal. Fritextrutan är till för extra information du vill lämna, max 50 tecken får användas. <br /><br /> Alla fotbollsplaner oavsett storlek räknas som fullstora.</span></span></h5>
 
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <label class="control-label col-md-4" for="AntalGräs">Antal gräsplaner</label>
-                                <div class="col-md-8">
-                                    @Html.DropDownListFor(model => model.AntalGras, antalPlaner, null, htmlAttributes: new { @class = "form-control" })
-                                    @Html.ValidationMessageFor(model => model.AntalGras, "", new { @class = "text-danger" })
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label class="control-label col-md-4" for="AntalGräs">Antal gräsplaner</label>
+                                    <div class="col-md-8">
+                                        @Html.DropDownListFor(model => model.AntalGras, antalPlaner, null, htmlAttributes: new { @class = "form-control" })
+                                        @Html.ValidationMessageFor(model => model.AntalGras, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="control-label col-md-4" for="AntalGrus">Antal grusplaner</label>
+                                    <div class="col-md-8">
+                                        @Html.DropDownListFor(model => model.AntalGrus, antalPlaner, null, htmlAttributes: new { @class = "form-control" })
+                                        @Html.ValidationMessageFor(model => model.AntalGrus, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="control-label col-md-4" for="AntalKonstGras">Antal konstgräsplaner</label>
+                                    <div class="col-md-8">
+                                        @Html.DropDownListFor(model => model.AntalKonstGras, antalPlaner, null, htmlAttributes: new { @class = "form-control" })
+                                        @Html.ValidationMessageFor(model => model.AntalKonstGras, "", new { @class = "text-danger" })
+                                    </div>
                                 </div>
                             </div>
-                            <div class="form-group">
-                                <label class="control-label col-md-4" for="AntalGrus">Antal grusplaner</label>
-                                <div class="col-md-8">
-                                    @Html.DropDownListFor(model => model.AntalGrus, antalPlaner, null, htmlAttributes: new { @class = "form-control" })
-                                    @Html.ValidationMessageFor(model => model.AntalGrus, "", new { @class = "text-danger" })
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    @Html.LabelFor(model => model.Fritext, htmlAttributes: new { @class = "control-label col-md-3" })
+                                    <div class="col-md-8">
+                                        @Html.TextAreaFor(model => model.Fritext, new { htmlAttributes = new { @class = "form-control" } })
+                                        @Html.ValidationMessageFor(model => model.Fritext, "", new { @class = "text-danger" })
+                                    </div>
                                 </div>
                             </div>
-                            <div class="form-group">
-                                <label class="control-label col-md-4" for="AntalKonstGras">Antal konstgräsplaner</label>
-                                <div class="col-md-8">
-                                    @Html.DropDownListFor(model => model.AntalKonstGras, antalPlaner, null, htmlAttributes: new { @class = "form-control" })
-                                    @Html.ValidationMessageFor(model => model.AntalKonstGras, "", new { @class = "text-danger" })
-                                </div>
-                            </div>
-                       </div>
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                @Html.LabelFor(model => model.Fritext, htmlAttributes: new { @class = "control-label col-md-3" })
-                                <div class="col-md-8">
-                                    @Html.TextAreaFor(model => model.Fritext, new { htmlAttributes = new { @class = "form-control" } })
-                                    @Html.ValidationMessageFor(model => model.Fritext, "", new { @class = "text-danger" })
-                                </div>
-                            </div>
-                        </div>
 
                             @{
                                 List<SelectListItem> jaNej = new List<SelectListItem>();
@@ -388,54 +391,59 @@
                                     Value = "False"
                                 });
                             }
+                            </div>
                         </div>
-
+                    
+                    
                         <div class="container-tillgängligt col-md-12">
-                            <h5 style="text-align: left; margin-left: 1%; margin-bottom: 3%;">Tillgängligt <span class="text-muted">- Inom ett avstånd på 500 meter från planerna</span><span class="glyphicon glyphicon-question-sign pull-right hjalpKnapp" aria-hidden="true"><span class="hjalpText">Välj Ja alternativt Nej för respektive facilitet på den aktuella fotbollsplanen.</span></span></h5>
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    @Html.LabelFor(model => model.Parkering, htmlAttributes: new { @class = "control-label col-md-3" })
-                                    <div class="col-md-9">
-                                        @Html.DropDownListFor(model => model.Parkering, jaNej, null, htmlAttributes: new { @class = "form-control" })
-                                        @Html.ValidationMessageFor(model => model.Parkering, "", new { @class = "text-danger" })
+                            <div class="tillgängligtSlide text-center">Tillgängligt <span id="tillgängligtSlideIco" class="glyphicon glyphicon-chevron-down" aria-hidden="true"></span></div>
+                            <div id="T-toggle">
+                                <h5 style="text-align: left; margin-left: 2%; margin-bottom: 2%;">Tillgängligt <span class="text-muted">- Inom ett avstånd på 500 meter från planerna</span><span class="glyphicon glyphicon-question-sign pull-right hjalpKnapp" aria-hidden="true" style="margin-right:2%;"><span class="hjalpText">Välj Ja alternativt Nej för respektive facilitet på den aktuella fotbollsplanen.</span></span></h5>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        @Html.LabelFor(model => model.Parkering, htmlAttributes: new { @class = "control-label col-md-3" })
+                                        <div class="col-md-9">
+                                            @Html.DropDownListFor(model => model.Parkering, jaNej, null, htmlAttributes: new { @class = "form-control" })
+                                            @Html.ValidationMessageFor(model => model.Parkering, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="control-label col-md-3" for="Omkladnadsrum">Omklädningsrum</label>
+                                        <div class="col-md-9">
+                                            @Html.DropDownListFor(model => model.Omkladnadsrum, jaNej, htmlAttributes: new { @class = "form-control" })
+                                            @Html.ValidationMessageFor(model => model.Omkladnadsrum, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="control-label col-md-3" for="Kafe">Kafé</label>
+                                        <div class="col-md-9">
+                                            @Html.DropDownListFor(model => model.Kafe, jaNej, htmlAttributes: new { @class = "form-control" })
+                                            @Html.ValidationMessageFor(model => model.Kafe, "", new { @class = "text-danger" })
+                                        </div>
                                     </div>
                                 </div>
-                                <div class="form-group">
-                                    <label class="control-label col-md-3" for="Omkladnadsrum">Omklädningsrum</label>
-                                    <div class="col-md-9">
-                                        @Html.DropDownListFor(model => model.Omkladnadsrum, jaNej, htmlAttributes: new { @class = "form-control" })
-                                        @Html.ValidationMessageFor(model => model.Omkladnadsrum, "", new { @class = "text-danger" })
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label class="control-label col-md-3" for="Kafe">Kafé</label>
-                                    <div class="col-md-9">
-                                        @Html.DropDownListFor(model => model.Kafe, jaNej, htmlAttributes: new { @class = "form-control" })
-                                        @Html.ValidationMessageFor(model => model.Kafe, "", new { @class = "text-danger" })
-                                    </div>
-                                </div>
-                           </div>
 
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    @Html.LabelFor(model => model.Restaurang, htmlAttributes: new { @class = "control-label col-md-3" })
-                                    <div class="col-md-9">
-                                        @Html.DropDownListFor(model => model.Restaurang, jaNej, null, htmlAttributes: new { @class = "form-control" })
-                                        @Html.ValidationMessageFor(model => model.Restaurang, "", new { @class = "text-danger" })
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        @Html.LabelFor(model => model.Restaurang, htmlAttributes: new { @class = "control-label col-md-3" })
+                                        <div class="col-md-9">
+                                            @Html.DropDownListFor(model => model.Restaurang, jaNej, null, htmlAttributes: new { @class = "form-control" })
+                                            @Html.ValidationMessageFor(model => model.Restaurang, "", new { @class = "text-danger" })
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="form-group">
-                                    @Html.LabelFor(model => model.Upplyst, htmlAttributes: new { @class = "control-label col-md-3" })
-                                    <div class="col-md-9">
-                                        @Html.DropDownListFor(model => model.Upplyst, jaNej, null, htmlAttributes: new { @class = "form-control" })
-                                        @Html.ValidationMessageFor(model => model.Upplyst, "", new { @class = "text-danger" })
+                                    <div class="form-group">
+                                        @Html.LabelFor(model => model.Upplyst, htmlAttributes: new { @class = "control-label col-md-3" })
+                                        <div class="col-md-9">
+                                            @Html.DropDownListFor(model => model.Upplyst, jaNej, null, htmlAttributes: new { @class = "form-control" })
+                                            @Html.ValidationMessageFor(model => model.Upplyst, "", new { @class = "text-danger" })
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="form-group">
-                                    @Html.LabelFor(model => model.Bokning, htmlAttributes: new { @class = "control-label col-md-3" })
-                                    <div class="col-md-9">
-                                        @Html.DropDownListFor(model => model.Bokning, jaNej, null, htmlAttributes: new { @class = "form-control" })
-                                        @Html.ValidationMessageFor(model => model.Bokning, "", new { @class = "text-danger" })
+                                    <div class="form-group">
+                                        @Html.LabelFor(model => model.Bokning, htmlAttributes: new { @class = "control-label col-md-3" })
+                                        <div class="col-md-9">
+                                            @Html.DropDownListFor(model => model.Bokning, jaNej, null, htmlAttributes: new { @class = "form-control" })
+                                            @Html.ValidationMessageFor(model => model.Bokning, "", new { @class = "text-danger" })
+                                        </div>
                                     </div>
                                 </div>
                             </div>

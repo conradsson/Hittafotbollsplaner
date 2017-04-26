@@ -151,6 +151,7 @@ div.body-nyplan {
 
 div.container-generellinfo,div.container-planinfo,div.container-tillgängligt{
     margin-bottom: 2%;
+    padding: 0;
     background-color: white;
     -webkit-box-shadow: 0px 0px 2px 0px rgba(0,0,0,0.75);
     -moz-box-shadow: 0px 0px 2px 0px rgba(0,0,0,0.75);
@@ -367,6 +368,29 @@ input#sökinput{
 .nolidots{
     list-style-type: none;
     margin-left: -37px;
+}
+
+.genInfoSlide,.planInfoSlide,.tillgängligtSlide{
+    width: 100%;
+    height:35px;
+    padding-top: 3px;
+    background-color: #eeeeee;
+    border-bottom: 1px solid #cccccc;
+
+    font-size: larger;
+}
+
+span#genInfoSlideIco.glyphicon-chevron-down,
+span#planInfoSlideIco.glyphicon-chevron-down,
+span#tillgängligtSlideIco.glyphicon-chevron-down{
+    color: #2ab74b;
+    top:5px;
+}
+
+span#genInfoSlideIco.glyphicon-chevron-up,
+span#planInfoSlideIco.glyphicon-chevron-up,
+span#tillgängligtSlideIco.glyphicon-chevron-up{
+    color: #2ab74b;
 }
 
 span.hjalpKnapp{
