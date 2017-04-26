@@ -8,10 +8,11 @@
         $(".navbar").toggle();
     });
 </script>
+
 <style type="text/css">
     #share-buttons img {
-        width: 45px;
-        padding: 5px;
+        width: 52px;
+        padding: 1%;
         border: 0;
         box-shadow: 0;
         display: inline;
@@ -256,38 +257,12 @@
             <div class="panel-heading">
                 <h3 class="panel-title">Dela!</h3>
             </div>
-            <div class="panel-body text-center">
-                <div id="share-buttons">
-
-                    <img class="icon icons8-Copy-Link" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABoAAAAaCAYAAACpSkzOAAABpklEQVRIS7WVAVEDMRBFXxUACgAFIAEHUAfgoCgAB4ACkEAVAAoABbQOQAHMg6RzuSaXML1m5qbXXJK3+3ezO+FvHAA3wHF4D9PJzydwCTzkPtbmJuHgV2C3tjh8F3TRuHa1TNAjcAq8AOfAonCIXpe+VbmClGQHOKxAatJqhNJq+NoQ9B1mfc8NPfmPtLcBmJzVAmqV9gR4KsWxBdQibbQ+quP/JGlaQDVpuxJ1QQls2yBhd8BsbNAbcJTJqOnYoD4jJshi2yDBv3EbC2T5ugL0wItriTJbRwUJ8f5o9HV4hJ2NDfK8WJD1wnppdYhzG0sX5ZoFmaaAWad3FmjnN5auL5d9TIhxUkJjtXGMuhAlEuC4z0ASj2It2+tYkSsrsbp7uBb7KI9eOOYhPtGTpP51G99zSMt+c+vXuhjw2HdsI45SU1wlgwt13+bXH7l7JsC1emY6vwfP+p6seeSEMDca1P0OLQcyRrYA96iCsBIkiVHGkWSqFsOh/RrzASxL7bu7OXbYUgxLICFmokkzbwENxbCmht+/DEkLaCiGQ6BlSDKvwOIHs8mA7w22/4gAAAAASUVORK5CYII=" width="26" height="26">
-
-                    <!-- Email -->
-                    <a href="mailto:?Subject=Hitta Fotbollsplaner&amp;Body=I%20saw%20this%20and%20thought%20of%20you!%20 https://hittafotbollsplaner.azurewebsites.net/Fotbollsplan/AktuellFotbollsplan/@Model.Id">
-                        <img src="https://simplesharebuttons.com/images/somacro/email.png" alt="Email" />
-                    </a>
-
-                    <!-- Facebook -->
-                    <a href="http://www.facebook.com/sharer.php?u=https://hittafotbollsplaner.azurewebsites.net/Fotbollsplan/AktuellFotbollsplan/@Model.Id" target="_blank">
-                        <img src="https://simplesharebuttons.com/images/somacro/facebook.png" alt="Facebook" />
-                    </a>
-
-                    <!-- Google+ -->
-                    <a href="https://plus.google.com/share?url=https://hittafotbollsplaner.azurewebsites.net/Fotbollsplan/AktuellFotbollsplan/@Model.Id" target="_blank">
-                        <img src="https://simplesharebuttons.com/images/somacro/google.png" alt="Google" />
-                    </a>
-
-                    <!-- LinkedIn -->
-                    <a href="http://www.linkedin.com/shareArticle?mini=true&amp;url=https://hittafotbollsplaner.azurewebsites.net/Fotbollsplan/AktuellFotbollsplan/@Model.Id" target="_blank">
-                        <img src="https://simplesharebuttons.com/images/somacro/linkedin.png" alt="LinkedIn" />
-                    </a>
-
-
-                    <!-- Twitter -->
-                    <a href="https://twitter.com/share?url=https://hittafotbollsplaner.azurewebsites.net/Fotbollsplan/AktuellFotbollsplan/@Model.Id&amp;text=Hitta%20Fotbollsplaner&amp;hashtags=simplesharebuttons" target="_blank">
-                        <img src="https://simplesharebuttons.com/images/somacro/twitter.png" alt="Twitter" />
-                    </a>
-
-                </div>
+            <div class="panel-body text-center" style="padding-top: 0%;">
+                    <div class="text-center center-block">
+                        <a href="http://www.facebook.com/sharer.php?u=https://hittafotbollsplaner.azurewebsites.net/Fotbollsplan/AktuellFotbollsplan/@Model.Id"><i id="social-fb" class="fa fa-facebook-square fa-4x social"></i></a>
+                        <a href="https://twitter.com/share?url=https://hittafotbollsplaner.azurewebsites.net/Fotbollsplan/AktuellFotbollsplan/@Model.Id&amp;text=Hitta%20Fotbollsplaner&amp;hashtags=simplesharebuttons"><i id="social-tw" class="fa fa-twitter-square fa-4x social"></i></a>
+                        <a href="https://plus.google.com/share?url=https://hittafotbollsplaner.azurewebsites.net/Fotbollsplan/AktuellFotbollsplan/@Model.Id"><i id="social-gp" class="fa fa-google-plus-square fa-4x social"></i></a>
+                    </div>
             </div>
         </div>
     </div>
@@ -296,7 +271,7 @@
             <div class="panel-heading">
                 <h3 class="panel-title">Fel?</h3>
             </div>
-            <div class="panel-body">
+            <div class="panel-body" style="padding-top: 0%;">
                 <ul class="nolidots text-center" style="color:black; text-decoration: none;">
                     <li style="font-size: larger;"><i class="fa fa-exclamation-circle" aria-hidden="true" style="color:black;"></i>@Html.ActionLink(" Föreslå ändring", "../Home/Kontakt")</li>
                 </ul>
