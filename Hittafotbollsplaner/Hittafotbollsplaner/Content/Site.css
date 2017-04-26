@@ -237,7 +237,8 @@ div.card.col-md-6:hover .middle {
 
 .toppanel{
     text-align: center;
-    margin-bottom: 2%;
+
+    margin: 0;
 }
 
 div.toppanel a{
