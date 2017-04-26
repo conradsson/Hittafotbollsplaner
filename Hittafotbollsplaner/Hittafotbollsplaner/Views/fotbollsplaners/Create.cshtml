@@ -23,13 +23,13 @@
             @Html.AntiForgeryToken()
 
                 <div class="form-horizontal">
-                    <div class="toppanel"><a class="pull-left" href="/Home/Index" style="display:inline;">&lt; Till start</a><h3 class="panel-title text-center" style="display:inline; margin-left:-10%; margin-bottom: 2%; font-size:larger;">Lägg till fotbollsplan</h3></div>
+                    <div class="toppanel"><a class="pull-left" href="/Home/Index" style="display:inline;">&lt; Till start</a><h3 class="panel-title text-center" style="display:inline; margin-left:-10%; margin-bottom: 2%; font-size:x-large;">Lägg till fotbollsplan</h3></div>
 
                     
                     <div class="container-generellinfo col-md-12">
                         <div class="genInfoSlide text-center">Generell information <span id="genInfoSlideIco" class="glyphicon glyphicon-chevron-down" aria-hidden="true"></span></div>
                         <div id="G-toggle">
-                            <h5 style="text-align: left; margin-left: 2%; margin-bottom: 2%;">Generell information<span class="glyphicon glyphicon-question-sign pull-right hjalpKnapp" aria-hidden="true" style="margin-right:2%; "><span class="hjalpText">Vänligen markera på kartan vart fotbollsplanen ligger, uppgifterna fylls då i automatiskt. Fyll sedan i det som saknas eller ändra det som är felaktigt. <br /><br /> Hemsida är ej obligatoriskt.</span></span></h5>
+                            <span class="glyphicon glyphicon-question-sign pull-right hjalpKnapp" aria-hidden="true" style="margin-right:2%; "><span class="hjalpText">Vänligen markera på kartan vart fotbollsplanen ligger, uppgifterna fylls då i automatiskt. Fyll sedan i det som saknas eller ändra det som är felaktigt. <br /><br /> Hemsida är ej obligatoriskt.</span></span>
 
                             <div class="col-md-6">
                                 <div class="col-md-12" style="text-align: center;">
@@ -338,7 +338,7 @@
                     <div class="container-planinfo col-md-12">
                         <div class="planInfoSlide text-center">Planinformation <span id="planInfoSlideIco" class="glyphicon glyphicon-chevron-down" aria-hidden="true"></span></div>
                         <div id="P-toggle">
-                            <h5 style="text-align: left; margin-left: 2%; margin-bottom: 2%;">Planinformation<span class="glyphicon glyphicon-question-sign pull-right hjalpKnapp" aria-hidden="true" style="margin-right:2%;" ><span class="hjalpText">Välj typ av fotbollsplan samt antal. Fritextrutan är till för extra information du vill lämna, max 50 tecken får användas. <br /><br /> Alla fotbollsplaner oavsett storlek räknas som fullstora.</span></span></h5>
+                            <span class="glyphicon glyphicon-question-sign pull-right hjalpKnapp" aria-hidden="true" style="margin-right:2%;" ><span class="hjalpText">Välj typ av fotbollsplan samt antal. Fritextrutan är till för extra information du vill lämna, max 50 tecken får användas. <br /><br /> Alla fotbollsplaner oavsett storlek räknas som fullstora.</span></span>
 
                             <div class="col-md-6">
                                 <div class="form-group">
@@ -396,9 +396,9 @@
                     
                     
                         <div class="container-tillgängligt col-md-12">
-                            <div class="tillgängligtSlide text-center">Tillgängligt <span id="tillgängligtSlideIco" class="glyphicon glyphicon-chevron-down" aria-hidden="true"></span></div>
+                            <div class="tillgängligtSlide text-center">Tillgängligheter <span id="tillgängligtSlideIco" class="glyphicon glyphicon-chevron-down" aria-hidden="true"></span></div>
                             <div id="T-toggle">
-                                <h5 style="text-align: left; margin-left: 2%; margin-bottom: 2%;">Tillgängligt <span class="text-muted">- Inom ett avstånd på 500 meter från planerna</span><span class="glyphicon glyphicon-question-sign pull-right hjalpKnapp" aria-hidden="true" style="margin-right:2%;"><span class="hjalpText">Välj Ja alternativt Nej för respektive facilitet på den aktuella fotbollsplanen.</span></span></h5>
+                                <span class="text-muted">Dessa gäller inom ett avstånd på 500 meter från planerna</span><span class="glyphicon glyphicon-question-sign pull-right hjalpKnapp" aria-hidden="true" style="margin-right:2%;"><span class="hjalpText">Välj Ja alternativt Nej för respektive facilitet på den aktuella fotbollsplanen.</span></span>
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         @Html.LabelFor(model => model.Parkering, htmlAttributes: new { @class = "control-label col-md-3" })
