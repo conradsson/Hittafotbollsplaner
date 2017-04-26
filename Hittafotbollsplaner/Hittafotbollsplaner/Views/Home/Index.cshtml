@@ -41,9 +41,9 @@
         <span class="bars"></span>
     </a>
     <a href="~/Home/Index"><img id="logo" src="/Content/img/hfpLogotype.png" style="width: 200px; height: 80px;"></a>
-    <div class="input-group">
-        <input id="sökinput" type="text" class="form-control controls" placeholder="Sök på adress eller platser..">
-        <div class="input-group-btn">
+    <div class="input-group" style="width: 93%; margin-left: 2%; margin-right: 0%;">
+        <input id="sökinput" type="text" class="form-control controls pull-right" placeholder="Sök på adress eller namn..">
+        <div class="input-group-btn ">
             <button type="button" class="btn btn-default" onclick="geolocate()"><i class="material-icons">my_location</i></button>
             @*<button type="button" class="btn btn-default"><i class="material-icons">search</i></button>*@
         </div>
@@ -271,6 +271,7 @@
                                                 marker1.setPosition(place.geometry.location);
                                                 marker1.setVisible(true);
 
+
                                                 var address = '';
                                                 if (place.address_components) {
                                                     address = [
@@ -296,6 +297,8 @@
                                             setupClickListener('changetype-address', ['address']);
                                             setupClickListener('changetype-establishment', ['establishment']);
                                             setupClickListener('changetype-geocode', ['geocode']);
+
+                                            // HITTA POSTION
 
                                     }
         </script>
