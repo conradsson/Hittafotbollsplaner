@@ -33,12 +33,18 @@
 </script>
 
 
+
+
+
 <div class="sökDiv text-center">
+    <a class="menu-bar" data-toggle="collapse" href="#menu">
+        <span class="bars"></span>
+    </a>
     <a href="~/Home/Index"><img id="logo" src="/Content/img/hfpLogotype.png" style="width: 200px; height: 80px;"></a>
     <div class="input-group" >
         <input id="sökinput" type="text" class="form-control controls" placeholder="Sök på adress eller namn..">
         <div class="input-group-btn">
-            <button type="button" class="btn btn-default"><i class="material-icons">my_location</i></button>
+            <button type="button" class="btn btn-default" onclick="geolocate()"><i class="material-icons">my_location</i></button>
             @*<button type="button" class="btn btn-default"><i class="material-icons">search</i></button>*@
         </div>
     </div>
@@ -49,18 +55,148 @@
             <li>@Html.ActionLink("Om oss", "Om", "Home")</li>
             <li>@Html.ActionLink("Kontakt", "Kontakt", "Home")</li>
         </ul>
-    </div>
-    <hr />
-    <div>
-        <div id="googleMap" style="width:100%;height:370px;"></div>
-    </div>
-                            @using (Html.BeginForm("Index", "Home"))
-                            {
-                                    <script>
+    </div>  
+
+</div>
+
+
+<div class="kartDiv ontoplook">
+        <div id="googleMap" style="width:100%;height:inherit;"></div>
+    @using (Html.BeginForm("Index", "Home"))
+    {
+        <script>
                                         function myMap() {
-                                            var myCenter = new google.maps.LatLng(63, 14);
+                                            var myCenter = new google.maps.LatLng(61.5376, 15.5063);
                                             var mapCanvas = document.getElementById("googleMap");
-                                            var mapOptions = { center: myCenter, zoom: 4 };
+                                            var mapOptions = {
+                                                center: myCenter,
+                                                zoom: 5,
+                                                minZoom: 5,
+                                                styles: [
+  {
+      "featureType": "administrative.country",
+      "elementType": "geometry.stroke",
+      "stylers": [
+        {
+            "lightness": -65
+        }
+      ]
+  },
+  {
+      "featureType": "administrative.province",
+      "elementType": "geometry.stroke",
+      "stylers": [
+        {
+            "lightness": -75
+        }
+      ]
+  },
+  {
+      "featureType": "landscape.natural",
+      "elementType": "geometry.fill",
+      "stylers": [
+        {
+            "color": "#ffffff"
+        }
+      ]
+  },
+  {
+      "featureType": "landscape.natural",
+      "elementType": "geometry.stroke",
+      "stylers": [
+        {
+            "color": "#00ff40"
+        }
+      ]
+  },
+  {
+      "featureType": "landscape.natural.terrain",
+      "elementType": "geometry.fill",
+      "stylers": [
+        {
+            "lightness": -15
+        }
+      ]
+  },
+  {
+      "featureType": "road.arterial",
+      "elementType": "geometry.fill",
+      "stylers": [
+        {
+            "lightness": -35
+        }
+      ]
+  },
+  {
+      "featureType": "road.arterial",
+      "elementType": "labels",
+      "stylers": [
+        {
+            "visibility": "off"
+        }
+      ]
+  },
+  {
+      "featureType": "road.highway",
+      "elementType": "geometry.fill",
+      "stylers": [
+        {
+            "color": "#8f8f8f"
+        },
+        {
+            "lightness": -30
+        },
+        {
+            "visibility": "off"
+        }
+      ]
+  },
+  {
+      "featureType": "road.highway",
+      "elementType": "geometry.stroke",
+      "stylers": [
+        {
+            "color": "#a6a6a6"
+        }
+      ]
+  },
+  {
+      "featureType": "road.highway",
+      "elementType": "labels",
+      "stylers": [
+        {
+            "visibility": "off"
+        }
+      ]
+  },
+  {
+      "featureType": "road.local",
+      "stylers": [
+        {
+            "visibility": "off"
+        }
+      ]
+  },
+  {
+      "featureType": "water",
+      "elementType": "geometry",
+      "stylers": [
+        {
+            "lightness": -40
+        }
+      ]
+  },
+  {
+      "featureType": "water",
+      "elementType": "geometry.fill",
+      "stylers": [
+        {
+            "lightness": 55
+        }
+      ]
+  }
+                                                ]
+                                            };
                                             var map = new google.maps.Map(mapCanvas, mapOptions);
                                             var icon = {
                                                 url: "/Content/img/marker.png", // url
@@ -160,12 +296,14 @@
                                             setupClickListener('changetype-address', ['address']);
                                             setupClickListener('changetype-establishment', ['establishment']);
                                             setupClickListener('changetype-geocode', ['geocode']);
+
                                     }
-                                    </script>
-                            }
+        </script>
+    }
+
 </div>
 
-<div class="row ontoppageStart">
+@*<div class="row ontoppageStart">
     <div class="col-md-offset-3 col-md-3">
         <h3>Populära</h3>
         <div class="list-group">
@@ -193,7 +331,7 @@
         </div>
     </div>
     <div class="col-md-3"></div>
-</div>
+</div>*@
 
 <script src="http://maps.google.com/maps/api/js?sensor=false" type="text/javascript"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
