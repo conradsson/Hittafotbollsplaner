@@ -7,6 +7,7 @@
 <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
 
 
+
 <script>
     $(document).ready(function () {
         $("#sökinput").autocomplete({
@@ -238,7 +239,24 @@
 
                                             var autocomplete = new google.maps.places.Autocomplete(input, options);
 
+                                            // HITTA POSTION
+                                            var myloc = new google.maps.Marker({
+                                                clickable: false,
+                                                icon: new google.maps.MarkerImage('//maps.gstatic.com/mapfiles/mobile/mobileimgs2.png',
+                                                                                                new google.maps.Size(22,22),
+                                                                                                new google.maps.Point(0,18),
+                                                                                                new google.maps.Point(11,11)),
+                                                shadow: null,
+                                                zIndex: 999,
+                                                map: map
+                                            });
 
+                                            if (navigator.geolocation) navigator.geolocation.getCurrentPosition(function(pos) {
+                                                var me = new google.maps.LatLng(pos.coords.latitude, pos.coords.longitude);
+                                                myloc.setPosition(me);
+                                            }, function(error) {
+                                                // ...
+                                            });
 
                                             // Bind the map's bounds (viewport) property to the autocomplete object,
                                             // so that the autocomplete requests use the current map bounds for the
@@ -298,7 +316,6 @@
                                             setupClickListener('changetype-establishment', ['establishment']);
                                             setupClickListener('changetype-geocode', ['geocode']);
 
-                                            // HITTA POSTION
 
                                     }
         </script>
@@ -335,6 +352,7 @@
     </div>
     <div class="col-md-3"></div>
 </div>*@
+
 
 <script src="http://maps.google.com/maps/api/js?sensor=false" type="text/javascript"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
