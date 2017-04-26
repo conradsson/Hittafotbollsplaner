@@ -45,7 +45,7 @@
     <div class="input-group" style="width: 93%; margin-left: 2%; margin-right: 0%;">
         <input id="sökinput" type="text" class="form-control controls pull-right" placeholder="Sök på adress eller namn..">
         <div class="input-group-btn ">
-            <button type="button" class="btn btn-default" onclick="geolocate()"><i class="material-icons">my_location</i></button>
+            <button id="hittaPosition" type="button" class="btn btn-default"><i class="material-icons">my_location</i></button>
             @*<button type="button" class="btn btn-default"><i class="material-icons">search</i></button>*@
         </div>
     </div>
@@ -240,23 +240,24 @@
                                             var autocomplete = new google.maps.places.Autocomplete(input, options);
 
                                             // HITTA POSTION
-                                            var myloc = new google.maps.Marker({
-                                                clickable: false,
-                                                icon: new google.maps.MarkerImage('//maps.gstatic.com/mapfiles/mobile/mobileimgs2.png',
-                                                                                                new google.maps.Size(22,22),
-                                                                                                new google.maps.Point(0,18),
-                                                                                                new google.maps.Point(11,11)),
-                                                shadow: null,
-                                                zIndex: 999,
-                                                map: map
-                                            });
+                                                var myloc = new google.maps.Marker({
+                                                    clickable: false,
+                                                    icon: new google.maps.MarkerImage('//maps.gstatic.com/mapfiles/mobile/mobileimgs2.png',
+                                                                                                    new google.maps.Size(22,22),
+                                                                                                    new google.maps.Point(0,18),
+                                                                                                    new google.maps.Point(11,11)),
+                                                    shadow: null,
+                                                    zIndex: 999,
+                                                    map: map
+                                                });
 
-                                            if (navigator.geolocation) navigator.geolocation.getCurrentPosition(function(pos) {
-                                                var me = new google.maps.LatLng(pos.coords.latitude, pos.coords.longitude);
-                                                myloc.setPosition(me);
-                                            }, function(error) {
-                                                // ...
-                                            });
+                                                if (navigator.geolocation) navigator.geolocation.getCurrentPosition(function(pos) {
+                                                    var me = new google.maps.LatLng(pos.coords.latitude, pos.coords.longitude);
+                                                    myloc.setPosition(me);
+                                                }, function(error) {
+                                                    // ...
+                                                });
+
 
                                             // Bind the map's bounds (viewport) property to the autocomplete object,
                                             // so that the autocomplete requests use the current map bounds for the
