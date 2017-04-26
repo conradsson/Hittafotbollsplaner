@@ -1,7 +1,11 @@
 ﻿$(document).ready(function () {
 
     if (window.location.pathname == '/fotbollsplaners/Create') {
-        $("#G-toggle").slideDown("slow");
+        if ($('#genInfoSlideIco').hasClass('glyphicon-chevron-down')) {
+            $('#genInfoSlideIco').removeClass('glyphicon-chevron-down');
+            $('#genInfoSlideIco').addClass('glyphicon-chevron-up');
+            $("#G-toggle").slideDown("slow");
+        }
         $("#P-toggle").slideUp("0");
         $("#T-toggle").slideUp("0");
 
