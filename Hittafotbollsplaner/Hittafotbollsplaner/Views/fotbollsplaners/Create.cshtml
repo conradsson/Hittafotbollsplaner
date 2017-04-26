@@ -16,7 +16,7 @@
 }
 
 <div class="row ontoppageNyplan content">
-    <div class="panel-body body-nyplan">
+    <div class="panel-body">
 
         @using (Html.BeginForm())
         {
@@ -398,7 +398,8 @@
                         <div class="container-tillgängligt col-md-12">
                             <div class="tillgängligtSlide text-center">Tillgängligheter <span id="tillgängligtSlideIco" class="glyphicon glyphicon-chevron-down" aria-hidden="true"></span></div>
                             <div id="T-toggle">
-                                <span class="text-muted">Dessa gäller inom ett avstånd på 500 meter från planerna</span><span class="glyphicon glyphicon-question-sign pull-right hjalpKnapp" aria-hidden="true" style="margin-right:2%;"><span class="hjalpText">Välj Ja alternativt Nej för respektive facilitet på den aktuella fotbollsplanen.</span></span>
+                                <span class="glyphicon glyphicon-question-sign pull-right hjalpKnapp" aria-hidden="true" style="margin-right:2%;"><span class="hjalpText">Välj Ja alternativt Nej för respektive facilitet på den aktuella fotbollsplanen.</span></span>
+                                <p class="text-primary text-center" style="left:0; margin-left: 2%; margin-bottom:0;">Dessa faciliteter gäller inom ett avstånd på 500 meter från fotbollsplanen/fotbollsplanerna.</p>
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         @Html.LabelFor(model => model.Parkering, htmlAttributes: new { @class = "control-label col-md-3" })

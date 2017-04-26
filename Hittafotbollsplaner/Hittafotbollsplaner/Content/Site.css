@@ -141,13 +141,13 @@ div.body-om {
     margin-right: auto;
 }
 
-div.body-nyplan {
+/*div.body-nyplan {
     width: 95% !important;
     margin-left: auto;
     margin-right: auto;
     margin-top: 1%;
     margin-bottom: 1%;
-}
+}*/
 
 div.container-generellinfo,div.container-planinfo,div.container-tillgängligt{
     margin-bottom: 2%;
@@ -239,6 +239,29 @@ div.card.col-md-6:hover .middle {
     text-align: center;
     margin-bottom: 2%;
 }
+
+div.toppanel a{
+    margin-left: 1%;
+    padding: 3px 10px 3px 7px;
+    outline: 10px solid white;
+    background-color: #f1f1f1;
+    font-weight:900;
+}
+
+div.toppanel a:hover{
+    background-color: #d7d7d7;
+    text-decoration:none;
+}
+
+div.toppanel a:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
 
 .infoDiv{
     margin-top:-2%;
@@ -394,6 +417,9 @@ span#tillgängligtSlideIco.glyphicon-chevron-up{
     color: #2ab74b;
 }
 
+div#G-toggle div, div#P-toggle div, div#T-toggle div {
+    margin-top: 2%;
+}
 
 span.hjalpKnapp{
     font-size: x-large;
