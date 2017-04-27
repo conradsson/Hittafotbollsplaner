@@ -1,5 +1,9 @@
 ﻿$(document).ready(function () {
 
+    if (window.location.pathname == '/Home/Index' || window.location.pathname == '/') {
+        $('div.toppanel').hide();
+    }
+
     if (window.location.pathname == '/fotbollsplaners/Create') {
         if ($('#genInfoSlideIco').hasClass('glyphicon-chevron-down')) {
             $('#genInfoSlideIco').removeClass('glyphicon-chevron-down');
