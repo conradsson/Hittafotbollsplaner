@@ -213,7 +213,7 @@
                                                     icon: icon
                                                 });
                                                 marker.setMap(map);
-                                                addInfoWindow(marker, "<b>@item.Namn</b><br>@item.Adress<br>@item.Postnummer @item.Ort<br><br><a id=merInfoA href=@Url.Action("AktuellFotbollsplan", "Fotbollsplan", new { id = item.Id })><li id=merInfo>Mer information</li></a>");
+                                                addInfoWindow(marker, "<b>@item.Namn</b><br>@item.Adress<br>@item.Postnummer @item.Ort<br><br><a id=merInfoA href=@Url.Action("Planid", "Fotbollsplan", new { id = item.Id })><li id=merInfo>Mer information</li></a>");
                                                 </text>
                                             }
 

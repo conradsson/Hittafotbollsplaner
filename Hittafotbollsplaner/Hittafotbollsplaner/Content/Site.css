@@ -237,7 +237,6 @@ div.card.col-md-6:hover .middle {
 
 .toppanel{
     text-align: center;
-
     margin: 0;
 }
 
@@ -254,14 +253,6 @@ div.toppanel a:hover{
     text-decoration:none;
 }
 
-div.toppanel a:after {
-  content: '\00bb';
-  position: absolute;
-  opacity: 0;
-  top: 0;
-  right: -20px;
-  transition: 0.5s;
-}
 
 
 .infoDiv{
@@ -285,7 +276,7 @@ a.list-group-item {
 }
 
 .information-panel,.aktuellkarta{
-    min-height: inherit;
+    min-height: 100%;
 }
 
 div.kommentar-panel,div.extra-panel{
@@ -365,6 +356,10 @@ input#sökinput{
     height: 540px;
     margin-bottom: 2.5%;
 
+}
+
+.MapPlaceHolder {
+    min-height: 200px;
 }
 
 

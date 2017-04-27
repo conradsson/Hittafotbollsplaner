@@ -7,6 +7,7 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using Hittafotbollsplaner.Models;
+using System.Net.Mail;
 
 namespace Hittafotbollsplaner.Controllers
 {
@@ -78,5 +79,17 @@ namespace Hittafotbollsplaner.Controllers
 
             return Json(sorteradLista, JsonRequestBehavior.AllowGet);
         }
+
+        //public static void SendEmail(string toAddress, string subject, string body, bool isBodyHtml = true)
+        //{
+        //    var mailMessage = new MailMessage();
+        //    mailMessage.To.Add(toAddress);
+        //    mailMessage.Subject = subject;
+        //    mailMessage.Body = body;
+        //    mailMessage.IsBodyHtml = isBodyHtml;
+
+        //    var smtpClient = new SmtpClient { EnableSsl = false };
+        //    smtpClient.Send(mailMessage);
+        //}
     }
 }

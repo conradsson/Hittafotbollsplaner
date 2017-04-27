@@ -17,7 +17,7 @@ namespace Hittafotbollsplaner.Controllers
             return View();
         }
 
-        public ActionResult AktuellFotbollsplan(string id)
+        public ActionResult Planid(string id)
         {
             fotbollsplaner aktuellFotbollsplan = db.fotbollsplaners.Find(Convert.ToInt32(id));
 
