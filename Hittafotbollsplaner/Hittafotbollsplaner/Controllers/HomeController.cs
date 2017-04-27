@@ -16,7 +16,7 @@ namespace Hittafotbollsplaner.Controllers
     {
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Contact(EmailFormModel model)
+        public async Task<ActionResult> Kontakt(EmailFormModel model)
         {
             if (ModelState.IsValid)
             {
@@ -29,16 +29,18 @@ namespace Hittafotbollsplaner.Controllers
                 using (var smtp = new SmtpClient())
                 {
                     await smtp.SendMailAsync(message);
-                    return RedirectToAction("Sent");
+                    ViewBag.SuccessEmail = "y";
+                    return View();
                 }
             }
             return View(model);
         }
 
-        public ActionResult Sent()
-        {
-            return View();
-        }
+        //public ActionResult Sent()
+        //{
+        //    ViewBag.SuccessEmail = "y";
+        //    return View();
+        //}
 
         public ActionResult Index()
         {
