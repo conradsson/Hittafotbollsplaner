@@ -178,6 +178,7 @@
     <Compile Include="Controllers\fotbollsplanersController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Models\EmailFormModel.cs" />
     <Compile Include="Models\fotbollsplaner.cs">
       <DependentUpon>hittafotbollsplaner.tt</DependentUpon>
     </Compile>
@@ -317,6 +318,7 @@
     <Content Include="Views\fotbollsplaners\Index.cshtml" />
     <Content Include="Views\fotbollsplaners\_SuccessConfirmation.cshtml" />
     <Content Include="Views\Fotbollsplan\Index.cshtml" />
+    <Content Include="Views\Home\Sent.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

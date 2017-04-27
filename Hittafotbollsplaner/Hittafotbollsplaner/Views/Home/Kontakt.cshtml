@@ -1,41 +1,42 @@
-﻿@{
-    ViewBag.Title = "Kontakt";
+﻿@model Hittafotbollsplaner.Models.EmailFormModel
+@{
+    ViewBag.Title = "Contact";
+}
+<h2>@ViewBag.Title.</h2>
+
+@using (Html.BeginForm("Contact", "Home"))
+{
+    @Html.AntiForgeryToken()
+    <h4>Send your comments.</h4>
+    <hr />
+    <div class="form-group">
+        @Html.LabelFor(m => m.FromName, new { @class = "col-md-2 control-label" })
+        <div class="col-md-10">
+            @Html.TextBoxFor(m => m.FromName, new { @class = "form-control" })
+            @Html.ValidationMessageFor(m => m.FromName)
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.FromEmail, new { @class = "col-md-2 control-label" })
+        <div class="col-md-10">
+            @Html.TextBoxFor(m => m.FromEmail, new { @class = "form-control" })
+            @Html.ValidationMessageFor(m => m.FromEmail)
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Message, new { @class = "col-md-2 control-label" })
+        <div class="col-md-10">
+            @Html.TextAreaFor(m => m.Message, new { @class = "form-control" })
+            @Html.ValidationMessageFor(m => m.Message)
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" class="btn btn-default" value="Send" />
+        </div>
+    </div>
 }
 
-<div class="row ontoppageKontakt content">
-
-        <div class="toppanel"><h3 class="panel-title text-center" style="margin-top: 2%; margin-bottom: 2%;">Kontakt</h3></div>
-
-    <div class="panel-body">
-
-        <form class="form-horizontal">
-            <fieldset>
-                <div class="form-group">
-                    <label for="inputEmail" class="col-lg-2 control-label">Email</label>
-                    <div class="col-lg-10">
-                        <input type="text" class="form-control" id="inputEmail" placeholder="Email" required>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label for="inputName" class="col-lg-2 control-label">Namn</label>
-                    <div class="col-lg-10">
-                        <input type="text" class="form-control" id="inputName" placeholder="Namn" required>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label for="textArea" class="col-lg-2 control-label">Text</label>
-                    <div class="col-lg-10">
-                        <textarea class="form-control" rows="3" id="textArea" required></textarea>
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <div class="col-lg-10 col-lg-offset-2">
-                        <button type="submit" class="btn btn-primary">Skicka</button>
-                    </div>
-                </div>
-            </fieldset>
-        </form>
-
-    </div>
-</div>
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
