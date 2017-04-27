@@ -8,11 +8,38 @@ using System.Web;
 using System.Web.Mvc;
 using Hittafotbollsplaner.Models;
 using System.Net.Mail;
+using System.Threading.Tasks;
 
 namespace Hittafotbollsplaner.Controllers
 {
     public class HomeController : Controller
     {
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<ActionResult> Contact(EmailFormModel model)
+        {
+            if (ModelState.IsValid)
+            {
+                var body = "<p>Email From: {0} ({1})</p><p>Message:</p><p>{2}</p>";
+                var message = new MailMessage();
+                message.To.Add(new MailAddress("info.hittafotbollsplaner@gmail.com")); //replace with valid value
+                message.Subject = "Från kontakt";
+                message.Body = string.Format(body, model.FromName, model.FromEmail, model.Message);
+                message.IsBodyHtml = true;
+                using (var smtp = new SmtpClient())
+                {
+                    await smtp.SendMailAsync(message);
+                    return RedirectToAction("Sent");
+                }
+            }
+            return View(model);
+        }
+
+        public ActionResult Sent()
+        {
+            return View();
+        }
+
         public ActionResult Index()
         {
             hittafotbollsplanerEntities db = new hittafotbollsplanerEntities();
@@ -79,17 +106,5 @@ namespace Hittafotbollsplaner.Controllers
 
             return Json(sorteradLista, JsonRequestBehavior.AllowGet);
         }
-
-        //public static void SendEmail(string toAddress, string subject, string body, bool isBodyHtml = true)
-        //{
-        //    var mailMessage = new MailMessage();
-        //    mailMessage.To.Add(toAddress);
-        //    mailMessage.Subject = subject;
-        //    mailMessage.Body = body;
-        //    mailMessage.IsBodyHtml = isBodyHtml;
-
-        //    var smtpClient = new SmtpClient { EnableSsl = false };
-        //    smtpClient.Send(mailMessage);
-        //}
     }
 }
