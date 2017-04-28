@@ -320,7 +320,7 @@ div.input-group{
 div.input-group span{
     background-color: rgb(46, 46, 46);
     border: 1px solid #6b6b6b;
-
+    cursor: pointer;
 }
 
 div.input-group span i{
