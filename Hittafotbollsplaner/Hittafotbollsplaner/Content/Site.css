@@ -130,7 +130,7 @@ input[type="search"] {margin:0 auto;}
     width: 90%;
 }
 div.body-om {
-    width: 60% !important;
+    width: 60%;
     margin-left: auto;
     margin-right: auto;
 }
@@ -306,7 +306,7 @@ button.btn.btn-default.btn-lg.hideNav{
 }
 
 #logo{
-    width: 58%; 
+    width: 58%;
     height: auto;
     margin-top: 5%;
     margin-bottom: 3%;
@@ -551,11 +551,13 @@ a#merInfoA{
   /*// RESPONSIVITET*/
       @media only screen and (max-width: 425px) {
     div.card.col-md-6.text-center.kort {
-        width: 100%;
+        margin: 0 auto;
+        width: 70%;
         padding: 0%;
     }
     div#omOssPanel.panel-body.body-om{
         padding: 0%;
+        width: 90%;
     }
     div.toppanel{
         visibility:hidden;
