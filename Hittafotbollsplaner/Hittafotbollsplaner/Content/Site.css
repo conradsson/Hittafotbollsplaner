@@ -228,26 +228,37 @@ div.card.col-md-6:hover .middle {
     padding: 5px;
     z-index: 1000;
 }
-
-.toppanel{
-    text-align: center;
-    margin: 0;
+div.followStart-container{
+    margin: 0 auto;
 }
 
-div.toppanel a{
-    margin-left: 1%;
-    padding: 5px 15px 5px 10px;
-    outline: 10px solid white;
+div.followStart{
+    position: relative;
+    width: 200px;
+    margin: 0 auto;
+    margin-top: 1%;
+    border: 10px solid white;
+    border-radius: 3px;
     background-color: #eaeaea;
-    font-weight:900;
+    text-align: center;
 }
 
-div.toppanel a:hover{
+a.followStartbody{
+    width: inherit;
+    text-align: center;
+}
+
+#followLogo{
+    position: relative;
+    padding: 5px 10px 5px 12px;
+    z-index: 100;
+    width: 130px;
+    height: auto;
+}
+
+div.followStart:hover{
     background-color: #d7d7d7;
-    text-decoration:none;
 }
-
-
 
 .infoDiv{
     margin-top:-2%;
@@ -293,16 +304,17 @@ button.btn.btn-default.btn-lg.hideNav{
     position: relative;
     z-index:11;
     background-color: #eaeaea;
-    outline: 15px solid white;
+    border: 15px solid white;
     width: 32%;
     min-width: 320px;
     height: auto;
     margin: 0 auto;
     margin-top: 4%;
     margin-bottom: 3%;
-    -webkit-box-shadow: 0px 0px 20px 10px rgba(0,0,0,0.75);
+    border-radius: 3px;
+    /*-webkit-box-shadow: 0px 0px 20px 10px rgba(0,0,0,0.75);
     -moz-box-shadow: 0px 0px 20px 10px rgba(0,0,0,0.75);
-    box-shadow: 0px 0px 20px 10px rgba(0,0,0,0.75);
+    box-shadow: 0px 0px 20px 10px rgba(0,0,0,0.75);*/
 }
 
 #logo{
@@ -311,6 +323,8 @@ button.btn.btn-default.btn-lg.hideNav{
     margin-top: 5%;
     margin-bottom: 3%;
 }
+
+
 
 div.input-group{
     width: 85%;
@@ -358,8 +372,7 @@ input#sökinput{
     width: 60%;
     height: 540px;
     margin-top: 60px;
-    margin-bottom: 2.5%;
-
+    margin-bottom: 2.5%;    
 }
 
 .MapPlaceHolder {
@@ -374,13 +387,13 @@ input#sökinput{
     margin-top:2%;
     margin-bottom: 100px;
     background-color: #eaeaea;
-    outline: 15px solid white;
-    -webkit-box-shadow: 0px 0px 20px 10px rgba(0,0,0,0.75);
-    -moz-box-shadow: 0px 0px 20px 10px rgba(0,0,0,0.75);
-    box-shadow: 0px 0px 20px 10px rgba(0,0,0,0.75);
-
-
+    border: 15px solid white;
+    border-radius: 3px;
 }
+.ontoppageKontakt {
+        min-height: 400px;
+    }
+
 
 .ontoplook{
     position: relative;
@@ -388,11 +401,9 @@ input#sökinput{
     background-color: #eaeaea;
     border: none;
     border-radius: 0px;
-    outline: 15px solid white;
-    -webkit-box-shadow: 0px 0px 20px 10px rgba(0,0,0,0.75);
-    -moz-box-shadow: 0px 0px 20px 10px rgba(0,0,0,0.75);
-    box-shadow: 0px 0px 20px 10px rgba(0,0,0,0.75);
-        border-radius: 500px;
+    border: 15px solid white;
+    overflow: hidden;
+    border-radius: 3px;
 }
 
 
@@ -555,6 +566,11 @@ a#merInfoA{
  }
 
   /*// RESPONSIVITET*/
+@media only screen and (min-width: 1900px) {
+    .ontoppageKontakt {
+        min-height: 500px;
+    }
+}
 
   @media only screen and (max-width: 475px) {
     div.container{
@@ -563,12 +579,14 @@ a#merInfoA{
     div.sökDiv{
         margin-top: 10%;
     }
-    .ontoppageOm,.ontoppageKontakt,.ontoppageNyplan{
-        margin-top: 20%;
-    }
-}
 
-      @media only screen and (max-width: 425px) {
+
+    .ontoppageOm,.ontoppageKontakt,.ontoppageNyplan{
+        margin-top: 4%;
+    }
+    div.toppanel{
+        margin-top:5%;
+    }
     div.card.col-md-6.text-center.kort {
         margin: 0 auto;
         width: 70%;
@@ -578,10 +596,7 @@ a#merInfoA{
         padding: 0%;
         width: 90%;
     }
-    div.toppanel{
-        
-        margin-top:5%;
-    }
+
     div.container.body-content{
         padding: 0%;
     }

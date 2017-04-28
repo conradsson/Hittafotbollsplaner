@@ -11,35 +11,21 @@
 </head>
 <body>
 
-    @*<button id="hideNav" type="button" class="btn btn-default btn-lg hideNav"></button>
-
-    <div class="navbar navbar-inverse">
-        <div class="container">
-            <div class="navbar-header">
-
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="logotyp" href="~/Home/Index"><img src="~/Content/img/hfpLogotype.png" style="width: 150px; height: 60px;"></a>
-            </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav pull-right">
-                    <li>@Html.ActionLink("Sök efter fotbollsplan", "Index", "Home")</li>
-                    <li>@Html.ActionLink("Lägg till fotbollsplan", "Create", "fotbollsplaners")</li>
-                    <li>@Html.ActionLink("Om oss", "Om", "Home")</li>
-                    <li>@Html.ActionLink("Kontakt", "Kontakt", "Home")</li>
-                </ul>
-            </div>
-        </div>
-    </div>*@
-
     <div class="fullscreenBackground"></div>
 
-    <div class="toppanel"><a class="pull-left" href="/Home/Index" style="margin-left: 5%; margin-top: 1.3%;">&lt; Till start</a></div>
+
 
     <div class="container body-content">
+
+        <div class="followStart">
+            <a class="followStartbody" href="/Home/Index">
+                <div class="followStart-container">
+                    <img id="followLogo" src="/Content/img/hfpLogotype.png">
+                </div>
+            </a>
+        </div>
+            
+        
 
         @RenderBody()
 

@@ -1,7 +1,7 @@
 ﻿$(document).ready(function () {
 
     if (window.location.pathname == '/Home/Index' || window.location.pathname == '/') {
-        $('div.toppanel').hide();
+        $('div.followStart').hide();
     }
 
     if (window.location.pathname == '/fotbollsplaners/Create') {
