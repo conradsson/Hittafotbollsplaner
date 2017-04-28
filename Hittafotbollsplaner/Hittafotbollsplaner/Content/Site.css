@@ -551,6 +551,19 @@ a#merInfoA{
  }
 
   /*// RESPONSIVITET*/
+
+  @media only screen and (max-width: 475px) {
+    div.container{
+        width:100%;
+    }
+    div.sökDiv{
+        margin-top: 10%;
+    }
+    .ontoppageOm,.ontoppageKontakt,.ontoppageNyplan{
+        margin-top: 10%;
+    }
+}
+
       @media only screen and (max-width: 425px) {
     div.card.col-md-6.text-center.kort {
         margin: 0 auto;
@@ -569,8 +582,3 @@ a#merInfoA{
     }
 }
 
-@media only screen and (max-width: 475px) {
-    div.container{
-        width:100%;
-    }
-}
