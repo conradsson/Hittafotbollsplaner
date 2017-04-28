@@ -1,41 +1,38 @@
 ﻿@{
     ViewBag.Title = "Om oss";
 }
-        <div class="row ontoppageOm content">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<div class="row ontoppageOm content">
 
-                <div class="toppanel"><h3 class="panel-title text-center" style="margin-top: 2%;margin-bottom: 2%;">Om oss</h3></div>
+    <div class="toppanel"><h3 class="panel-title text-center" style="margin-top: 2%;margin-bottom: 2%;">Om oss</h3></div>
 
-            <div class="panel-body body-om">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. <br />
-                Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto.
-
-
-                <div class="card-container">
-                    <div class="col-md-2"></div>
-                        <div class="card col-md-4">
-                            <img src="~/Content/img/img_avatar.png" alt="Avatar" class="image" style="width:100%">
-                            <div class="middle">
-                                <div class="text"><a href="mailto:hischam_ely@hotmail.com">E-mail</a></div>
-                            </div>
-                            <div class="container">
-                                <h4><b>Hischam El Yahiaoui</b></h4>
-                                <p>Systemutvecklare</p>
-                                <p style="font-weight:bold;">Skapare och utvecklare av <br /> hittafotbollsplan.se</p>
-                            </div>
-                        </div>
-                        <div class="card col-md-4">
-                            <img src="~/Content/img/img_avatar.png" alt="Avatar" class="image" style="width:100%">
-                            <div class="middle">
-                                <div class="text"><a href="mailto:johanconradsson@outlook.com">E-mail</a></div>
-                                <div class="text" style="margin-top: 3%;"><a href="http://johanconradsson.com">Hemsida</a></div>
-                            </div>
-                            <div class="container">
-                                <h4><b>Johan Conradsson</b></h4>
-                                <p>Systemutvecklare</p>
-                                <p style="font-weight:bold;">Skapare och utvecklare av <br /> hittafotbollsplan.se</p>
-                            </div>
-                        </div>
-                    <div class="col-md-2"></div>
+    <div id="omOssPanel" class="panel-body body-om">
+        <div class="texten">
+            <h4>Om hittafotbollsplaner.se</h4>Är du på jakt efter en specifik fotbollsplan eller vill du bara hitta en fotbollsplan att spela fotbolls på? Då har du hittat helt rätt! <br />Hittafotbollsplaner.se är en kostnadsfri lokaliseringstjänst för dig som söker efter en fotbollsplan att spela på.
+            <h4>Hur fungerar det?</h4>Du kan enkelt på startsidan se en karta över samtliga inlagda fotbollsplaner och på så vis se den du söker efter. Skulle det mot förmodan vara krångligt så kan du använda dig utav navigeringsknappen som via GPS tar fram din position på kartan. Vill du maximera sökningen ytterligare så kan du söka efter en adress i sökfältet. <br />
+            <h4>Vi behöver dig</h4>Ni användare är viktiga för oss! Vet du om en fotbollsplan som inte finns med på fotbollsplaner.se så får du gärna lägga till fotbollsplanen i vår simpla tjänst <b>@Html.ActionLink("lägg till fotbollsplan", "Create", "fotbollsplaners")</b>. Där finns tydlig information om hur du gör för att lägga till en fotbollsplan.
+            <h4>Om oss bakom tjänsten</h4>Vår delade passion för utveckling och fotboll fick oss att vilja hjälpa andra fotbollsintresserade runt om i landet och därför kändes det naturligt att skapa hittafotbollsplaner.se. Vårt mål och vår ambition är att underlätta och bidra till det fotbollskommunity som finns i Sverige. Samtidigt som vi hoppas att vår tjänst stödjer redan fotbollsinsatta personer så vill vi även hjälpa till och ge vårt bidrag till folk som bara vill röra på sig lite. Vid frågor och funderingar så får ni gärna <b>@Html.ActionLink("kontakta oss", "Kontakt", "Home")</b>.
+        </div>
+        <div class="bildContainer">
+            <div class="card col-md-6 text-center kort" style="margin-top: 10%;">
+                <img src="~/Content/img/img_avatar.png" alt="Avatar" class="image" style="width:100%">
+                <div class="middle">
+                    <div class="text"><a href="mailto:hischam_ely@hotmail.com">E-mail</a></div>
                 </div>
+                <h4><b>Hischam El Yahiaoui</b></h4>
+                <p>Systemutvecklare</p>
+                <p style="font-weight:bold;">Skapare och utvecklare av <br /> hittafotbollsplan.se</p>
+            </div>
+            <div class="card col-md-6 text-center kort" style="margin-top: 10%;">
+                <img src="~/Content/img/img_avatar.png" alt="Avatar" class="image" style="width:100%">
+                <div class="middle">
+                    <div class="text"><a href="mailto:johanconradsson@outlook.com">E-mail</a></div>
+                    <div class="text" style="margin-top: 3%;"><a href="http://johanconradsson.com">Hemsida</a></div>
+                </div>
+                <h4><b>Johan Conradsson</b></h4>
+                <p>Systemutvecklare</p>
+                <p style="font-weight:bold;">Skapare och utvecklare av <br /> hittafotbollsplan.se</p>
             </div>
         </div>
+    </div>
+</div>

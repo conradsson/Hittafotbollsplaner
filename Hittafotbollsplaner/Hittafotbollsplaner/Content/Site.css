@@ -547,4 +547,20 @@ a#merInfoA{
       margin-top: -1px;
       margin-left: -5px;
  }
-  
+
+  /*// RESPONSIVITET*/
+      @media only screen and (max-width: 425px) {
+    div.card.col-md-6.text-center.kort {
+        width: 100%;
+        padding: 0%;
+    }
+    div#omOssPanel.panel-body.body-om{
+        padding: 0%;
+    }
+    div.toppanel{
+        visibility:hidden;
+    }
+    div.container.body-content{
+        padding: 0%;
+    }
+}
