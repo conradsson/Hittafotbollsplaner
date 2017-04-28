@@ -253,6 +253,7 @@
                                                     if (navigator.geolocation) navigator.geolocation.getCurrentPosition(function(pos) {
                                                         var me = new google.maps.LatLng(pos.coords.latitude, pos.coords.longitude);
                                                         myloc.setPosition(me);
+                                                        map.controls[google.maps.ControlPosition.TOP_RIGHT].push(me);
                                                     }, function(error) {
                                                         // ...
                                                     });
