@@ -93,12 +93,6 @@ div.list-group {
     border-radius: 50px;
 }
 
-input,
-select,
-textarea {
-    max-width: 280px;
-}
-
 #divSuccessMessage {
     z-index: 10;
 }
@@ -305,33 +299,38 @@ button.btn.btn-default.btn-lg.hideNav{
     height: auto;
     margin: 0 auto;
     margin-top: 4%;
-    margin-bottom: 4%;
+    margin-bottom: 3%;
     -webkit-box-shadow: 0px 0px 20px 10px rgba(0,0,0,0.75);
     -moz-box-shadow: 0px 0px 20px 10px rgba(0,0,0,0.75);
     box-shadow: 0px 0px 20px 10px rgba(0,0,0,0.75);
 }
 
 #logo{
+    width: 58%; 
+    height: auto;
     margin-top: 5%;
     margin-bottom: 3%;
 }
 
-
 div.input-group{
-    width: 329px;
+    width: 85%;
     margin: 0 auto;
 }
-div.input-group button{
-    position: relative;
-    z-index: 20;
-    margin-left:-7%;
+
+div.input-group span{
+    background-color: rgb(46, 46, 46);
+    border: 1px solid #6b6b6b;
+
+}
+
+div.input-group span i{
+    color: white;
 }
 
 input#sökinput{
-    height: 46px;
-    width: 95%;
-    margin-left: auto;
-    margin-right: auto;
+    height: 48px;
+    margin: 0 auto;
+    margin-right:0;
 }
 
 .mini-nav ul{
@@ -354,6 +353,7 @@ input#sökinput{
     min-width: 320px;
     width: 60%;
     height: 540px;
+    margin-top: 60px;
     margin-bottom: 2.5%;
 
 }
@@ -547,3 +547,4 @@ a#merInfoA{
       margin-top: -1px;
       margin-left: -5px;
  }
+  

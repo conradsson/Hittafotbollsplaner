@@ -4,6 +4,18 @@
     ViewBag.Title = "Fel";
 }
 
-<h1 class="text-danger">Fel.</h1>
-<h2 class="text-danger">Ett fel har inträffat, kontakta ansvarig.</h2>
-
+<div class="modal" style="display: block; background-color: rgba(0, 0, 0, 0.7);">
+    <div class="modal-dialog">
+        <div class="modal-content ontoplook" style="margin-top: 35%;">
+            <div class="modal-header">
+                <h4 class="modal-title">Ett fel har inträffat</h4>
+            </div>
+            <div class="modal-body">
+                <p>Vi beklagar för att detta fel har inträffat. Kontakta oss om detta kvarstår. Återgå till start.</p>
+            </div>
+            <div class="modal-footer">
+                <input type="button" class="btn btn-success" value="Ok" onclick="location.href='@Url.Action("Index", "Home")'" />
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div>

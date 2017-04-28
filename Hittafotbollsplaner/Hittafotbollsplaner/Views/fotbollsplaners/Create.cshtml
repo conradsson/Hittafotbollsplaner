@@ -392,7 +392,7 @@
                                 <div class="form-group">
                                     @Html.LabelFor(model => model.Fritext, htmlAttributes: new { @class = "control-label col-md-3" })
                                     <div class="col-md-8">
-                                        @Html.TextAreaFor(model => model.Fritext, new { htmlAttributes = new { @class = "form-control" } })
+                                        <textarea class="form-control" rows="5" id="Fritext" name="Fritext"></textarea>
                                         @Html.ValidationMessageFor(model => model.Fritext, "", new { @class = "text-danger" })
                                     </div>
                                 </div>
