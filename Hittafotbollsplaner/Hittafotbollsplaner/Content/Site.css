@@ -569,4 +569,7 @@ a#merInfoA{
     div.container{
         width:100%;
     }
+    div.sökDiv{
+        margin-top: 2%;
+    }
 }
