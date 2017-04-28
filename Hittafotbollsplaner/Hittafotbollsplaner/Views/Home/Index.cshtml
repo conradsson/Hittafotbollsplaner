@@ -44,7 +44,7 @@
     <a href="~/Home/Index"><img id="logo" src="/Content/img/hfpLogotype.png" style="width: 200px; height: 80px;"></a>
     <div class="input-group">
         <input id="sökinput" type="text" class="form-control controls" placeholder="Sök på adress eller namn..">
-        <span id="getPos" class="input-group-addon" onclick="scrollTo('.kartDiv',1000)"><img src="~/Content/img/loc.png"/></span>
+        <span id="getPos" class="input-group-addon" onclick="scrollTo('.kartDiv',2000)"><img src="~/Content/img/loc.png"/></span>
     </div>
 
     <div class="mini-nav">
@@ -242,9 +242,9 @@
                                                     var myloc = new google.maps.Marker({
                                                         clickable: false,
                                                         icon: new google.maps.MarkerImage('//maps.gstatic.com/mapfiles/mobile/mobileimgs2.png',
-                                                                                                        new google.maps.Size(22,22),
-                                                                                                        new google.maps.Point(0,18),
-                                                                                                        new google.maps.Point(11,11)),
+                                                        new google.maps.Size(22,22),
+                                                        new google.maps.Point(0,18),
+                                                        new google.maps.Point(11,11)),
                                                         shadow: null,
                                                         zIndex: 999,
                                                         map: map
@@ -253,7 +253,9 @@
                                                     if (navigator.geolocation) navigator.geolocation.getCurrentPosition(function(pos) {
                                                         var me = new google.maps.LatLng(pos.coords.latitude, pos.coords.longitude);
                                                         myloc.setPosition(me);
-                                                        map.controls[google.maps.ControlPosition.TOP_RIGHT].push(me);
+                                                        map.panTo(me);
+                                                        map.setZoom(10);
+
                                                     }, function(error) {
                                                         // ...
                                                     });
