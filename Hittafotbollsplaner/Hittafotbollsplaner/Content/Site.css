@@ -564,3 +564,9 @@ a#merInfoA{
         padding: 0%;
     }
 }
+
+@media only screen and (max-width: 475px) {
+    div.container{
+        width:100%;
+    }
+}
