@@ -321,10 +321,14 @@ div.input-group span{
     background-color: rgb(46, 46, 46);
     border: 1px solid #6b6b6b;
     cursor: pointer;
+    padding: 0;
 }
 
-div.input-group span i{
-    color: white;
+div.input-group span img{
+    padding-left: 5px;
+    padding-right: 5px;
+    width:40px;
+    height: auto;
 }
 
 input#sökinput{
