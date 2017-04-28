@@ -560,7 +560,7 @@ a#merInfoA{
         margin-top: 10%;
     }
     .ontoppageOm,.ontoppageKontakt,.ontoppageNyplan{
-        margin-top: 10%;
+        margin-top: 20%;
     }
 }
 
@@ -575,7 +575,8 @@ a#merInfoA{
         width: 90%;
     }
     div.toppanel{
-        visibility:hidden;
+        
+        margin-top:5%;
     }
     div.container.body-content{
         padding: 0%;
