@@ -12,7 +12,7 @@ namespace Hittafotbollsplaner.Models
     using System;
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
-
+    
     public partial class fotbollsplaner
     {
         public int Id { get; set; }
@@ -36,7 +36,7 @@ namespace Hittafotbollsplaner.Models
         public bool Upplyst { get; set; }
         public bool Bokning { get; set; }
         public string Hemsida { get; set; }
-        [StringLength(50, MinimumLength = 0, ErrorMessage = "Max 50 tecken får användas.")]
+        [StringLength(150, MinimumLength = 0, ErrorMessage = "Max 150 tecken får användas.")]
         public string Fritext { get; set; }
     }
 }

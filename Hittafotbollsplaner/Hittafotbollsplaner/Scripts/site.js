@@ -13,6 +13,8 @@
         $("#P-toggle").slideUp("0");
         $("#T-toggle").slideUp("0");
 
+
+
         $(".genInfoSlide").click(function () {
             if ($('#genInfoSlideIco').hasClass('glyphicon-chevron-down')) {
                 $('#genInfoSlideIco').removeClass('glyphicon-chevron-down');
