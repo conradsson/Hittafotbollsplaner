@@ -30,9 +30,24 @@
                     <div class="infoDiv">
                         <h2>@Model.Namn</h2>
                         <h4>@Model.Adress, @Model.Postnummer @Model.Ort</h4>
-                        <a href="https://@Model.Hemsida" target="_blank">@Model.Hemsida</a>
-                        <p>@Model.Fritext</p>
-                        <img class="pull-right bildfotbollsplan" src="http://traveldigg.com/wp-content/uploads/2016/08/Emirates-Stadium-Field.jpg" alt="Bild">
+                        @if (Model.Hemsida == null || Model.Hemsida == "")
+                        {
+                            <p class="text-muted">Ingen hemsida</p>
+                        }
+                        else
+                        {
+                            <a class="hemsida" href="https://@Model.Hemsida" target="_blank">@Model.Hemsida</a>
+                        }
+                        @if (Model.Fritext == null || Model.Fritext == "")
+                        {
+                            <p class="text-muted">Ingen fritext</p>
+                        }
+                        else
+                        {
+                            <p class="fritext">@Model.Fritext</p>
+                        }
+                        
+                        <img class="bildfotbollsplan" src="http://traveldigg.com/wp-content/uploads/2016/08/Emirates-Stadium-Field.jpg" alt="Bild">
                     </div>
 
                 </div>
@@ -239,7 +254,7 @@
             <div class="panel-body">
                 <div class="row läggtillkom text-center">
                     <script src="https://apis.google.com/js/plusone.js"></script>
-                    <div id="comments" class=" text-center"></div>
+                    <div id="comments" class="text-center"></div>
                     <script>
                         gapi.comments.render('comments', {
                             href: window.location,
