@@ -36,8 +36,9 @@
                                     <label class="text-center" for="Karta">Markera vart på kartan fotbollsplanen ligger</label><br />
 
                                 </div>
-                                <div class="col-md-12">
-                                    <button type="button" id="getPosCre" class="btn btn-default"><i class="material-icons">my_location</i></button>
+                                <div class="col-md-12 col-kart">
+                                    <span id="getPosCre" class="btn btn-default"><img src="~/Content/img/loc.png" /></span>
+     
                                     <div id="googleMap" style="width:100%;height:370px;"></div>
                                 </div>
                             </div>
@@ -186,7 +187,7 @@
                                     };
 
                                     // HITTA POSTION
-                                    $("button#getPosCre").click(function () {
+                                    $("span#getPosCre").click(function () {
 
                                         var myloc = new google.maps.Marker({
                                             clickable: false,

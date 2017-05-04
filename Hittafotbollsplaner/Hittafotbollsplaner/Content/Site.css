@@ -334,7 +334,9 @@ button.btn.btn-default.btn-lg.hideNav{
     margin-bottom: 3%;
 }
 
-
+#lat,#long {
+    visibility: hidden;
+}
 
 div.input-group{
     width: 85%;
@@ -349,6 +351,12 @@ div.input-group span{
 }
 
 div.input-group span img{
+    padding-left: 5px;
+    padding-right: 5px;
+    width:40px;
+    height: auto;
+}
+#getPosCre img{
     padding-left: 5px;
     padding-right: 5px;
     width:40px;
@@ -456,6 +464,7 @@ div#G-toggle div, div#P-toggle div, div#T-toggle div {
 }
 
 div#G-toggle #googleMap{
+    margin-top: 0;
     border: 1px solid rgb(113, 113, 113);
     -webkit-box-shadow: 0px 10px 22px -1px rgba(6, 35, 41, 0.75);
     -moz-box-shadow: 0px 10px 22px -1px rgba(6, 35, 41, 0.75);
@@ -515,10 +524,11 @@ footer.ontoplookFooter{
 li#merInfo{
     list-style-type: none;
     text-align: center;
-    background-color:lightgrey;
+    background-color: #d8d8d8;
     padding: 3%;
     border-radius: 5px;
     text-decoration: none;
+    border: 1px solid rgb(68, 68, 68);
 }
 li#merInfo:hover{
 
@@ -562,11 +572,17 @@ a#merInfoA{
      color: #f39c12;
  }
 
- button#getPosCre{
+ #getPos {
+     background-color: #2ab74b;
+     border:1px solid #b2b2b2;
+     border-left: 0;
+ }
+
+ span#getPosCre{
      position: absolute;
      z-index: 20;
-     top: 8%;
-     right:4.5%;
+     top: 1%;
+     right:5%;
 
 
      background-color: #2ab74b;
@@ -574,9 +590,9 @@ a#merInfoA{
      height: 40px;
  }
 
-  button#getPosCre i{
-      margin-top: -1px;
-      margin-left: -5px;
+  span#getPosCre img{
+     margin-top: -5px;
+     margin-left: -11px;
  }
 
   /*// RESPONSIVITET*/
@@ -619,16 +635,14 @@ a#merInfoA{
     #googleMap{
     height:380px;
     }
-    ul.nolidots{
-        
-    }
 
     ul.nolidots li{
         display: inline-block;
     }
+
 }
 
-  @media only screen and (max-width: 475px) {
+  @media only screen and (max-width: 475px){
     div.container{
         width:100%;
     }
@@ -655,16 +669,37 @@ a#merInfoA{
     div.container.body-content{
         padding: 0%;
     }
+
+    
+    span.hjalpText {
+        right: 0%;
+    }
 }
-  @media only screen and (min-width: 425px) {
+  @media only screen and (max-width: 425px) {
     #googleMap{
     height:380px;
     }
 }
 
-    @media only screen and (min-width: 320px) {
+    @media only screen and (max-width: 375px) and (min-width: 320px) {
     #googleMap{
     height:380px;
+    }
+    span.hjalpText {
+      width: 330px;
+    }
+    .col-kart{
+        padding: 0;
+    }
+}
+
+    @media only screen and (max-width: 320px) {
+    #googleMap{
+    height:380px;
+    }
+    span.hjalpText {
+        width: 300px;
+        right: -170%;
     }
 }
 
