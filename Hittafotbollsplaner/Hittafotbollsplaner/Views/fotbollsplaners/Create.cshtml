@@ -38,7 +38,7 @@
                                 </div>
                                 <div class="col-md-12 col-kart">
                                     <span id="getPosCre" class="btn btn-default"><img src="~/Content/img/loc.png" /></span>
-     
+
                                     <div id="googleMap" style="width:100%;height:370px;"></div>
                                 </div>
                             </div>
@@ -203,6 +203,8 @@
                                         if (navigator.geolocation) navigator.geolocation.getCurrentPosition(function (pos) {
                                             var me = new google.maps.LatLng(pos.coords.latitude, pos.coords.longitude);
                                             myloc.setPosition(me);
+                                            map.panTo(me);
+                                            map.setZoom(10);
                                         }, function (error) {
                                             // ...
                                         });

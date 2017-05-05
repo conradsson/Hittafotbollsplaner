@@ -16,7 +16,7 @@ namespace Hittafotbollsplaner.Models
     public partial class fotbollsplaner
     {
         public int Id { get; set; }
-        [Required(ErrorMessage = "Fältet Namn krävs."), StringLength(25, MinimumLength = 3, ErrorMessage = "Namnet bör vara minst tre bokstäver.")]
+        [Required(ErrorMessage = "Fältet Namn krävs."), StringLength(40, MinimumLength = 3, ErrorMessage = "Namnet bör vara mellan tre till fyrtio bokstäver.")]
         public string Namn { get; set; }
         [Required(ErrorMessage = "Fältet Adress krävs."), StringLength(25, MinimumLength = 3, ErrorMessage = "Adressen bör vara minst tre bokstäver.")]
         public string Adress { get; set; }
