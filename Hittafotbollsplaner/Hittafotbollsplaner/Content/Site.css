@@ -660,6 +660,11 @@ a#merInfoA{
     ul.nolidots li{
         display: inline-block;
     }
+         div.ontoplook.extra-panel{
+            margin-bottom: 1% !important;
+            margin-left: 3.8%;
+            margin-top: 1%;
+        }
 
 }
 
@@ -695,11 +700,77 @@ a#merInfoA{
     span.hjalpText {
         right: 0%;
     }
+     div.kommentar-panel{
+            margin-bottom: 1%;
+        }
+     div.ontoplook.extra-panel{
+            margin-bottom: 1% !important;
+            margin-left: 3.5%;
+        }
+
 }
   @media only screen and (max-width: 425px) {
     #googleMap{
     height:333px;
     }
+    div.ontoppageKontakt{
+        margin-left: 2%;
+        margin-right: 2%;
+    }
+            span.hjalpText{
+            position:absolute;
+            right: -60%;
+        }
+            div.ontoplook.information-panel{
+            height: 950px;
+
+        }
+        div.infoDiv{
+            width: 100% !important;
+        }
+        p.fritext{
+            width: 100% !important;
+            margin-bottom: 10%;
+        }
+        div#googleMap.map-aktuellplan{
+            width: 85% !important;
+            margin-bottom: 5%;
+            overflow: visible;
+        }
+        div.row.icon-panel{
+            width: 100% !important;
+             margin-bottom: 100%;
+
+        }
+        div.col-md-5.antalfotbollplaner{
+            width: 100%;
+            margin: 0% !important;
+            float: right;
+        }
+        ul.nolidots li{
+            width: 50%;
+            margin: 0% !important;
+            margin-left: 20%;
+        }
+        div.row.ovrigtrow{
+            width: 50%;
+            margin: 0% !important;
+            margin-right: 0% !important;
+            float: right;
+        }
+                    ul.nolidots.text-center.center-block{
+            text-align: right !important;
+            margin-right: 0% !important;
+            margin-left: 14% !important;
+        }
+                            div.ontoplook.kommentar-panel{
+            height: 230px;
+        }
+                            div.row.läggtillkom.text-center{
+            width: 95% !important;
+            position: absolute;
+            left: -110px;
+        }
 }
 
     @media only screen and (max-width: 375px) and (min-width: 320px) {
@@ -712,6 +783,11 @@ a#merInfoA{
     .col-kart{
         padding: 0;
     }
+                                div.row.läggtillkom.text-center{
+            width: 95% !important;
+            position: absolute;
+            left: -135px;
+        }
 }
 
     @media only screen and (max-width: 320px) {
@@ -721,5 +797,27 @@ a#merInfoA{
     span.hjalpText {
         width: 300px;
         right: -170%;
+        position:absolute;
+        right: -60%;
+
     }
+        div.ontoppageKontakt{
+        margin-left: 3%;
+        margin-right: 3%;
+    }
+        div.row.ontoppageNyplan.content{
+            margin-left: 5%;
+            margin-right: 0%;
+    }
+        iframe#I0_1493992866026{
+
+        }
+        div.yJa{
+
+        }
+                                    div.row.läggtillkom.text-center{
+            width: 95% !important;
+            position: absolute;
+            left: -160px;
+        }
 }
