@@ -402,7 +402,7 @@ input#sökinput{
     width: 60%;
     height: 540px;
     margin-top: 60px;
-    margin-bottom: 2.5%;    
+    margin-bottom: 2.5%;
 }
 
 .MapPlaceHolder {
@@ -688,7 +688,7 @@ a#merInfoA{
         padding: 0%;
     }
 
-    
+
     span.hjalpText {
         right: 0%;
     }
@@ -720,4 +720,3 @@ a#merInfoA{
         right: -170%;
     }
 }
-
