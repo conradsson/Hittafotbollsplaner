@@ -303,7 +303,7 @@ a.list-group-item {
 }
 
 .information-panel{
-    min-height: 380px;
+    min-height: 400px;
 }
 
 div.kommentar-panel,div.extra-panel{
@@ -608,6 +608,8 @@ a#merInfoA{
  }
 
   .red{
+      position: relative;
+      margin-top: -5px;
       color: red;
   }
 
