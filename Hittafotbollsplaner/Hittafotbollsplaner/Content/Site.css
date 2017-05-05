@@ -269,6 +269,10 @@ div.followStart:hover{
     background-color: #d7d7d7;
 }
 
+.col-md-11 {
+    width: 93.8%;
+}
+
 .infoDiv{
     margin-top:-2%;
     width:100%;
@@ -286,12 +290,20 @@ div.followStart:hover{
     float: right !important;
 }
 
+.map-aktuellplan{
+    position:absolute;
+    z-index:10;
+    right:0;
+    margin-top: -150px;
+    float: right !important;
+}
+
 a.list-group-item {
     list-style-type: none;
 }
 
-.information-panel,.aktuellkarta{
-    min-height: 100%;
+.information-panel{
+    min-height: 380px;
 }
 
 div.kommentar-panel,div.extra-panel{
@@ -605,7 +617,7 @@ a#merInfoA{
         min-height: 520px;
     }
     #googleMap{
-    height:450px;
+    height:333px;
     }
 }
 @media only screen and (max-width: 1900px) and (min-width: 1440px){
@@ -613,7 +625,7 @@ a#merInfoA{
         min-height: 500px;
     }
     #googleMap{
-    height:450px;
+    height:333px;
     }
 }
 
@@ -622,7 +634,7 @@ a#merInfoA{
     width:80%;
     }
     #googleMap{
-    height:375px;
+    height:333px;
     }
 }
 
@@ -631,13 +643,13 @@ a#merInfoA{
     width:95%;
     }
     #googleMap{
-    height:370px;
+    height:333px;
     }
 }
 
 @media only screen and (max-width: 768px) and (min-width: 475px){
     #googleMap{
-    height:380px;
+    height:333px;
     }
 
     ul.nolidots li{
@@ -681,13 +693,13 @@ a#merInfoA{
 }
   @media only screen and (max-width: 425px) {
     #googleMap{
-    height:380px;
+    height:333px;
     }
 }
 
     @media only screen and (max-width: 375px) and (min-width: 320px) {
     #googleMap{
-    height:380px;
+    height:333px;
     }
     span.hjalpText {
       width: 330px;
@@ -699,7 +711,7 @@ a#merInfoA{
 
     @media only screen and (max-width: 320px) {
     #googleMap{
-    height:380px;
+    height:333px;
     }
     span.hjalpText {
         width: 300px;
