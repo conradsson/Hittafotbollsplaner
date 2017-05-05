@@ -595,6 +595,10 @@ a#merInfoA{
      margin-left: -11px;
  }
 
+  .red{
+      color: red;
+  }
+
   /*// RESPONSIVITET*/
   @media only screen and (min-width: 1900px){
     .ontoppageKontakt {
