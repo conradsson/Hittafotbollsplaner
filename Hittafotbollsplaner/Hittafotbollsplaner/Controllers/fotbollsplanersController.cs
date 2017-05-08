@@ -35,10 +35,15 @@ namespace Hittafotbollsplaner.Controllers
             return View(fotbollsplaner);
         }
 
-        // GET: fotbollsplaners/Create
+        // GET: fotbollsplaners/Create  
         public ActionResult Create()
         {
             return View();
+        }
+
+        public ActionResult RightClickMapLink(string id)
+        {
+            return View("Create");
         }
 
         // POST: fotbollsplaners/Create

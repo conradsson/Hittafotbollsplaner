@@ -616,6 +616,30 @@ a#merInfoA{
       color: red;
   }
 
+  .contextmenu{
+  visibility:hidden;
+  background: white;
+  border:1px solid #8888FF;
+  z-index: 10;
+  position: relative;
+  width: 155px;
+  height: 25px;
+}
+  .menudot{
+      position: absolute;
+      left:-6px;
+      top:-6px;
+      width: 10px;
+      height: 10px;
+      border: 1px solid rgba(30, 30, 30, 0.89);
+      border-radius: 50%;
+      background-color: #2ab74b;
+  }
+.contextmenu a{
+padding: 6px;
+width: 155px;
+}
+
   /*// RESPONSIVITET*/
   @media only screen and (min-width: 1900px){
     .ontoppageKontakt {

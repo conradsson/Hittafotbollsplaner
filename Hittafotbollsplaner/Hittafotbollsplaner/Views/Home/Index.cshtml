@@ -30,6 +30,30 @@
                 });
             }
         });
+
+        function startläggtill() {
+
+            var latlon = $('#latLngInput').val();
+
+
+            if (latlon != "") {
+
+                $.ajax({
+                    url: '/fotbollsplaners/RightClickMapLink',
+                    contentType: 'application/html; charset=utf-8',
+                    data: { latlon },
+                    type: 'GET',
+                    dataType: 'html',
+                    success: function (result) {
+                        alert('Det funkar!');
+                    }
+                })
+            }
+            else {
+                alert('Inget värde i Ajaxen!');
+            }
+        }
+
     });
 </script>
 
@@ -63,6 +87,8 @@
     @using (Html.BeginForm("Index", "Home"))
     {
         <script>
+            var currpos;
+
             function myMap() {
                 var myCenter = new google.maps.LatLng(61.5376, 15.5063);
                 var mapCanvas = document.getElementById("googleMap");
@@ -239,6 +265,81 @@
                         infoWindow.open(map, marker);
                     });
                 }
+
+                /*   CONTEXT MENU   */
+                var geocoder = new google.maps.Geocoder();
+
+                //google.maps.event.addListener(map, 'click', function (event) {
+                //    showContextMenu(event.latLng);
+                //    currpos = event.latLng();
+
+                //});
+
+                google.maps.event.addListener(map, 'click', function(event) {
+                    showContextMenu(event.latLng);
+                    geocoder.geocode({
+                        'latLng': event.latLng
+                    }, function(results, status) {
+                        if (status == google.maps.GeocoderStatus.OK) {
+                            if (results[0]) {
+                                currpos = event.latLng;
+                                $('#latLngInput').val(currpos);
+                            }
+                        }
+                    });
+                });
+
+                function showContextMenu(caurrentLatLng  ) {
+                    var projection;
+                    var contextmenuDir;
+                    projection = map.getProjection() ;
+                    $('.contextmenu').remove();
+                    contextmenuDir = document.createElement("div");
+                    contextmenuDir.className  = 'contextmenu';
+                    contextmenuDir.innerHTML = '<div class="context"><div class="menudot"><input type="text" id="latLngInput"><input type="button" value="Lägg till fotbollsplan här" id="startläggtill" onclick="startläggtill()"/></div></div>';
+
+                    $(map.getDiv()).append(contextmenuDir);
+
+                    setMenuXY(caurrentLatLng);
+
+                    contextmenuDir.style.visibility = "visible";
+                }
+
+                function getCanvasXY(caurrentLatLng){
+                    var scale = Math.pow(2, map.getZoom());
+                    var nw = new google.maps.LatLng(
+                        map.getBounds().getNorthEast().lat(),
+                        map.getBounds().getSouthWest().lng()
+                    );
+                    var worldCoordinateNW = map.getProjection().fromLatLngToPoint(nw);
+                    var worldCoordinate = map.getProjection().fromLatLngToPoint(caurrentLatLng);
+                    var caurrentLatLngOffset = new google.maps.Point(
+                        Math.floor((worldCoordinate.x - worldCoordinateNW.x) * scale),
+                        Math.floor((worldCoordinate.y - worldCoordinateNW.y) * scale)
+                    );
+                    return caurrentLatLngOffset;
+                }
+
+                function setMenuXY(caurrentLatLng){
+                    var mapWidth = $('#map_canvas').width();
+                    var mapHeight = $('#map_canvas').height();
+                    var menuWidth = $('.contextmenu').width();
+                    var menuHeight = $('.contextmenu').height();
+                    var clickedPosition = getCanvasXY(caurrentLatLng);
+                    var x = clickedPosition.x ;
+                    var y = clickedPosition.y ;
+
+                    if((mapWidth - x ) < menuWidth)
+                        x = x - menuWidth;
+                    if((mapHeight - y ) < menuHeight)
+                        y = y - menuHeight;
+
+                    $('.contextmenu').css('left',x  );
+                    $('.contextmenu').css('top',y );
+                };
+                /*   CONTEXT MENU END  */
+
+
                 var options = {
                     componentRestrictions: {country: "swe"}
                 };
@@ -273,6 +374,8 @@
                     }, function(error) {
                         // ...
                     });
+
+
 
                 });
 

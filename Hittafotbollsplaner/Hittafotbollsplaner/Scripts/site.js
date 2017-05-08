@@ -61,22 +61,12 @@
             $("#T-toggle").slideDown("slow");;
         });
 
-        }
+    }
+
+
 
     $("#hideNav").click(function () {
         $(".navbar").toggle();
-    });
-
-    $('.rapporteralink').on('click', function (e) {
-        e.preventDefault();
-
-        $.ajax({
-            type: "GET",
-            url: '/Fotbollsplan/_Rapportera',
-            success: function (result) {
-                $('.information-panel').html(result);
-            }
-        });
     });
 
     var scrollTo = function (identifier, speed) {  // Scroll-To function
