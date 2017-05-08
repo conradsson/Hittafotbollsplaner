@@ -10,7 +10,7 @@
 
 <script>
     $(document).ready(function () {
-        $("#sökinput").autocomplete({
+        $("#sökinputt").autocomplete({
             source: function (request, response) {
                 $.ajax({
                     url: "/Home/GetAutoCompleteData",
@@ -32,7 +32,6 @@
         });
     });
 </script>
-
 
 
 
@@ -221,6 +220,8 @@
 
                 </text>
                                             }
+
+
                 mcOptions = {
                     styles: [{
                         height: 77,
@@ -239,6 +240,8 @@
                         infoWindow.open(map, marker);
                     });
                 }
+
+
                 var options = {
                     componentRestrictions: {country: "swe"}
                 };
@@ -276,10 +279,12 @@
 
                 });
 
+
                 // Bind the map's bounds (viewport) property to the autocomplete object,
                 // so that the autocomplete requests use the current map bounds for the
                 // bounds option in the request.
                 autocomplete.bindTo('bounds', map);
+
                 var infowindow = new google.maps.InfoWindow();
                 var infowindowContent = document.getElementById('infowindow-content');
                 infowindow.setContent(infowindowContent);
@@ -321,6 +326,22 @@
                     infowindowContent.children['place-address'].textContent = address;
                     infowindow.open(map, marker1);
                 });
+
+                setTimeout(function(){
+
+                              @foreach (var item in Model.AllaFotbollsplaner)
+                    {
+                        <text>
+
+                    $(".pac-container").append('<div class="pac-item"><span class="fa fa-futbol-o"></span>&nbsp;&nbsp;&nbsp;<span class="pac-item-query"><span class="pac-matched"></span>@item.Namn</span> <span>@item.Adress,  @item.Ort</span></div>');
+
+                        </text>
+                    }
+
+                }, 500);
+                searchBoxMapAddress();
+
+
                 // Sets a listener on a radio button to change the filter type on Places
                 // Autocomplete.
                 function setupClickListener(id, types) {
