@@ -33,7 +33,7 @@
 
                             <div class="col-md-6">
                                 <div class="col-md-12" style="text-align: center;">
-                                    <label class="text-center" for="Karta">Markera vart på kartan fotbollsplanen ligger<span class="red">*</span></label><br />
+                                    <label class="text-center" for="Karta">Klicka vart på kartan fotbollsplanen ligger<span class="red">*</span></label><br />
 
                                 </div>
                                 <div class="col-md-12 col-kart">
@@ -204,7 +204,7 @@
                                             var me = new google.maps.LatLng(pos.coords.latitude, pos.coords.longitude);
                                             myloc.setPosition(me);
                                             map.panTo(me);
-                                            map.setZoom(10);
+                                            map.setZoom(16);
                                         }, function (error) {
                                             // ...
                                         });
@@ -366,8 +366,8 @@
                     <div class="container-planinfo col-md-12">
                         <div class="planInfoSlide text-center">Planinformation <span id="planInfoSlideIco" class="glyphicon glyphicon-chevron-down" aria-hidden="true"></span></div>
                         <div id="P-toggle">
-                            <span class="glyphicon glyphicon-question-sign pull-right hjalpKnapp" aria-hidden="true" style="margin-right:2%;" ><span class="hjalpText">Välj typ av fotbollsplan samt antal. Fritextrutan är till för extra information du vill lämna, max 150 tecken får användas. <br /><br /> Alla fotbollsplaner oavsett storlek räknas som fullstora.</span></span>
-
+                            <span class="glyphicon glyphicon-question-sign pull-right hjalpKnapp" aria-hidden="true" style="margin-right:2%;" ><span class="hjalpText">Välj typ av fotbollsplan samt antal. Fritextrutan är till för extra information du vill lämna, max 150 tecken får användas.</span></span>
+                            <p class="text-primary text-center" style="left:0; margin-top: 2%; margin-left: 2%; margin-bottom:0;">Alla fotbollsplaner oavsett storlek räknas som fullstora. Specificera gärna storleken i fritexten.</p>
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label class="control-label col-md-4" for="AntalGräs">Antal gräsplaner</label>
@@ -395,7 +395,7 @@
                                 <div class="form-group">
                                     @Html.LabelFor(model => model.Fritext, htmlAttributes: new { @class = "control-label col-md-3" })
                                     <div class="col-md-8">
-                                        <textarea class="form-control" rows="5" id="Fritext" name="Fritext"></textarea>
+                                        <textarea class="form-control fritextinput" rows="5" id="Fritext" name="Fritext" placeholder='T.ex. planstorlek eller området kring planen/planerna'></textarea>
                                         @Html.ValidationMessageFor(model => model.Fritext, "", new { @class = "text-danger" })
                                     </div>
                                 </div>
@@ -470,7 +470,7 @@
                                     <div class="form-group">
                                         <label class="control-label col-md-3" for="Bokning">Bokning<span class="red">*</span></label>
                                         <div class="col-md-9">
-                                            @Html.DropDownListFor(model => model.Bokning, jaNej, null, htmlAttributes: new { @class = "form-control" })
+                                            @Html.DropDownListFor(model => model.Bokning, jaNej, null, htmlAttributes: new { @class = "form-control bokninginput" })
                                             @Html.ValidationMessageFor(model => model.Bokning, "", new { @class = "text-danger" })
                                         </div>
                                     </div>

@@ -23,5 +23,25 @@ namespace Hittafotbollsplaner.Controllers
 
             return View("Index", aktuellFotbollsplan);
         }
+
+        [HttpGet]
+        public ActionResult _Rapportera()
+        {
+            return PartialView("_Rapportera");
+        }
+
+        public ActionResult FelOpen()
+        {
+                ViewBag.Fel = "y";
+                return View("Index");
+
+        }
+
+        public ActionResult FelClose()
+        {
+            ViewBag.Fel = "";
+            return View("Index");
+
+        }
     }
 }
