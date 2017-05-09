@@ -204,11 +204,11 @@
                 };
                 var map = new google.maps.Map(mapCanvas, mapOptions);
                 var icon = {
-                    url: "/Content/img/marker.png", // url
-                    scaledSize: new google.maps.Size(32, 50), // scaled size
+                    url: "/Content/img/marker2.png", // url
+                    scaledSize: new google.maps.Size(38, 56), // scaled size
                     origin: new google.maps.Point(0, 0), // origin
                     anchor:
-                    new google.maps.Point(20, 50) // anchor
+                    new google.maps.Point(26, 56) // anchor
                 };
 
 
@@ -254,7 +254,7 @@
 
                 google.maps.event.addListener(map, 'rightclick', function(event) {
                     map.panTo(event.latLng);
-                    map.setMapTypeId('satellite');
+                    map.setMapTypeId('hybrid');
                     showContextMenu(event.latLng);
                     geocoder.geocode({
                         'latLng': event.latLng
