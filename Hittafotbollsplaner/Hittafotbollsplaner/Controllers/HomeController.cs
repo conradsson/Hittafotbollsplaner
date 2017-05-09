@@ -55,6 +55,8 @@ namespace Hittafotbollsplaner.Controllers
             return View(model);
         }
 
+
+
         public ActionResult Nyplan()
         {
             ViewBag.Message = "";

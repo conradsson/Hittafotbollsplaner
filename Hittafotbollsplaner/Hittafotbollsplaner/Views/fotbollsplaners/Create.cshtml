@@ -53,6 +53,7 @@
                                         center: myCenter,
                                         zoom: 5,
                                         minZoom: 5,
+                                        mapTypeId: google.maps.MapTypeId.TERRAIN,
                                         styles: [
 {
     "featureType": "administrative.country",
@@ -270,7 +271,7 @@
                                 <div class="form-group">
                                     <label class="control-label col-md-4" for="Namn">Namn<span class="red">*</span></label>
                                     <div class="col-md-8">
-                                        @Html.EditorFor(model => model.Namn, new { htmlAttributes = new { @class = "form-control" } })
+                                        @Html.EditorFor(model => model.Namn, new { htmlAttributes = new { @class = "form-control"} })
                                         @Html.ValidationMessageFor(model => model.Namn, "", new { @class = "text-danger" })
                                     </div>
                                 </div>

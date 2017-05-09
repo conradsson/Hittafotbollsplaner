@@ -43,9 +43,8 @@
 
 
 <div class="sökDiv text-center">
-    <a class="menu-bar" data-toggle="collapse" href="#menu">
-        <span class="bars"></span>
-    </a>
+    <span class="glyphicon glyphicon-question-sign pull-right hjalpKnapp" aria-hidden="true" style="margin-right:2%; "><span class="hjalpText">Sök efter fotbollsplaner genom att ange adress eller namnet på fotbollsplanen i sökfältet. Resultatet visas här på kartan nedan.<br /><br /> På denna karta kan man även lägga till fotbollplaner genom att högerklicka på där planen befinner sig.</span></span>
+
     <a href="~/Home/Index"><img id="logo" src="/Content/img/hfpLogotype.png" style="width: 200px; height: 80px;"></a>
     <div class="input-group">
         <input id="sökinput" type="text" class="form-control controls" placeholder="Sök på adress eller namn..">
@@ -77,6 +76,7 @@
                     center: myCenter,
                     zoom: 5,
                     minZoom: 5,
+                    mapTypeId: google.maps.MapTypeId.TERRAIN,
                     styles: [
 {
     "featureType": "administrative.country",
@@ -254,7 +254,7 @@
 
                 google.maps.event.addListener(map, 'rightclick', function(event) {
                     map.panTo(event.latLng);
-                    map.setZoom(15);
+                    map.setMapTypeId('satellite');
                     showContextMenu(event.latLng);
                     geocoder.geocode({
                         'latLng': event.latLng
@@ -293,6 +293,7 @@
                             type: 'GET',
                             dataType: 'html',
                             success: function (result) {
+                                window.location.href = "/fotbollsplaners/Create";
                             }
                         })
                     }

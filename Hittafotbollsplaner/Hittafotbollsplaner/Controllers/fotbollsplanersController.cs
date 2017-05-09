@@ -35,6 +35,21 @@ namespace Hittafotbollsplaner.Controllers
             return View(fotbollsplaner);
         }
 
+        public fotbollsplaner RightClickMapLink(string latlon)
+        {
+            fotbollsplaner model = new fotbollsplaner();
+
+            latlon = latlon.Trim(' ').Trim('(').Trim(')');
+
+
+            model.Latitud = latlon.Split(',')[0];
+            model.Longitud = latlon.Split(',')[1].Trim(' ');
+
+
+            return model;
+        }
+
+
         // GET: fotbollsplaners/Create  
         public ActionResult Create()
         {
@@ -42,10 +57,6 @@ namespace Hittafotbollsplaner.Controllers
         }
 
 
-        public ActionResult RightClickMapLink(string latlon)
-        {
-            return View("Create");
-        }
 
         // POST: fotbollsplaners/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for
