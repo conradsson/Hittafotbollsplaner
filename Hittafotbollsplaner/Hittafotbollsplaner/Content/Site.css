@@ -619,11 +619,13 @@ a#merInfoA{
   .contextmenu{
   visibility:hidden;
   background: white;
-  border:1px solid #8888FF;
+  border:1px solid gray;
   z-index: 10;
   position: relative;
   width: 155px;
-  height: 25px;
+  height: 85px;
+  text-align: center;
+  border-radius: 2px;
 }
   .menudot{
       position: absolute;
@@ -635,10 +637,30 @@ a#merInfoA{
       border-radius: 50%;
       background-color: #2ab74b;
   }
-.contextmenu a{
-padding: 6px;
-width: 155px;
+
+.contextmenu span {
+    padding: 5px;
+    
 }
+.contextmenu li{
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+background-color: #d8d8d8;
+border: 1px solid black;
+text-align:center;
+padding: 2px;
+width: 90%;
+list-style-type: none;
+cursor: pointer;
+margin-top: 3%;
+}
+
+#latLngInput{
+    visibility: hidden;
+}
+
+
 
   /*// RESPONSIVITET*/
   @media only screen and (min-width: 1900px){

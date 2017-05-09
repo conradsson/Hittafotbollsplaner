@@ -11,7 +11,6 @@ namespace Hittafotbollsplaner.Models
         public IEnumerable<fotbollsplaner> fotbollsplaner { get; set; }
         public IEnumerable<fotbollsplaner> senasteFotbollsplaner { get; set; }
         public IEnumerable<fotbollsplaner> AllaFotbollsplaner { get; set; }
-        public string currLat { get; set; }
-        public string currLon { get; set; }
+        public string currPos { get; set; }
     }
 }

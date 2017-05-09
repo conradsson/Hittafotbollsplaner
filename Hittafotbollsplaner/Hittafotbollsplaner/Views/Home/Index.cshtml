@@ -30,31 +30,13 @@
                 });
             }
         });
+    }); 
+</script>
 
-        function startläggtill() {
-
-            var latlon = $('#latLngInput').val();
+<script>
 
 
-            if (latlon != "") {
 
-                $.ajax({
-                    url: '/fotbollsplaners/RightClickMapLink',
-                    contentType: 'application/html; charset=utf-8',
-                    data: { latlon },
-                    type: 'GET',
-                    dataType: 'html',
-                    success: function (result) {
-                        alert('Det funkar!');
-                    }
-                })
-            }
-            else {
-                alert('Inget värde i Ajaxen!');
-            }
-        }
-
-    });
 </script>
 
 
@@ -270,13 +252,9 @@
                 /*   CONTEXT MENU   */
                 var geocoder = new google.maps.Geocoder();
 
-                //google.maps.event.addListener(map, 'click', function (event) {
-                //    showContextMenu(event.latLng);
-                //    currpos = event.latLng();
-
-                //});
-
-                google.maps.event.addListener(map, 'click', function(event) {
+                google.maps.event.addListener(map, 'rightclick', function(event) {
+                    map.panTo(event.latLng);
+                    map.setZoom(15);
                     showContextMenu(event.latLng);
                     geocoder.geocode({
                         'latLng': event.latLng
@@ -285,10 +263,44 @@
                             if (results[0]) {
                                 currpos = event.latLng;
                                 $('#latLngInput').val(currpos);
+                                
+                                map.addListener('center_changed', function() {
+                                    $('.contextmenu').hide();
+                                });
+
+                                $("#startläggtill").click(function () {
+                                    startläggtill();
+                                });
+
+
                             }
                         }
                     });
                 });
+
+
+
+                function startläggtill() {
+
+                    var latlon = $('#latLngInput').val();
+
+                    if (latlon != "") {
+
+                        $.ajax({
+                            url: '/fotbollsplaners/RightClickMapLink',
+                            contentType: 'application/html; charset=utf-8',
+                            data: { latlon },
+                            type: 'GET',
+                            dataType: 'html',
+                            success: function (result) {
+                            }
+                        })
+                    }
+                    else {
+                        alert('Inga koordinater på denna plats');
+                    }
+                }
+
 
                 function showContextMenu(caurrentLatLng  ) {
                     var projection;
@@ -297,7 +309,7 @@
                     $('.contextmenu').remove();
                     contextmenuDir = document.createElement("div");
                     contextmenuDir.className  = 'contextmenu';
-                    contextmenuDir.innerHTML = '<div class="context"><div class="menudot"><input type="text" id="latLngInput"><input type="button" value="Lägg till fotbollsplan här" id="startläggtill" onclick="startläggtill()"/></div></div>';
+                    contextmenuDir.innerHTML = '<div class="context"><div class="menudot"></div><span id="startläggtilltext">Finns det en <br/> fotbollsplan här?<li id="startläggtill">Lägg till fotbollsplan</li></span><input type="text" id="latLngInput"></div>';
 
                     $(map.getDiv()).append(contextmenuDir);
 

@@ -41,7 +41,8 @@ namespace Hittafotbollsplaner.Controllers
             return View();
         }
 
-        public ActionResult RightClickMapLink(string id)
+
+        public ActionResult RightClickMapLink(string latlon)
         {
             return View("Create");
         }
