@@ -33,22 +33,15 @@
     }); 
 </script>
 
-<script>
-
-
-
-</script>
-
-
 
 
 <div class="sökDiv text-center">
-    <span class="glyphicon glyphicon-question-sign pull-right hjalpKnapp" aria-hidden="true" style="margin-right:2%; "><span class="hjalpText">Sök efter fotbollsplaner genom att ange adress eller namnet på fotbollsplanen i sökfältet. Resultatet visas här på kartan nedan.<br /><br /> På denna karta kan man även lägga till fotbollplaner genom att högerklicka på där planen befinner sig.</span></span>
+    <span class="glyphicon glyphicon-question-sign pull-right hjalpKnapp" aria-hidden="true" style="margin-right:2%; "><span class="hjalpText">Sök efter fotbollsplaner genom att ange adress eller namnet på fotbollsplanen i sökfältet. Resultatet visas här på kartan nedan.<br/><br/>Använd gärna lokaliseringsknappen höger i sökfältet för att enkelt hitta din position.</span></span>
 
-    <a href="~/Home/Index"><img id="logo" src="/Content/img/hfpLogotype.png" style="width: 200px; height: 80px;"></a>
+    <a href="~/Home/Index"><img id="logo" src="/Content/img/hfpLogotype.png"></a>
     <div class="input-group">
         <input id="sökinput" type="text" class="form-control controls" placeholder="Sök på adress eller namn..">
-        <span id="getPos" class="input-group-addon" onclick="scrollTo('.kartDiv',2000)"><img src="~/Content/img/loc.png"/></span>
+        <span id="getPos" class="input-group-addon" onclick="scrollTo('.kartDiv',2000)" title="Hitta min position"><img src="~/Content/img/loc.png"/></span>
     </div>
 
     <div class="mini-nav">
@@ -250,107 +243,107 @@
                 }
 
                 /*   CONTEXT MENU   */
-                var geocoder = new google.maps.Geocoder();
+                //var geocoder = new google.maps.Geocoder();
 
-                google.maps.event.addListener(map, 'rightclick', function(event) {
-                    map.panTo(event.latLng);
-                    map.setMapTypeId('hybrid');
-                    showContextMenu(event.latLng);
-                    geocoder.geocode({
-                        'latLng': event.latLng
-                    }, function(results, status) {
-                        if (status == google.maps.GeocoderStatus.OK) {
-                            if (results[0]) {
-                                currpos = event.latLng;
-                                $('#latLngInput').val(currpos);
+                //google.maps.event.addListener(map, 'rightclick', function(event) {
+                //    map.panTo(event.latLng);
+                //    map.setMapTypeId('hybrid');
+                //    showContextMenu(event.latLng);
+                //    geocoder.geocode({
+                //        'latLng': event.latLng
+                //    }, function(results, status) {
+                //        if (status == google.maps.GeocoderStatus.OK) {
+                //            if (results[0]) {
+                //                currpos = event.latLng;
+                //                $('#latLngInput').val(currpos);
                                 
-                                map.addListener('center_changed', function() {
-                                    $('.contextmenu').hide();
-                                });
+                //                map.addListener('center_changed', function() {
+                //                    $('.contextmenu').hide();
+                //                });
 
-                                $("#startläggtill").click(function () {
-                                    startläggtill();
-                                });
-
-
-                            }
-                        }
-                    });
-                });
+                //                $("#startläggtill").click(function () {
+                //                    startläggtill();
+                //                });
 
 
-
-                function startläggtill() {
-
-                    var latlon = $('#latLngInput').val();
-
-                    if (latlon != "") {
-
-                        $.ajax({
-                            url: '/fotbollsplaners/RightClickMapLink',
-                            contentType: 'application/html; charset=utf-8',
-                            data: { latlon },
-                            type: 'GET',
-                            dataType: 'html',
-                            success: function (result) {
-                                window.location.href = "/fotbollsplaners/Create";
-                            }
-                        })
-                    }
-                    else {
-                        alert('Inga koordinater på denna plats');
-                    }
-                }
+                //            }
+                //        }
+                //    });
+                //});
 
 
-                function showContextMenu(caurrentLatLng  ) {
-                    var projection;
-                    var contextmenuDir;
-                    projection = map.getProjection() ;
-                    $('.contextmenu').remove();
-                    contextmenuDir = document.createElement("div");
-                    contextmenuDir.className  = 'contextmenu';
-                    contextmenuDir.innerHTML = '<div class="context"><div class="menudot"></div><span id="startläggtilltext">Finns det en <br/> fotbollsplan här?<li id="startläggtill">Lägg till fotbollsplan</li></span><input type="text" id="latLngInput"></div>';
 
-                    $(map.getDiv()).append(contextmenuDir);
+                //function startläggtill() {
 
-                    setMenuXY(caurrentLatLng);
+                //    var latlon = $('#latLngInput').val();
 
-                    contextmenuDir.style.visibility = "visible";
-                }
+                //    if (latlon != "") {
 
-                function getCanvasXY(caurrentLatLng){
-                    var scale = Math.pow(2, map.getZoom());
-                    var nw = new google.maps.LatLng(
-                        map.getBounds().getNorthEast().lat(),
-                        map.getBounds().getSouthWest().lng()
-                    );
-                    var worldCoordinateNW = map.getProjection().fromLatLngToPoint(nw);
-                    var worldCoordinate = map.getProjection().fromLatLngToPoint(caurrentLatLng);
-                    var caurrentLatLngOffset = new google.maps.Point(
-                        Math.floor((worldCoordinate.x - worldCoordinateNW.x) * scale),
-                        Math.floor((worldCoordinate.y - worldCoordinateNW.y) * scale)
-                    );
-                    return caurrentLatLngOffset;
-                }
+                //        $.ajax({
+                //            url: '/fotbollsplaners/RightClickMapLink',
+                //            contentType: 'application/html; charset=utf-8',
+                //            data: { latlon },
+                //            type: 'GET',
+                //            dataType: 'html',
+                //            success: function (result) {
+                //                window.location.href = "/fotbollsplaners/Create";
+                //            }
+                //        })
+                //    }
+                //    else {
+                //        alert('Inga koordinater på denna plats');
+                //    }
+                //}
 
-                function setMenuXY(caurrentLatLng){
-                    var mapWidth = $('#map_canvas').width();
-                    var mapHeight = $('#map_canvas').height();
-                    var menuWidth = $('.contextmenu').width();
-                    var menuHeight = $('.contextmenu').height();
-                    var clickedPosition = getCanvasXY(caurrentLatLng);
-                    var x = clickedPosition.x ;
-                    var y = clickedPosition.y ;
 
-                    if((mapWidth - x ) < menuWidth)
-                        x = x - menuWidth;
-                    if((mapHeight - y ) < menuHeight)
-                        y = y - menuHeight;
+                //function showContextMenu(caurrentLatLng  ) {
+                //    var projection;
+                //    var contextmenuDir;
+                //    projection = map.getProjection() ;
+                //    $('.contextmenu').remove();
+                //    contextmenuDir = document.createElement("div");
+                //    contextmenuDir.className  = 'contextmenu';
+                //    contextmenuDir.innerHTML = '<div class="context"><div class="menudot"></div><span id="startläggtilltext">Finns det en <br/> fotbollsplan här?<li id="startläggtill">Lägg till fotbollsplan</li></span><input type="text" id="latLngInput"></div>';
 
-                    $('.contextmenu').css('left',x  );
-                    $('.contextmenu').css('top',y );
-                };
+                //    $(map.getDiv()).append(contextmenuDir);
+
+                //    setMenuXY(caurrentLatLng);
+
+                //    contextmenuDir.style.visibility = "visible";
+                //}
+
+                //function getCanvasXY(caurrentLatLng){
+                //    var scale = Math.pow(2, map.getZoom());
+                //    var nw = new google.maps.LatLng(
+                //        map.getBounds().getNorthEast().lat(),
+                //        map.getBounds().getSouthWest().lng()
+                //    );
+                //    var worldCoordinateNW = map.getProjection().fromLatLngToPoint(nw);
+                //    var worldCoordinate = map.getProjection().fromLatLngToPoint(caurrentLatLng);
+                //    var caurrentLatLngOffset = new google.maps.Point(
+                //        Math.floor((worldCoordinate.x - worldCoordinateNW.x) * scale),
+                //        Math.floor((worldCoordinate.y - worldCoordinateNW.y) * scale)
+                //    );
+                //    return caurrentLatLngOffset;
+                //}
+
+                //function setMenuXY(caurrentLatLng){
+                //    var mapWidth = $('#map_canvas').width();
+                //    var mapHeight = $('#map_canvas').height();
+                //    var menuWidth = $('.contextmenu').width();
+                //    var menuHeight = $('.contextmenu').height();
+                //    var clickedPosition = getCanvasXY(caurrentLatLng);
+                //    var x = clickedPosition.x ;
+                //    var y = clickedPosition.y ;
+
+                //    if((mapWidth - x ) < menuWidth)
+                //        x = x - menuWidth;
+                //    if((mapHeight - y ) < menuHeight)
+                //        y = y - menuHeight;
+
+                //    $('.contextmenu').css('left',x  );
+                //    $('.contextmenu').css('top',y );
+                //};
                 /*   CONTEXT MENU END  */
 
 
@@ -375,7 +368,7 @@
                         new google.maps.Point(0,18),
                         new google.maps.Point(11,11)),
                         shadow: null,
-                        zIndex: 999,
+                        zIndex: 999999,
                         map: map
                     });
 
@@ -383,7 +376,7 @@
                         var me = new google.maps.LatLng(pos.coords.latitude, pos.coords.longitude);
                         myloc.setPosition(me);
                         map.panTo(me);
-                        map.setZoom(10);
+                        map.setZoom(14);
 
                     }, function(error) {
                         // ...
@@ -413,7 +406,7 @@
                     if (!place.geometry) {
                         // User entered the name of a Place that was not suggested and
                         // pressed the Enter key, or the Place Details request failed.
-                        window.alert("Ingen adress fanns med namnet: '" + place.name + "'");
+                        //window.alert("Ingen adress fanns med namnet: '" + place.name + "'");
                         return;
                     }
                     // If the place has a geometry, then present it on a map.
