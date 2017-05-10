@@ -1,10 +1,10 @@
 ﻿$(document).ready(function () {
 
-    if (window.location.pathname == '/Home/Index' || window.location.pathname == '/') {
+    if (window.location.pathname == '../' || window.location.pathname == '/') {
         $('div.followStart').hide();
     }
 
-    if (window.location.pathname == '/fotbollsplaners/Create') {
+    if (window.location.pathname == '/laggtillfotbollsplan') {
         if ($('#genInfoSlideIco').hasClass('glyphicon-chevron-down')) {
             $('#genInfoSlideIco').removeClass('glyphicon-chevron-down');
             $('#genInfoSlideIco').addClass('glyphicon-chevron-up');
