@@ -7,9 +7,10 @@
 <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
 
 
+
 <script>
     $(document).ready(function () {
-        $("#sokinputt").autocomplete({
+        $("#sökinput").autocomplete({
             source: function (request, response) {
                 $.ajax({
                     url: "/Home/GetAutoCompleteData",
@@ -19,7 +20,7 @@
                     success: function (data) {
                         response($.map(data, function (item) {
                             return {
-                                label: item.Namn, value: item.Value
+                                label: item.Namn, value: item.Adress
                             }
                         }))
                     },
@@ -29,14 +30,15 @@
                 });
             }
         });
-    });
+    }); 
 </script>
+
 
 
 <div class="sökDiv text-center">
     <span class="glyphicon glyphicon-question-sign pull-right hjalpKnapp" aria-hidden="true" style="margin-right:2%; "><span class="hjalpText">Sök efter fotbollsplaner genom att ange adress eller namnet på fotbollsplanen i sökfältet. Resultatet visas här på kartan nedan.<br/><br/>Använd gärna lokaliseringsknappen höger i sökfältet för att enkelt hitta din position.</span></span>
 
-    <a href="~/Home/Index"><img id="logo" src="/Content/img/hfpLogotype.png"></a>
+    <a href="../"><img id="logo" src="/Content/img/hfpLogotype.png"></a>
     <div class="input-group">
         <input id="sökinput" type="text" class="form-control controls" placeholder="Sök på adress eller namn..">
         <span id="getPos" class="input-group-addon" onclick="scrollTo('.kartDiv',2000)" title="Hitta min position"><img src="~/Content/img/loc.png"/></span>
@@ -254,7 +256,7 @@
                 //            if (results[0]) {
                 //                currpos = event.latLng;
                 //                $('#latLngInput').val(currpos);
-
+                                
                 //                map.addListener('center_changed', function() {
                 //                    $('.contextmenu').hide();
                 //                });
