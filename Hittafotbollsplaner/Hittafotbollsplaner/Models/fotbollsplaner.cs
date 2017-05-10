@@ -35,6 +35,7 @@ namespace Hittafotbollsplaner.Models
         public bool Restaurang { get; set; }
         public bool Upplyst { get; set; }
         public bool Bokning { get; set; }
+        [RegularExpression("^[^:]+", ErrorMessage = "Http:// eller Https:// ska inte anges.")]
         public string Hemsida { get; set; }
         [StringLength(150, MinimumLength = 0, ErrorMessage = "Max 150 tecken får användas.")]
         public string Fritext { get; set; }
