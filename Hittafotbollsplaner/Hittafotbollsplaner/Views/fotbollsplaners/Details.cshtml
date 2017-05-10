@@ -1,13 +1,12 @@
 ﻿@model Hittafotbollsplaner.Models.fotbollsplaner
 
 @{
-    ViewBag.Title = "Details";
+    ViewBag.Title = "Mer info";
 }
 
-<h2>Details</h2>
+<h2>Mer info</h2>
 
-<div>
-    <h4>fotbollsplaner</h4>
+<div style="background-color: white;">
     <hr />
     <dl class="dl-horizontal">
         <dt>
@@ -43,16 +42,96 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Underlag)
+            @Html.DisplayNameFor(model => model.Hemsida)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Underlag)
+            @Html.DisplayFor(model => model.Hemsida)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AntalGras)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AntalGras)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AntalKonstGras)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AntalKonstGras)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AntalGrus)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AntalGrus)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Fritext)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Fritext)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Parkering)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Parkering)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Omkladnadsrum)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Omkladnadsrum)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Kafe)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Kafe)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Restaurang)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Restaurang)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Upplyst)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Upplyst)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Bokning)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Bokning)
         </dd>
 
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Redigera", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Tillbaka till listan", "Index")
 </p>

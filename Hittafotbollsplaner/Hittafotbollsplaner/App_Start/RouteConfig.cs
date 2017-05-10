@@ -19,8 +19,11 @@ namespace Hittafotbollsplaner
             routes.MapRoute(name: "Om", url: "omoss", defaults: new { controller = "Home", action = "Om" });
             routes.MapRoute(name: "Kontakt", url: "kontakt", defaults: new { controller = "Home", action = "Kontakt" });
             routes.MapRoute(name: "Aktuellfotbollsplan", url: "Fotbollsplan/{id}", defaults: new { controller = "Fotbollsplan", action = "Planid"});
+
             routes.MapRoute(name: "Admin", url: "admin", defaults: new { controller = "fotbollsplaners", action = "Index" });
-            routes.MapRoute(name: "login", url: "login", defaults: new { controller = "Account", action = "Register" });
+            routes.MapRoute(name: "AdminEdit", url: "admin/edit/{id}", defaults: new { controller = "fotbollsplaners", action = "Edit" });
+            routes.MapRoute(name: "AdminMerinfo", url: "admin/merinfo/{id}", defaults: new { controller = "fotbollsplaners", action = "Details" });
+            routes.MapRoute(name: "AdminDelete", url: "admin/delete/{id}", defaults: new { controller = "fotbollsplaners", action = "Delete" });
         }
     }
 }
