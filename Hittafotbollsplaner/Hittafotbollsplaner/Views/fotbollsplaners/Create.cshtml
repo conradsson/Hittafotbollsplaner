@@ -465,7 +465,7 @@
                                 List<SelectListItem> jaNej = new List<SelectListItem>();
                                 jaNej.Add(new SelectListItem
                                 {
-                                    Text = "Nej",
+                                    Text = "-",
                                     Value = "False"
                                 });
                                 jaNej.Add(new SelectListItem
@@ -473,7 +473,16 @@
                                     Text = "Ja",
                                     Value = "True"
                                 });
-
+                                jaNej.Add(new SelectListItem
+                                {
+                                    Text = "Nej",
+                                    Value = "False"
+                                });
+                                jaNej.Add(new SelectListItem
+                                {
+                                    Text = "Vet ej",
+                                    Value = "False"
+                                });
                             }
                             </div>
                         </div>
@@ -485,21 +494,21 @@
                                 <p class="text-primary text-center" style="left:0; margin-top: 2%; margin-left: 2%; margin-bottom:0;">Dessa tillgängligheter gäller inom ett avstånd på 500 meter från fotbollsplanen/fotbollsplanerna.</p>
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label class="control-label col-md-3" for="Parkering">Parkering<span class="red">*</span></label>
+                                        <label class="control-label col-md-3" for="Parkering">Parkering<span class="red"></span></label>
                                         <div class="col-md-9">
                                             @Html.DropDownListFor(model => model.Parkering, jaNej, null, htmlAttributes: new { @class = "form-control" })
                                             @Html.ValidationMessageFor(model => model.Parkering, "", new { @class = "text-danger" })
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        <label class="control-label col-md-3" for="Omkladningsrum">Omklädningsrum<span class="red">*</span></label>
+                                        <label class="control-label col-md-3" for="Omkladningsrum">Omklädningsrum<span class="red"></span></label>
                                         <div class="col-md-9">
                                             @Html.DropDownListFor(model => model.Omkladnadsrum, jaNej, htmlAttributes: new { @class = "form-control" })
                                             @Html.ValidationMessageFor(model => model.Omkladnadsrum, "", new { @class = "text-danger" })
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        <label class="control-label col-md-3" for="Kafe">Kafé<span class="red">*</span></label>
+                                        <label class="control-label col-md-3" for="Kafe">Kafé<span class="red"></span></label>
                                         <div class="col-md-9">
                                             @Html.DropDownListFor(model => model.Kafe, jaNej, htmlAttributes: new { @class = "form-control" })
                                             @Html.ValidationMessageFor(model => model.Kafe, "", new { @class = "text-danger" })
@@ -509,21 +518,21 @@
 
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label class="control-label col-md-3" for="Restaurang">Restaurang<span class="red">*</span></label>
+                                        <label class="control-label col-md-3" for="Restaurang">Restaurang<span class="red"></span></label>
                                         <div class="col-md-9">
                                             @Html.DropDownListFor(model => model.Restaurang, jaNej, null, htmlAttributes: new { @class = "form-control" })
                                             @Html.ValidationMessageFor(model => model.Restaurang, "", new { @class = "text-danger" })
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        <label class="control-label col-md-3" for="Upplyst">Upplyst<span class="red">*</span></label>
+                                        <label class="control-label col-md-3" for="Upplyst">Upplyst<span class="red"></span></label>
                                         <div class="col-md-9">
                                             @Html.DropDownListFor(model => model.Upplyst, jaNej, null, htmlAttributes: new { @class = "form-control" })
                                             @Html.ValidationMessageFor(model => model.Upplyst, "", new { @class = "text-danger" })
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        <label class="control-label col-md-3" for="Bokning">Bokning<span class="red">*</span></label>
+                                        <label class="control-label col-md-3" for="Bokning">Bokning<span class="red"></span></label>
                                         <div class="col-md-9">
                                             @Html.DropDownListFor(model => model.Bokning, jaNej, null, htmlAttributes: new { @class = "form-control bokninginput" })
                                             @Html.ValidationMessageFor(model => model.Bokning, "", new { @class = "text-danger" })
