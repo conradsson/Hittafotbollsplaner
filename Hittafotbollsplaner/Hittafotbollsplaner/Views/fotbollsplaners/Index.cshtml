@@ -23,9 +23,6 @@
         <th>
             @Html.DisplayNameFor(model => model.Postnummer)
         </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Underlag)
-        </th>
         <th></th>
     </tr>
 
@@ -42,9 +39,6 @@
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.Postnummer)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Underlag)
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
