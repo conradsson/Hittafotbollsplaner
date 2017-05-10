@@ -325,7 +325,6 @@
     <Content Include="Views\fotbollsplaners\Index.cshtml" />
     <Content Include="Views\fotbollsplaners\_SuccessConfirmation.cshtml" />
     <Content Include="Views\Fotbollsplan\Index.cshtml" />
-    <Content Include="Views\Home\Sent.cshtml" />
     <Content Include="Views\Home\_SuccessEmail.cshtml" />
     <Content Include="Views\Fotbollsplan\_Rapportera.cshtml" />
   </ItemGroup>
