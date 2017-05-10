@@ -7,10 +7,9 @@
 <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
 
 
-
 <script>
     $(document).ready(function () {
-        $("#sökinputt").autocomplete({
+        $("#sokinputt").autocomplete({
             source: function (request, response) {
                 $.ajax({
                     url: "/Home/GetAutoCompleteData",
@@ -20,7 +19,7 @@
                     success: function (data) {
                         response($.map(data, function (item) {
                             return {
-                                label: item.Namn, value: item.Adress
+                                label: item.Namn, value: item.Value
                             }
                         }))
                     },
@@ -30,9 +29,8 @@
                 });
             }
         });
-    }); 
+    });
 </script>
-
 
 
 <div class="sökDiv text-center">
@@ -256,7 +254,7 @@
                 //            if (results[0]) {
                 //                currpos = event.latLng;
                 //                $('#latLngInput').val(currpos);
-                                
+
                 //                map.addListener('center_changed', function() {
                 //                    $('.contextmenu').hide();
                 //                });
@@ -434,7 +432,7 @@
                     infowindow.open(map, marker1);
                 });
 
-                setTimeout(function(){
+                @*setTimeout(function(){
 
                               @foreach (var item in Model.AllaFotbollsplaner)
                     {
@@ -446,7 +444,7 @@
                     }
 
                 }, 500);
-                searchBoxMapAddress();
+                searchBoxMapAddress();*@
 
 
                 // Sets a listener on a radio button to change the filter type on Places
