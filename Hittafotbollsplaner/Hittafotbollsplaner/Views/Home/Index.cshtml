@@ -10,7 +10,7 @@
 
 <script>
     $(document).ready(function () {
-        $("#sökinputt").autocomplete({
+        $("#sökinput").autocomplete({
             source: function (request, response) {
                 $.ajax({
                     url: "/Home/GetAutoCompleteData",
@@ -434,7 +434,7 @@
                     infowindow.open(map, marker1);
                 });
 
-                setTimeout(function(){
+                @*setTimeout(function(){
 
                               @foreach (var item in Model.AllaFotbollsplaner)
                     {
@@ -446,7 +446,7 @@
                     }
 
                 }, 500);
-                searchBoxMapAddress();
+                searchBoxMapAddress();*@
 
 
                 // Sets a listener on a radio button to change the filter type on Places
