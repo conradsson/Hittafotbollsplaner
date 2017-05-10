@@ -98,7 +98,7 @@ namespace Hittafotbollsplaner.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,Namn,Adress,Ort,Postnummer,Underlag")] fotbollsplaner fotbollsplaner)
+        public ActionResult Edit([Bind(Include = "Id, Namn, Adress, Ort, Postnummer, Latitud, Longitud, AntalGras, AntalGrus, AntalKonstGras, Parkering, Omkladnadsrum, Kafe, Restaurang, Upplyst, Bokning, Hemsida, Fritext")] fotbollsplaner fotbollsplaner)
         {
             if (ModelState.IsValid)
             {
