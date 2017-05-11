@@ -1,5 +1,9 @@
 ﻿@model Hittafotbollsplaner.Models.fotbollsplaner
 
+
+@if (Request.IsAuthenticated)
+{
+
 @{
     ViewBag.Title = "Mer info";
 }
@@ -135,3 +139,25 @@
     @Html.ActionLink("Redigera", "Edit", new { id = Model.Id }) |
     @Html.ActionLink("Tillbaka till listan", "Index")
 </p>
+            }
+            else // EJ INLOGGAD
+            {
+@{
+                    ViewBag.Title = "Ej inloggad";
+                }
+< div class="modal" style="display: block; background-color: rgba(0, 0, 0, 0.7);">
+    <div class="modal-dialog">
+        <div class="modal-content ontoplook" style="margin-top: 35%;">
+            <div class="modal-header">
+                <h4 class="modal-title">Ej inloggad</h4>
+            </div>
+            <div class="modal-body">
+                <p>Vänligen logga in för att få tillgång till denna sida.</p>
+            </div>
+            <div class="modal-footer">
+                <input type="button" class="btn btn-success" value="Logga in" onclick="location.href='@Url.Action("Login", "Account")'" />
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div>
+}

@@ -1,11 +1,13 @@
 ﻿@model IEnumerable<Hittafotbollsplaner.Models.fotbollsplaner>
 
-@{
-    ViewBag.Title = "Admin";
-}
+
 
 @if (Request.IsAuthenticated)
 {
+    @{
+        ViewBag.Title = "Admin";
+    }
+
     <h2>Admin</h2>
 
     <p>
@@ -78,17 +80,20 @@
         }
 
     </table>
-}
-else
+        }
+else // EJ INLOGGAD
 {
+   @{
+    ViewBag.Title = "Ej inloggad";
+   }
     <div class="modal" style="display: block; background-color: rgba(0, 0, 0, 0.7);">
         <div class="modal-dialog">
             <div class="modal-content ontoplook" style="margin-top: 35%;">
                 <div class="modal-header">
-                    <h4 class="modal-title">Du måste vara inloggad för att kunna editera!</h4>
+                    <h4 class="modal-title">Ej inloggad</h4>
                 </div>
                 <div class="modal-body">
-                    <p>Logga in först.</p>
+                    <p>Vänligen logga in för att få tillgång till denna sida.</p>
                 </div>
                 <div class="modal-footer">
                     <input type="button" class="btn btn-success" value="Logga in" onclick="location.href='@Url.Action("Login", "Account")'" />
