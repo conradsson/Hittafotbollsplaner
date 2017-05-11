@@ -36,11 +36,6 @@ namespace Hittafotbollsplaner.Controllers
             return View(model);
         }
 
-        //public ActionResult Sent()
-        //{
-        //    ViewBag.SuccessEmail = "y";
-        //    return View();
-        //}
 
         public ActionResult Index()
         {

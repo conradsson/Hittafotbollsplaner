@@ -33,6 +33,11 @@
     });
 </script>
 
+@if (@ViewBag.Login != null)
+{
+    @Html.Partial("_Login")
+}
+
 <div class="sa pull-right"><a href="/login">Admin</a></div>
 
 

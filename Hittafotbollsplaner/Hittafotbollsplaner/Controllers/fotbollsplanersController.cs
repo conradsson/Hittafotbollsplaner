@@ -50,6 +50,8 @@ namespace Hittafotbollsplaner.Controllers
         }
 
 
+
+
         // GET: fotbollsplaners/Create  
         public ActionResult Create()
         {
