@@ -4,115 +4,96 @@
     ViewBag.Title = "Admin";
 }
 
-<h2>Admin</h2>
+@if (Request.IsAuthenticated)
+{
+    <h2>Admin</h2>
 
-<p>
-    @Html.ActionLink("Lägg till fotbollsplan", "Create")
-</p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.Namn)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Adress)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Ort)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Postnummer)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Hemsida)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.AntalGras)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.AntalKonstGras)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.AntalGrus)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Fritext)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Parkering)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Omkladnadsrum)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Kafe)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Restaurang)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Upplyst)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Bokning)
-        </th>
-    </tr>
+    <p>
+        @Html.ActionLink("Lägg till fotbollsplan", "Create")
+    </p>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Namn)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Adress)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Ort)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Postnummer)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Hemsida)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AntalGras)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AntalKonstGras)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AntalGrus)
+            </th>
+        </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Namn)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Adress)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Ort)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Postnummer)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Hemsida)
-        </td>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Namn)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Adress)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Ort)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Postnummer)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Hemsida)
+                </td>
 
-        <td>
-            @Html.DisplayFor(modelItem => item.AntalGras)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.AntalKonstGras)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.AntalGrus)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Fritext)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Parkering)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Omkladnadsrum)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Kafe)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Restaurang)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Upplyst)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Bokning)
-        </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.AntalGras)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.AntalKonstGras)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.AntalGrus)
+                </td>
 
-        <td>
-            @Html.ActionLink("Redigera", "Edit", new { id=item.Id }) |
-            @Html.ActionLink("Mer info", "Details", new { id=item.Id }) |
-            @Html.ActionLink("Ta bort", "Delete", new { id=item.Id })
-        </td>
-    </tr>
+
+                <td>
+                    @Html.ActionLink("Redigera", "Edit", new { id = item.Id }) |
+                    @Html.ActionLink("Mer info", "Details", new { id = item.Id }) |
+                    @Html.ActionLink("Ta bort", "Delete", new { id = item.Id })
+                </td>
+            </tr>
+        }
+
+    </table>
 }
-
-</table>
+else
+{
+    <div class="modal" style="display: block; background-color: rgba(0, 0, 0, 0.7);">
+        <div class="modal-dialog">
+            <div class="modal-content ontoplook" style="margin-top: 35%;">
+                <div class="modal-header">
+                    <h4 class="modal-title">Du måste vara inloggad för att kunna editera!</h4>
+                </div>
+                <div class="modal-body">
+                    <p>Logga in först.</p>
+                </div>
+                <div class="modal-footer">
+                    <input type="button" class="btn btn-success" value="Logga in" onclick="location.href='@Url.Action("Login", "Account")'" />
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div>
+}
