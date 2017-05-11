@@ -39,6 +39,7 @@ namespace Hittafotbollsplaner.Controllers
 
         public ActionResult Index()
         {
+
             hittafotbollsplanerEntities db = new hittafotbollsplanerEntities();
             FotbollsplanerModels model = new FotbollsplanerModels();
             List<fotbollsplaner> allaFotbollsplaner = db.fotbollsplaners.ToList();
