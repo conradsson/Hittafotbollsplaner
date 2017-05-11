@@ -386,12 +386,13 @@ namespace Hittafotbollsplaner.Controllers
         }
 
         //
-        // POST: /Account/LogOff
+        // GET: /Account/LogOff
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult LogOff()
         {
             AuthenticationManager.SignOut(DefaultAuthenticationTypes.ApplicationCookie);
+            AuthenticationManager.SignOut();
             return RedirectToAction("Index", "Home");
         }
 

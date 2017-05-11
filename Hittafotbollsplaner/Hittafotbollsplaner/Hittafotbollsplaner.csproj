@@ -331,6 +331,7 @@
     <Content Include="Views\Fotbollsplan\Index.cshtml" />
     <Content Include="Views\Home\_SuccessEmail.cshtml" />
     <Content Include="Views\Fotbollsplan\_Rapportera.cshtml" />
+    <Content Include="Views\Account\Login - BAK.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
