@@ -306,7 +306,7 @@
     <Content Include="Views\Account\ExternalLoginFailure.cshtml" />
     <Content Include="Views\Account\ForgotPassword.cshtml" />
     <Content Include="Views\Account\ForgotPasswordConfirmation.cshtml" />
-    <Content Include="Views\Account\Login.cshtml">
+    <Content Include="Views\Account\LoginBACKUP.cshtml">
       <BrowseToURL>~/login</BrowseToURL>
     </Content>
     <Content Include="Views\Account\Register.cshtml" />
@@ -331,7 +331,7 @@
     <Content Include="Views\Fotbollsplan\Index.cshtml" />
     <Content Include="Views\Home\_SuccessEmail.cshtml" />
     <Content Include="Views\Fotbollsplan\_Rapportera.cshtml" />
-    <Content Include="Views\Account\Login - BAK.cshtml" />
+    <Content Include="Views\Account\Login.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

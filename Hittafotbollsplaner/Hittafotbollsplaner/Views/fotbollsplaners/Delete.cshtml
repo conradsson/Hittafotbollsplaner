@@ -3,16 +3,15 @@
 
 @if (Request.IsAuthenticated)
 {
-@{
+{
     ViewBag.Title = "Delete";
 }
 
-<h2>Ta bort</h2>
 
-<h3>Är du säker på att du vill ta bort denna fotbollsplan?</h3>
 <div style="background-color: white;">
+    <h2>Är du säker på att du vill ta bort denna fotbollsplan?</h2>
     <hr />
-    <dl class="dl-horizontal">
+    <dl class="dl-horizontal" style="margin-left: 2%;">
         <dt>
             @Html.DisplayNameFor(model => model.Namn)
         </dt>
@@ -51,16 +50,16 @@
     {
         @Html.AntiForgeryToken()
 
-        <div class="form-actions no-color">
-            <input type="submit" value="Delete" class="btn btn-default" /> |
-            @Html.ActionLink("Tillbaka till listan", "Index")
+        <div class="form-actions">
+            <a href="../"><input type="button" value="Tillbaka" class="btn btn-default pull-left" /></a>
+            <input type="submit" value="Delete" class="btn btn-danger center-block" />
         </div>
     }
 </div>
     }
     else // EJ INLOGGAD
     {
-        @{
+        {
             ViewBag.Title = "Ej inloggad";
         }
             <div class="modal" style="display: block; background-color: rgba(0, 0, 0, 0.7);">

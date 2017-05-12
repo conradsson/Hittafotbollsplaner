@@ -7,13 +7,13 @@
 @if (Request.IsAuthenticated)
 {
 
-@if (@ViewBag.SuccessConfirm != null)
+if (@ViewBag.SuccessConfirm != null)
 {
     @Html.Partial("_SuccessConfirmation")
 }
 
 
-                @using (Html.BeginForm())
+                using (Html.BeginForm())
                 {
                     @Html.AntiForgeryToken()
 
@@ -548,7 +548,7 @@
 
                         @*<div class="form-group">*@
                         <div class="col-md-offset-5 col-md-2">
-                            <input type="submit" id="läggtillFP" value="Lägg till" class="btn btn-default" style="width:100%; font-size: larger; background-color: #2ab74b;" />
+                            <input type="submit" id="läggtillFP" value="Uppdatera" class="btn btn-default" style="width:100%; font-size: larger; background-color: #2ab74b;" />
                         </div>
                         <div class="col-md-5"></div>
                         @*</div>*@
@@ -565,8 +565,6 @@
                 @section Scripts {
                     @Scripts.Render("~/bundles/jqueryval")
                 }
-            </div>
-        </div>
 
 
         <script src="http://maps.google.com/maps/api/js?sensor=false" type="text/javascript"></script>
@@ -577,7 +575,7 @@
                                     else // EJ INLOGGAD
 
                                     {
-                                        @{
+                                        {
                                             ViewBag.Title = "Ej inloggad";
                                         }
     <div class="modal" style="display: block; background-color: rgba(0, 0, 0, 0.7);">

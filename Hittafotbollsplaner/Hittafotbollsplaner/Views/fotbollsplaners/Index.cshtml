@@ -4,8 +4,9 @@
 
 @if (Request.IsAuthenticated)
 {
-    @{
-        ViewBag.Title = "Admin";
+
+    {
+        ViewBag.Title = "Redigera - Admin";
     }
 
     <h2>Admin</h2>
@@ -27,10 +28,7 @@
             <th>
                 @Html.DisplayNameFor(model => model.Postnummer)
             </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Hemsida)
-            </th>
-            <th>
+            @*<th>
                 @Html.DisplayNameFor(model => model.AntalGras)
             </th>
             <th>
@@ -38,7 +36,7 @@
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.AntalGrus)
-            </th>
+            </th>*@
         </tr>
 
         @foreach (var item in Model)
@@ -56,11 +54,8 @@
                 <td>
                     @Html.DisplayFor(modelItem => item.Postnummer)
                 </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Hemsida)
-                </td>
 
-                <td>
+                @*<td>
                     @Html.DisplayFor(modelItem => item.AntalGras)
                 </td>
                 <td>
@@ -68,12 +63,12 @@
                 </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.AntalGrus)
-                </td>
+                </td>*@
 
 
                 <td>
-                    @Html.ActionLink("Redigera", "Edit", new { id = item.Id }) |
-                    @Html.ActionLink("Mer info", "Details", new { id = item.Id }) |
+                    @Html.ActionLink("Redigera", "Edit", new { id = item.Id })<br/>
+                    @Html.ActionLink("Mer info", "Details", new { id = item.Id })<br/>
                     @Html.ActionLink("Ta bort", "Delete", new { id = item.Id })
                 </td>
             </tr>
@@ -83,7 +78,7 @@
         }
 else // EJ INLOGGAD
 {
-   @{
+   {
     ViewBag.Title = "Ej inloggad";
    }
     <div class="modal" style="display: block; background-color: rgba(0, 0, 0, 0.7);">

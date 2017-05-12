@@ -1,33 +1,39 @@
 ﻿@model Hittafotbollsplaner.Models.IndexViewModel
-@{
-    ViewBag.Title = "Manage";
+
+@if (Request.IsAuthenticated)
+{
+
+
+
+{
+    ViewBag.Title = "Ändra kontoinställningar";
 }
 
-<h2>@ViewBag.Title.</h2>
+
 
 <p class="text-success">@ViewBag.StatusMessage</p>
-<div>
-    <h4>Change your account settings</h4>
+<div style="background-color: white;">
+    <h2>@ViewBag.Title.</h2>
     <hr />
     <dl class="dl-horizontal">
-        <dt>Password:</dt>
+        <dt>Lösenord:</dt>
         <dd>
             [
             @if (Model.HasPassword)
             {
-                @Html.ActionLink("Change your password", "ChangePassword")
+                @Html.ActionLink("Ändra lösenord", "ChangePassword")
             }
             else
             {
-                @Html.ActionLink("Create", "SetPassword")
+                @Html.ActionLink("Skapa lösenord", "SetPassword")
             }
             ]
         </dd>
-        <dt>External Logins:</dt>
+        @*<dt>External Logins:</dt>
         <dd>
             @Model.Logins.Count [
             @Html.ActionLink("Manage", "ManageLogins") ]
-        </dd>
+        </dd>*@
         @*
             Phone Numbers can used as a second factor of verification in a two-factor authentication system.
              
@@ -53,32 +59,54 @@
                 ]
             </dd>
         *@
-        <dt>Two-Factor Authentication:</dt>
+        @*<dt>Two-Factor Authentication:</dt>
         <dd>
             <p>
                 There are no two-factor authentication providers configured. See <a href="http://go.microsoft.com/fwlink/?LinkId=403804">this article</a>
                 for details on setting up this ASP.NET application to support two-factor authentication.
-            </p>
+            </p>*@
             @*@if (Model.TwoFactor)
+            {
+                using (Html.BeginForm("DisableTwoFactorAuthentication", "Manage", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
                 {
-                    using (Html.BeginForm("DisableTwoFactorAuthentication", "Manage", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
-                    {
-                        @Html.AntiForgeryToken()
-                        <text>Enabled
-                        <input type="submit" value="Disable" class="btn btn-link" />
-                        </text>
-                    }
+                    @Html.AntiForgeryToken()
+                    <text>Enabled
+                    <input type="submit" value="Disable" class="btn btn-link" />
+                    </text>
                 }
-                else
+            }
+            else
+            {
+                using (Html.BeginForm("EnableTwoFactorAuthentication", "Manage", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
                 {
-                    using (Html.BeginForm("EnableTwoFactorAuthentication", "Manage", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
-                    {
-                        @Html.AntiForgeryToken()
-                        <text>Disabled
-                        <input type="submit" value="Enable" class="btn btn-link" />
-                        </text>
-                    }
-                }*@
-        </dd>
+                    @Html.AntiForgeryToken()
+                    <text>Disabled
+                    <input type="submit" value="Enable" class="btn btn-link" />
+                    </text>
+                }
+            }
+    </dd>*@
     </dl>
 </div>
+    }
+    else
+    {
+        {
+            ViewBag.Title = "Ej inloggad";
+        }
+        <div class="modal" style="display: block; background-color: rgba(0, 0, 0, 0.7);">
+            <div class="modal-dialog">
+                <div class="modal-content ontoplook" style="margin-top: 35%;">
+                    <div class="modal-header">
+                        <h4 class="modal-title">Ej inloggad</h4>
+                    </div>
+                    <div class="modal-body">
+                        <p>Vänligen logga in för att få tillgång till denna sida.</p>
+                    </div>
+                    <div class="modal-footer">
+                        <input type="button" class="btn btn-success" value="Logga in" onclick="location.href='@Url.Action("Login", "Account")'" />
+                    </div>
+                </div><!-- /.modal-content -->
+            </div><!-- /.modal-dialog -->
+        </div>
+    }
