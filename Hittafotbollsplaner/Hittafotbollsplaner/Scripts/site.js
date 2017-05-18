@@ -1,5 +1,7 @@
 ﻿$(document).ready(function () {
 
+    
+
     if (window.location.pathname == '../' || window.location.pathname == '/') {
         $('div.followStart').hide();
     }
