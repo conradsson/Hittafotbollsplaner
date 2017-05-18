@@ -1701,7 +1701,7 @@ mark,
 }
 
 .text-muted {
-    color: #999999;
+    color: #7d7d7d;
 }
 
 .text-primary {
@@ -6691,7 +6691,7 @@ button.list-group-item-danger {
     margin-top: 0;
     margin-bottom: 0;
     font-size: 17px;
-    color: inherit;
+    /*color: inherit;*/
 }
 
     .panel-title > a,
