@@ -31,7 +31,7 @@
                     <div class="container-generellinfo col-md-12">
                         <div class="genInfoSlide text-center">Generell information <span id="genInfoSlideIco" class="glyphicon glyphicon-chevron-down" aria-hidden="true"></span></div>
                         <div id="G-toggle">
-                            <span class="glyphicon glyphicon-question-sign pull-right hjalpKnapp" aria-hidden="true" style="margin-right:2%; "><span class="hjalpText">Vänligen markera på kartan vart fotbollsplanen ligger, uppgifterna fylls då i automatiskt. Fyll sedan i det som saknas eller ändra det som är felaktigt. <br /><br /> Hemsida är ej obligatoriskt.</span></span>
+                            <span class="glyphicon glyphicon-question-sign pull-right hjalpKnapp" aria-hidden="true" style="margin-right:2%; "><span class="hjalpText">Vänligen markera på kartan vart fotbollsplanen ligger, uppgifterna fylls då i automatiskt. Fyll sedan i det som saknas eller ändra det som är felaktigt. <br /><br /> Finns det inget speciellt namn på planen döp den då till något lämpligt, t.ex. Stadsgatans gräsplan. <br /><br />Hemsida är ej obligatoriskt.</span></span>
 
                             <div class="col-md-6">
                                 <div class="col-md-12" style="text-align: center;">
@@ -328,7 +328,7 @@
                                 @Html.ValidationSummary(true, "", new { @class = "text-danger", required = "required" })
 
                                 <div class="form-group">
-                                    <label class="control-label col-md-4" for="Namn">Namn<span class="red">*</span></label>
+                                    <label class="control-label col-md-4" for="Namn">Namn på planen<span class="red">*</span></label>
                                     <div class="col-md-8">
                                         @Html.EditorFor(model => model.Namn, new { htmlAttributes = new { @class = "form-control"} })
                                         @Html.ValidationMessageFor(model => model.Namn, "", new { @class = "text-danger" })
