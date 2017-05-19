@@ -488,6 +488,10 @@ span.hjalpKnapp{
     color: #2ab74b;
 }
 
+span.hjalpKnapp:hover{
+    color: #1d8736;
+}
+
 span.hjalpKnapp:hover span.hjalpText{
     visibility: visible;
     opacity: 1;
@@ -589,6 +593,10 @@ a#merInfoA{
      background-color: #2ab74b;
      border:1px solid #b2b2b2;
      border-left: 0;
+ }
+
+  #getPos:hover {
+     background-color: #1d8736;
  }
 
  span#getPosCre{
