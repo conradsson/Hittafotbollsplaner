@@ -146,6 +146,7 @@
                             content: message
                         });
                         google.maps.event.addListener(marker, 'click', function () {
+                            map.panTo(this.getPosition());
                             infoWindow.open(map, marker);
                         });
                     }
