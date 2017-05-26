@@ -62,12 +62,8 @@
     }
 }
 
-
-
-
-
     <div class="sökDiv text-center">
-        <span class="glyphicon glyphicon-question-sign pull-right hjalpKnapp" aria-hidden="true" style="margin-right:2%; "><span class="hjalpText">Sök efter fotbollsplaner genom att ange adress eller namnet på fotbollsplanen i sökfältet. Resultatet visas här på kartan nedan.<br /><br />Använd gärna lokaliseringsknappen höger i sökfältet för att enkelt hitta din position.</span></span>
+        <span class="glyphicon glyphicon-question-sign pull-right hjalpKnapp" aria-hidden="true" style="margin-right:2%;margin-top: 1%; "><span class="hjalpText">Sök efter fotbollsplaner genom att ange adress eller namnet på fotbollsplanen i sökfältet. Resultatet visas här på kartan nedan.<br /><br />Använd gärna lokaliseringsknappen höger i sökfältet för att enkelt hitta din position.</span></span>
 
         <a href="../"><img id="logo" src="/Content/img/hfpLogotype.png"></a>
         <div class="input-group">
@@ -124,7 +120,6 @@
                         icon: icon
                     });
                     markers.push(marker)
-                    //marker.setMap(map);
                     addInfoWindow(marker, "<b>@item.Namn</b><br>@item.Adress<br>@item.Postnummer @item.Ort<br><br><a id=merInfoA href=@Url.Action("Planid", "Fotbollsplan", new { id = item.Id })><li id=merInfo>Mer information</li></a>");
 
                     </text>
