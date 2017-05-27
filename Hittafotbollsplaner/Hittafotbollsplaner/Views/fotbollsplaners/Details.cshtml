@@ -4,160 +4,162 @@
 @if (Request.IsAuthenticated)
 {
 
-{
-    ViewBag.Title = "Mer info";
-}
+    {
+        ViewBag.Title = "Mer info";
+    }
 
-<h2>Mer info</h2>
+    <div class="ontoplook" style="margin-top: 1%;">
+        <h2>Mer info</h2>
 
-<div style="background-color: white;">
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Namn)
-        </dt>
+        <div style="background-color: white;">
+            <hr />
+            <dl class="dl-horizontal">
+                <dt>
+                    @Html.DisplayNameFor(model => model.Namn)
+                </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Namn)
-        </dd>
+                <dd>
+                    @Html.DisplayFor(model => model.Namn)
+                </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Adress)
-        </dt>
+                <dt>
+                    @Html.DisplayNameFor(model => model.Adress)
+                </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Adress)
-        </dd>
+                <dd>
+                    @Html.DisplayFor(model => model.Adress)
+                </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Ort)
-        </dt>
+                <dt>
+                    @Html.DisplayNameFor(model => model.Ort)
+                </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Ort)
-        </dd>
+                <dd>
+                    @Html.DisplayFor(model => model.Ort)
+                </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Postnummer)
-        </dt>
+                <dt>
+                    @Html.DisplayNameFor(model => model.Postnummer)
+                </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Postnummer)
-        </dd>
+                <dd>
+                    @Html.DisplayFor(model => model.Postnummer)
+                </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Hemsida)
-        </dt>
+                <dt>
+                    @Html.DisplayNameFor(model => model.Hemsida)
+                </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Hemsida)
-        </dd>
+                <dd>
+                    @Html.DisplayFor(model => model.Hemsida)
+                </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.AntalGras)
-        </dt>
+                <dt>
+                    @Html.DisplayNameFor(model => model.AntalGras)
+                </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.AntalGras)
-        </dd>
+                <dd>
+                    @Html.DisplayFor(model => model.AntalGras)
+                </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.AntalKonstGras)
-        </dt>
+                <dt>
+                    @Html.DisplayNameFor(model => model.AntalKonstGras)
+                </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.AntalKonstGras)
-        </dd>
+                <dd>
+                    @Html.DisplayFor(model => model.AntalKonstGras)
+                </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.AntalGrus)
-        </dt>
+                <dt>
+                    @Html.DisplayNameFor(model => model.AntalGrus)
+                </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.AntalGrus)
-        </dd>
+                <dd>
+                    @Html.DisplayFor(model => model.AntalGrus)
+                </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Fritext)
-        </dt>
+                <dt>
+                    @Html.DisplayNameFor(model => model.Fritext)
+                </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Fritext)
-        </dd>
+                <dd>
+                    @Html.DisplayFor(model => model.Fritext)
+                </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Parkering)
-        </dt>
+                <dt>
+                    @Html.DisplayNameFor(model => model.Parkering)
+                </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Parkering)
-        </dd>
+                <dd>
+                    @Html.DisplayFor(model => model.Parkering)
+                </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Omkladnadsrum)
-        </dt>
+                <dt>
+                    @Html.DisplayNameFor(model => model.Omkladnadsrum)
+                </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Omkladnadsrum)
-        </dd>
+                <dd>
+                    @Html.DisplayFor(model => model.Omkladnadsrum)
+                </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Kafe)
-        </dt>
+                <dt>
+                    @Html.DisplayNameFor(model => model.Kafe)
+                </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Kafe)
-        </dd>
+                <dd>
+                    @Html.DisplayFor(model => model.Kafe)
+                </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Restaurang)
-        </dt>
+                <dt>
+                    @Html.DisplayNameFor(model => model.Restaurang)
+                </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Restaurang)
-        </dd>
+                <dd>
+                    @Html.DisplayFor(model => model.Restaurang)
+                </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Upplyst)
-        </dt>
+                <dt>
+                    @Html.DisplayNameFor(model => model.Upplyst)
+                </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Upplyst)
-        </dd>
+                <dd>
+                    @Html.DisplayFor(model => model.Upplyst)
+                </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Bokning)
-        </dt>
+                <dt>
+                    @Html.DisplayNameFor(model => model.Bokning)
+                </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Bokning)
-        </dd>
+                <dd>
+                    @Html.DisplayFor(model => model.Bokning)
+                </dd>
 
-    </dl>
-</div>
-<p>
-    @Html.ActionLink("Redigera", "Edit", new { id = Model.Id }) |
-    @Html.ActionLink("Tillbaka till listan", "Index")
-</p>
+            </dl>
+        </div>
+        <p>
+            @Html.ActionLink("Redigera", "Edit", new { id = Model.Id }) |
+            @Html.ActionLink("Tillbaka till listan", "Index")
+        </p>
+        </div>
             }
             else // EJ INLOGGAD
             {
-{
-                    ViewBag.Title = "Ej inloggad";
-                }
-<div class="modal" style="display: block; background-color: rgba(0, 0, 0, 0.7);">
-    <div class="modal-dialog">
-        <div class="modal-content ontoplook" style="margin-top: 35%;">
-            <div class="modal-header">
-                <h4 class="modal-title">Ej inloggad</h4>
+            {
+            ViewBag.Title = "Ej inloggad";
+            }
+            <div class="modal" style="display: block; background-color: rgba(0, 0, 0, 0.7);">
+                <div class="modal-dialog">
+                    <div class="modal-content ontoplook" style="margin-top: 35%;">
+                        <div class="modal-header">
+                            <h4 class="modal-title">Ej inloggad</h4>
+                        </div>
+                        <div class="modal-body">
+                            <p>Vänligen logga in för att få tillgång till denna sida.</p>
+                        </div>
+                        <div class="modal-footer">
+                            <input type="button" class="btn btn-success" value="Logga in" onclick="location.href='@Url.Action("Login", "Account")'" />
+                        </div>
+                    </div><!-- /.modal-content -->
+                </div><!-- /.modal-dialog -->
             </div>
-            <div class="modal-body">
-                <p>Vänligen logga in för att få tillgång till denna sida.</p>
-            </div>
-            <div class="modal-footer">
-                <input type="button" class="btn btn-success" value="Logga in" onclick="location.href='@Url.Action("Login", "Account")'" />
-            </div>
-        </div><!-- /.modal-content -->
-    </div><!-- /.modal-dialog -->
-</div>
-}
+            }
